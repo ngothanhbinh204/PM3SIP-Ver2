@@ -1,0 +1,21 @@
+section.table-price-section.section-large
+	.container
+		h1.site-title Bảng giá dịch vụ
+		.table-price.mt-10
+			table
+				thead
+					tr
+						th STT
+						th TÊN DỊCH VỤ
+						th
+				tbody
+					- for(x=1; x<=6; x++)
+						tr
+							td 0#{x}
+							td
+								a(href="#") Dịch vụ Hàng container
+							td
+								.button.justify-center
+									a(href="#" download).link
+										i.fa-light.fa-download
+										span Tải bảng giá

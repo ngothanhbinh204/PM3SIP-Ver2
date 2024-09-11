@@ -1,0 +1,23 @@
+.table-price
+	@apply overflow-x-auto
+	table
+		@apply w-full rem:min-w-[1000px]
+	th
+		@apply sub-header-20 font-bold text-white bg-primary-1 text-center p-3 border border-neutral-100 xl:px-5 xl:rem:py-[10px]
+		&:nth-child(1)
+			@apply w-20
+		&:nth-child(2)
+			@apply text-left
+		&:nth-child(3)
+			@apply rem:w-[240px]
+	td
+		@apply body-16 font-normal text-neutral-950 text-center border border-neutral-100 p-3 xl:px-5 xl:py-3
+		&:nth-child(1)
+			@apply font-bold
+		&:nth-child(2)
+			@apply text-left
+			a
+				@apply hover:text-primary-1 hover-underline
+	tbody
+		tr
+			@apply even:bg-neutral-50

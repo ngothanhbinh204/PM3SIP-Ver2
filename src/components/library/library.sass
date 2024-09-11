@@ -1,0 +1,20 @@
+.library-item
+	@apply flex flex-col gap-5 relative
+	.image
+		@apply aspect-[440/294] relative
+	.title
+		@apply sub-header-20 font-bold text-black
+	&:hover
+		.title
+			@apply text-primary-2
+	&.is-video
+		.image
+			&::before
+				@apply font-awesome content-['\f04b'] font-bold text-white text-32 size-16 flex-center rounded-full bg-primary-1 absolute-center z-1 ring-[10px] ring-primary-1/50 transition-all duration-200 ease-in-out pointer-events-none
+		&:hover
+			.image
+				&::before
+					@apply ring-[15px]
+
+.library-list
+	@apply grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3

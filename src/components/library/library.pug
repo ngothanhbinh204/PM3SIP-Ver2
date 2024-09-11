@@ -1,0 +1,25 @@
+section.library-section.section-large.bg-white
+	.container
+		h1.site-title Thư viện
+		nav.site-nav.mt-10
+			ul.site-nav-list
+				li.active
+					a(href="#") Thư viện ảnh
+				li
+					a(href="#") Video
+		.library-list.mt-10
+			- for(x=1; x<=3; x++)
+				.library-item.item-hover
+					.image.img-cover
+						+img(440, 352)
+					.caption
+						h2.title Album #{x}
+					a(href="#" data-fancybox="library").link-overlay
+					.hidden
+						a(href="#")
+				.library-item.item-hover.is-video
+					.image.img-cover
+						+img(440, 352)
+					.caption
+						h2.title Album #{x}
+					a(href="#" data-fancybox="video").link-overlay

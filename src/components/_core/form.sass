@@ -3,7 +3,7 @@
 	@apply focus:outline-none focus:ring-2 focus:ring-primary-1 focus:ring-offset-0
 
 +form-input
-	@apply placeholder:text-neutral-950
+	@apply placeholder:text-neutral-950/50
 	// @apply placeholder-shown:bg-white
 	@apply disabled:bg-neutral-950/50 disabled:border-neutral-950/75 disabled:text-neutral-900
 	@apply read-only:bg-neutral-950/50 read-only:border-neutral-950/75 read-only:text-neutral-900
@@ -17,6 +17,7 @@ select[multiple]
 
 textarea
 	@apply h-20 py-3 rounded-4 xl:rem:h-[137px] xl:py-4
+	@apply placeholder:text-neutral-950/50
 
 input[type='file']
 	@apply hidden

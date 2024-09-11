@@ -1,8 +1,16 @@
 .modal
-	@apply bg-transparent bg-none p-0
+	@apply bg-transparent bg-none p-0 hidden
 	.modal-wrap
-		@apply bg-white p-5 rounded-2 shadow
+		@apply bg-white p-5 rounded-5 shadow sm:p-10
 
-.modal-head
+// .modal-head
 
-.modal-body
+// .modal-body
+
+.modal-apply
+	@apply rem:max-w-[670px]
+	.row
+		@apply -mx-2
+		> *
+			@apply px-2
+

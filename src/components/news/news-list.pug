@@ -1,0 +1,32 @@
+section.news-section.section-large
+	.container
+		h1.site-title Tin tức
+		nav.site-nav.mt-10
+			ul.site-nav-list
+				li.active
+					a(href="#") Tất cả
+				li
+					a(href="#") Tin công ty
+				li
+					a(href="#") Tin công ty
+		.news-list.mt-10
+			- for(x=1; x<=4; x++)
+				.news-item.item-hover
+					.image.img-cover
+						a(href="#")
+							+img(920, 518)
+					.caption
+						p.news-date 30/03/2024
+						h2.title
+							a(href="#") Nếu doanh nghiệp đã xác định phát triển xanh thì ngành gì không quan trọng!
+						p.news-category Tin tức
+			- for(x=1; x<=8; x++)
+				.news-item.item-hover
+					.image.img-cover
+						a(href="#")
+							+img(320, 256)
+					.caption
+						p.news-date 30/03/2024
+						h3.title
+							a(href="#") Cảng cạn Phú Mỹ – Mảnh ghép hoàn thiện trung tâm logistics vùng Đông Nam bộ
+						p.news-category Tin tức

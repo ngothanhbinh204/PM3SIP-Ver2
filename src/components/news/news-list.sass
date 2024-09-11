@@ -36,3 +36,33 @@
 		&.active
 			a
 				@apply bg-primary-2 text-white
+
+.news-section
+	.news-list
+		@apply grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-12
+	@screen md
+		.news-item
+			&:nth-child(1)
+				@apply col-span-2
+	@screen lg
+		.news-item
+			&:nth-child(1)
+				@apply col-span-2 row-span-2
+	@screen xl
+		.news-item
+			@apply col-span-3
+			&:nth-child(1)
+				@apply col-span-8 row-span-3 col-start-5 row-start-1 gap-0
+				.image
+					@apply aspect-[920/518]
+			&:nth-child(2), &:nth-child(3), &:nth-child(4)
+				@apply col-span-4
+				@apply flex-row
+				.image
+					@apply rem:size-[160px] aspect-square
+				.title
+					@apply sub-header-20
+				.caption
+					@apply flex-1
+				.news-category
+					@apply pt-3 mt-3

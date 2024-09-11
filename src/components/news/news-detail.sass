@@ -1,0 +1,60 @@
+.news-flex
+	@apply flex items-center gap-5
+	.line
+		@apply flex-1 h-px bg-[#949494]
+
+.news-detail-section
+	.social-list
+		@apply xl:mt-0 xl:absolute xl:top-0 xl:-left-19
+	.news-item
+		.title
+			@apply sub-header-20
+		.news-category
+			@apply pt-3 mt-3
+
+.box-button
+	@apply bg-neutral-50 p-4 rounded-2 xl:p-6
+	a
+		@apply justify-between
+
+.career-other-item
+	@apply flex flex-col gap-2 relative p-4 xl:py-5
+	.title
+		@apply sub-header-20 font-bold text-neutral-950
+	.news-flex
+		@apply gap-3
+		> *
+			@apply body-16 font-normal text-neutral-500
+	&:hover
+		.title
+			@apply text-primary-2
+
+.box-career-other
+	@apply border border-neutral-200 rounded-1 overflow-hidden
+	.box-title
+		@apply sub-header-24 font-bold text-white bg-primary-1 p-4
+	.career-other-item
+		@apply border-b border-neutral-200 last:border-none
+
+.box-career-content
+	@apply body-16 font-normal text-neutral-950 p-5 rounded-tl-5 xl:rounded-tl-10 xl:p-10
+	h2
+		@apply sub-header-20 font-bold text-black mb-6
+	ul
+		@apply list-disc pl-5 space-y-2
+		li
+			@apply marker:text-neutral-300
+
+.career-info-list
+	column-count: 1
+	@apply gap-3 -mb-3
+	> *
+		@apply mb-3
+		strong
+			@apply whitespace-nowrap
+	.info-item
+		@apply flex gap-2
+	@screen md
+		column-count: 2
+		column-gap: 20px
+		break-inside: avoid-column

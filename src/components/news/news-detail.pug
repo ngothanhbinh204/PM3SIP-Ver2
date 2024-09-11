@@ -1,0 +1,45 @@
+section.news-detail-section.section-large.bg-white
+	.container
+		.row(class="justify-center")
+			.col(class="w-full lg:w-11/12 xl:w-5/6 relative")
+				.block-news-detail
+					h1.site-sub-title.font-bold.text-black Nếu doanh nghiệp đã xác định phát triển xanh thì ngành gì không quan trọng!
+					.news-flex.mt-5
+						p.news-date 30/03/2024
+						p.news-category Tin công ty
+						.line
+					.full-content.mt-5
+						p
+							strong Đó là quan điểm của bà Nguyễn Thị Thảo Nhi - Chủ tịch HĐQT kiêm Tổng giám đốc Công ty CP Thanh Bình Phú Mỹ về nội dung "Thu hút đầu tư xanh: Lọc ngành hay giảm phát thải?" đang được thảo luận tại hội thảo của Báo Thanh Niên.
+						p Là chủ đầu tư Khu công nghiệp (KCN) chuyên sâu Phú Mỹ 3, bà Nguyễn Thị Thảo Nhi cho biết khi đã xác định tăng trưởng xanh,phát triển bền vững thì tất cả các tập đoàn, công ty hàng đầu thế giới đều hướng tới đáp ứng 17 tiêu chí mà Liên Hiệp Quốc đã đưa ra. Trong đó, phải đáp ứng các yếu tố: kiểm soát, giảm thải khí thải; sản xuất không gây ô nhiễm môi trường; tiết kiệm tài nguyên thiên nhiên; có trách nhiệm với xã hội, với người lao động và quản trị minh bạch...
+				.social-list.mt-5
+					ul
+						li
+							a(href="#")
+								i.fa-brands.fa-facebook-f
+
+section.news-detail-section.section-large.bg-neutral-50.is-rounded-bl-l.mb-10
+	.container
+		h2.site-sub-title.font-bold.text-black Bài viết khác
+		.swiper-relative.mt-10.four-slider
+			.swiper
+				.swiper-wrapper
+					- for(x=1; x<=6; x++)
+						.swiper-slide
+							.news-item.item-hover
+								.image.img-cover
+									a(href="#")
+										+img(320, 256)
+								.caption
+									p.news-date 30/03/2024
+									h3.title
+										a(href="#") Cảng cạn Phú Mỹ – Mảnh ghép hoàn thiện trung tâm logistics vùng Đông Nam bộ
+									p.news-category Tin tức
+			.mobile-only
+				.swiper-pagination
+			.desktop-only
+				.swiper-button.is-abs
+					.button-prev
+						i.fa-light.fa-chevron-left
+					.button-next
+						i.fa-light.fa-chevron-right

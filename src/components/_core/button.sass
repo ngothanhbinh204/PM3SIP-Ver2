@@ -14,12 +14,25 @@
 		@apply size-8 rounded-full bg-primary-2 text-white flex items-center overflow-hidden
 		> *
 			@apply size-full min-w-8 flex-center transition-all duration-500 ease-in-out -translate-x-full
+		&.down
+			@apply flex-col
+			> *
+				@apply -translate-y-full min-h-8 translate-x-0
 	&:hover
 		@apply ring-2 text-primary-2
 		.icon
 			> *
 				@apply translate-x-0
+			&.down
+				> *
+					@apply translate-y-0
 	&.is-white
 		@apply ring-white text-white
 		.icon
 			@apply bg-white text-primary-2
+	&.is-blue
+		@apply ring-primary-1 text-primary-1
+		.icon
+			@apply bg-primary-1 text-white
+	&.no-border
+		@apply border-none px-0 py-0 rounded-none h-8 ring-0

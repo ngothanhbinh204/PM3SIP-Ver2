@@ -1,0 +1,91 @@
+section.career-detail-section.section-large.bg-white
+	.container
+		.row(class="-mt-10")
+			.col(class="w-full mt-10 lg:w-2/3 xl:w-3/4")
+				.box-career-content.bg-neutral-50
+					h1.site-sub-title.font-bold.text-black Nhân viên marketing
+					.mt-6.pt-6.border-t.border-primary-3
+						.career-info-list
+							- for(x=1; x<=2; x++)
+								.info-item
+									strong Chức vụ:
+									span Nhân viên Nhân viên Nhân viên Nhân viên Nhân viên Nhân viên Nhân viên Nhân viên Nhân viên Nhân viên Nhân viên Nhân viên Nhân viên Nhân viên Nhân viên
+								.info-item
+									strong Chức vụ:
+									span Nhân viên
+								.info-item
+									strong Chức vụ:
+									span Nhân viên
+								.info-item.text-primary-2
+									strong Chức vụ:
+									span Nhân viên
+								.info-item.text-primary-2
+									strong Chức vụ:
+									span Nhân viên
+								.info-item.text-primary-2
+									strong Chức vụ:
+									span Nhân viên
+				- for(x=1; x<=3; x++)
+					.box-career-content.mt-8.bg-neutral-50
+						h2 Mô tả công việc
+						ul
+							li Xây dựng kế hoạch, triển khai các hoạt động PR truyền thông phù hợp với chiến lược Marketing tổng thể của sản phẩm hoặc dự án
+							li Chịu trách nhiệm về content: Biên tập, viết bài, đưa tin các hoạt động và hình ảnh về sản phẩm dự án, nhằm cập nhật những tin tức nóng hổi nhất đến khách hàng mục tiêu, tạo độ hot cho chương trình đang theo dõi, quản lý. Chăm sóc facebook, website
+							li Thực hiện các hoạt động chăm sóc khách hàng, quản lý cơ sở dữ liệu khách hàng.
+							li Book lịch phát sóng, book lịch quảng cáo, theo dõi nội dung và thời lượng quảng cáo đúng kế hoạch.
+							li Thống kê phân tích số liệu doanh thu chi phí và đánh giá hiệu quả các kênh quảng cáo. 
+							li Lên ý tưởng kịch bản triển khai, tổ chức sự kiện truyền thông nhằm quảng bá cho sản phẩm, thương hiệu 
+							li Hỗ trợ tổ chức các sự kiện tại công ty
+							li Thực hiện các công việc khác theo sự chỉ đạo của trưởng phòng và Ban giám đốc
+							li Thống kê phân tích số liệu doanh thu chi phí và đánh giá hiệu quả các kênh quảng cáo
+							li Lên ý tưởng kịch bản triển khai, tổ chức sự kiện truyền thông nhằm quảng bá cho sản phẩm, thương hiệu 
+			.col(class="w-full mt-10 lg:w-1/3 xl:w-1/4")
+				.box-button.button.mb-10(class="xl:mb-13")
+					a(href="#modal-apply" data-fancybox="").btn-lined.w-full
+						span Ứng tuyển
+						span.icon
+							i.fa-solid.fa-arrow-right
+							i.fa-solid.fa-arrow-right
+					a(href="#" download).btn-lined.w-full.is-blue
+						span Tải hồ sơ ứng tuyển
+						span.icon
+							i.fa-solid.fa-arrow-right
+							i.fa-solid.fa-arrow-right
+				.box-career-other
+					.box-title Vị trí tuyển dụng khác
+					.box-body
+						- for(x=1; x<=5; x++)
+							.career-other-item
+								h3.title Nhân viên kho logistics
+								.news-flex
+									p.location TP. Hồ Chí Minh
+									p.news-date 30/03/2024
+								a(href="#").link-overlay
+
+#modal-apply.modal.modal-apply
+	.modal-wrap
+		.modal-content
+			.wrap-form
+				h3.site-sub-title.font-bold.text-black Nhân viên marketing
+				.body-18.font-normal.text-neutral-950.mt-3
+					p Ứng cử viên viên lòng gửi đầy đủ thông tin ứng tuyển. Bộ phận Phú Mỹ HR sẽ liên hệ bạn
+				.row(class="mt-6")
+					.form-group.col(class="w-full mt-4 sm:w-1/2")
+						input(type="text" placeholder="Họ và tên")
+					.form-group.col(class="w-full mt-4 sm:w-1/2")
+						input(type="text" placeholder="Email")
+					.form-group.col(class="w-full mt-4 sm:w-1/2")
+						input(type="text" placeholder="Số điện thoại")
+					.form-group.col(class="w-full mt-4 sm:w-1/2")
+						input(type="text" placeholder="Tiêu đề")
+					.form-group.col(class="w-full mt-4")
+						textarea(placeholder="Nội dung")
+					.col(class="w-full mt-10")
+						.flex.items-center.justify-between.gap-5
+							.form-group.form-captcha
+							.form-group.form-submit
+								button.btn-lined
+									span Liên hệ tư vấn
+									span.icon
+										i.fa-solid.fa-arrow-right
+										i.fa-solid.fa-arrow-right

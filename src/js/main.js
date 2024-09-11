@@ -3,6 +3,7 @@ $(function () {
 	lozadInit();
 	fancyboxInit();
 	countUpInit();
+	loadMoreItem();
 
 	accordionCollapse();
 
@@ -471,6 +472,10 @@ $('.four-slider').each(function (index) {
 				slidesPerView: 4,
 				spaceBetween: 32,
 			},
+			1400: {
+				slidesPerView: 4,
+				spaceBetween: 40,
+			},
 		},
 	});
 });
@@ -810,4 +815,24 @@ function accordionCollapse() {
 			.parent()
 			.siblings().find('.accordion-content').slideUp()
 	});
+}
+
+function loadMoreItem() {
+	$('.load-more-wrap').each(function () {
+		let $this = $(this);
+		let loadMore = $this.data('load-more')
+		let loadMoreItem = $this.find('.load-more-item');
+		let loadMoreButton = $this.find('.load-more-button');
+		$(loadMoreItem).slice(0, loadMore).show();
+
+		$(loadMoreButton).on('click', function (e) {
+			e.preventDefault();
+			let loadMoreItemHidden = $this.find('.load-more-item:hidden');
+			$(loadMoreItemHidden).slice(0, loadMore).slideDown();
+			let loadMoreItemHiddenLength = $this.find('.load-more-item:hidden').length;
+			if ($(loadMoreItemHiddenLength).length == 0) {
+				$(loadMoreButton).fadeOut('slow');
+			}
+		});
+	})
 }

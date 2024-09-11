@@ -1,0 +1,41 @@
+section.career-section.section-large.bg-neutral-50.is-rounded-bl-l
+	.container
+		h1.site-title Tuyển dụng
+		.site-desc.mt-10
+			p Cảng cạn Phú Mỹ được hình thành từ nhu cầu tối ưu hóa vận tải hàng hóa xuất, nhập khẩu của khu vực Tỉnh Bà Rịa – Vũng Tàu tới các hành lang kinh tế lân cận; trở thành trung tâm hậu cần của cảng biển; kết nối với các cảng cạn xa cảng biển gắn liền với các trung tâm phân phối tiêu thụ hàng hóa, các cửa khẩu đường bộ, đường thủy để nâng cao hiệu quả kết nối mạng lưới vận tải, thúc đẩy vận tải đa phương thức, giảm chi phí dịch vụ vận tải và logistics.Chúng tôi đang tuyển dụng các vị trí:
+		.career-list.mt-10
+			- for(x=1; x<=4; x++)
+				.career-item
+					.icon.mb-6.img-contain
+						img(src="./img/icon-2.png", alt="")
+					.caption
+						h2.title GIÁ TRỊ CỐT LÕI
+						.desc.mt-2
+							p SỨC KHỎE - AN TOÀN - MÔI TRƯỜNG - CHÍNH TRỰC - VĂN HÓA - NIỀM TIN
+
+section.career-section.section-large.bg-white
+	.container
+		h2.site-title Vị trí tuyển dụng
+		.load-more-wrap(data-load-more="5")
+			.career-table.table-responsive.mt-10
+				table
+					thead
+						tr
+							th STT
+							th VỊ TRÍ TUYỂN DỤNG
+							th KHU VỰC
+							th HẠN NỘP HỒ SƠ
+					tbody
+						- for(x=1; x<=6; x++)
+							tr.load-more-item
+								td 0#{x}
+								td
+									a(href="#") Dịch vụ Hàng container
+								td TP. Hồ Chí Minh
+								td 30/03/2024
+			.button.justify-center.mt-10
+				a(href="javascript:;").btn-lined.no-border.load-more-button
+					span Xem thêm
+					span.icon.down
+						i.fa-light.fa-chevron-down
+						i.fa-light.fa-chevron-down

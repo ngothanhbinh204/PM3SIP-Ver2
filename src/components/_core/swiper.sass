@@ -1,0 +1,47 @@
+.swiper-pagination
+	.swiper-pagination-bullet
+		@apply opacity-100 w-3 h-3 rounded-full bg-secondary-700/50
+		&.swiper-pagination-bullet-active
+			@apply bg-secondary-700
+	&.is-white
+		.swiper-pagination-bullet
+			@apply bg-white/50
+			&.swiper-pagination-bullet-active
+				@apply bg-white
+
+.swiper-button
+	> *
+		@apply size-16 flex-center rounded-full bg-black/20 text-white text-2xl transition-all
+		@apply hover:bg-primary-2
+		&.swiper-button-disabled
+			@apply opacity-40
+		&.swiper-button-lock
+			@apply opacity-0 pointer-events-none
+	&.is-white
+		> *
+			@apply text-white bg-white/20 border-white hover:text-neutral-200
+	&.is-abs
+		> *
+			@apply absolute top-1/2 -translate-y-1/2 z-1
+		.button-prev
+			@apply -left-12 xl:-left-26
+		.button-next
+			@apply -right-12 xl:-right-26
+		&.is-top-20
+			> *
+				@apply top-[20%]
+		&.is-top-30
+			> *
+				@apply top-[30%]
+		&.is-top-40
+			> *
+				@apply top-[40%]
+
+.swiper-relative
+	@apply lg:px-10 xl:px-0
+	&.is-page
+		@apply pb-10 lg:pb-0
+	.swiper-scrollbar
+		@apply h-[4px] bg-neutral-200 rounded-none left-0 w-full
+		.swiper-scrollbar-drag
+			@apply bg-primary-500 hover:bg-primary-700 rounded-none

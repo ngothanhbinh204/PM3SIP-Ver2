@@ -1,0 +1,22 @@
+.utilities-item
+	@apply relative
+	.image
+		@apply aspect-[680/464]
+	.caption
+		@apply flex flex-col gap-4 pt-5 md:p-8 xl:px-10 xl:pt-20
+	.title
+		@apply sub-header-20 font-bold text-neutral-950 md:text-white
+	.desc
+		@apply body-16 text-neutral-950 md:text-white
+		ul
+			@apply space-y-2 list-disc pl-5 marker:text-primary-1 md:marker:text-white
+	@screen md
+		.caption
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.80) 100%)
+			@apply absolute bottom-0 left-0 w-full
+
+
+.utilities-list
+	@apply grid grid-cols-1 gap-10 md:grid-cols-2
+
+// .utilities-section

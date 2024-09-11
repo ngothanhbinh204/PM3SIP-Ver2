@@ -1,0 +1,103 @@
+header
+	@apply fixed top-0 left-0 w-full z-999 bg-white px-4 py-1 flex items-center justify-between shadow-drop-shadow-light h-22 xl:px-10 md:h-25
+	.logo
+		@apply h-18
+		a, p
+			@apply flex-center h-full
+		img
+			@apply w-full h-full object-contain
+	.header-right
+		@apply flex items-center
+	.navbar-nav
+		@apply hidden xl:block
+	.main-menu
+		@apply flex items-center gap-10
+		> li
+			> a
+				@apply sub-header-20 font-medium text-black py-8 rem:gap-[10px]
+			&[class*="current-"], &:hover
+				> a
+					@apply text-primary-2
+			&.menu-item-has-children
+				@apply relative
+				> a
+					@apply flex items-center relative
+					&::after
+						@apply font-awesome content-['\f107'] text-base font-light text-primary-2
+				&:hover
+					> .sub-menu
+						@apply opacity-100 pointer-events-auto translate-y-0
+	.sub-menu
+		@apply absolute top-full left-0 w-full min-w-max bg-primary-2 p-6 space-y-4 rounded-tl-10 translate-y-3 transition-all duration-200 ease-in-out opacity-0 pointer-events-none
+		a
+			@apply body-16 font-normal text-white hover-underline
+		li
+			&[class*="current-"]
+				a
+					@apply hover-underline-active
+	.button-flex
+		@apply ml-10 flex items-center gap-2
+		> *
+			@apply p-3 rounded-1 bg-neutral-100 text-xl font-medium text-primary-1 flex items-center gap-3 cursor-pointer transition-all duration-200 ease-in-out
+			@apply hover:text-white hover:bg-primary-1
+			i
+				@apply text-2xl
+		.button-language
+			@apply p-0
+		.button-email, .button-phone
+			@apply hidden md:flex
+	#buttonMenu
+		@apply ml-5
+
+.mobile-wrap
+	@apply fixed top-0 w-screen h-screen bg-white shadow z-998 pt-25 pl-4 pb-4 max-w-xs -left-full opacity-0 transition-all duration-500 ease-in-out pointer-events-none md:pt-30 lg:pt-32 xl:hidden
+	.navbar-nav-list
+		@apply pr-4 max-h-[75vh] overflow-y-auto
+	.toggle-submenu
+		&:before
+			@apply font-awesome content-['\f107'] text-xl font-light text-primary-2 ml-2
+	.main-menu
+		@apply flex flex-col gap-3
+		> li
+			> a
+				@apply sub-header-20 font-medium text-black py-2
+			&[class*="current-"], &:hover
+				> a
+					@apply text-primary-2
+			&.menu-item-has-children
+				@apply relative
+	.sub-menu
+		@apply pl-4 space-y-4 pt-4 hidden
+		a
+			@apply body-16 font-normal text-black hover-underline
+		li
+			&[class*="current-"]
+				a
+					@apply hover-underline-active
+	.button-flex
+		@apply flex items-center gap-2
+		> *
+			@apply p-3 rounded-1 bg-neutral-100 text-xl font-medium text-primary-1 flex items-center gap-3 cursor-pointer transition-all duration-200 ease-in-out mt-5 w-max
+			i
+				@apply text-2xl
+	&.active
+		@apply left-0 opacity-100 pointer-events-auto
+
+.search-wrap
+	@apply fixed top-32 left-0 right-0 w-full z-100 hidden px-10 xl:rem:top-[160px]
+
+.wpml-ls
+	&.wpml-ls-legacy-dropdown-click
+		@apply w-full
+		> ul
+			> li
+				@apply flex-center
+				> a
+					@apply flex-center text-base font-normal text-neutral-500 bg-none bg-transparent p-3 border-0
+					@apply hover:text-white
+					img
+						@apply size-5 flex-center object-contain
+					&::after
+						@apply font-awesome content-['\f078'] text-sm font-light text-current ml-2 border-none flex static
+				>.wpml-ls-sub-menu
+					@apply border-none absolute top-full

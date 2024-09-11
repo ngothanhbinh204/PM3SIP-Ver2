@@ -1,0 +1,94 @@
+header(class="")
+	.header-left
+		.logo
+			a(href="/")
+				img(src="./img/logo.png", alt="")
+	.header-right
+		nav.navbar-nav#toggleMenu
+			ul.main-menu
+				li.menu-item-has-children
+					a(href="#") Giới thiệu
+					ul.sub-menu
+						li
+							a(href="#") Tổng quan
+						li
+							a(href="#") Sứ mệnh - Tầm nhìn
+						li
+							a(href="#") Sơ đồ tổ chức
+						li
+							a(href="#") Hạ tầng cảng
+				li.menu-item-has-children
+					a(href="#") Dịch vụ
+					ul.sub-menu
+						li
+							a(href="#") Tổng quan
+						li
+							a(href="#") Sứ mệnh - Tầm nhìn
+						li
+							a(href="#") Sơ đồ tổ chức
+						li
+							a(href="#") Hạ tầng cảng
+				li
+					a(href="#") Bảng giá dịch vụ
+				li.menu-item-has-children
+					a(href="#") Tin tức
+					ul.sub-menu
+						li
+							a(href="#") Tổng quan
+						li
+							a(href="#") Sứ mệnh - Tầm nhìn
+						li
+							a(href="#") Sơ đồ tổ chức
+						li
+							a(href="#") Hạ tầng cảng
+				li
+					a(href="#") Tuyển dụng
+				li
+					a(href="#") Thư viện
+				li
+					a(href="#") Liên hệ
+		.button-flex
+			.button-language
+				//- .wpml-ls-statics-shortcode_actions.wpml-ls.wpml-ls-legacy-dropdown-click.js-wpml-ls-legacy-dropdown-click
+				//- 	ul
+				//- 		li.wpml-ls-slot-shortcode_actions.wpml-ls-item.wpml-ls-item-en.wpml-ls-current-language.wpml-ls-first-item.wpml-ls-item-legacy-dropdown-click
+				//- 			a.js-wpml-ls-item-toggle.wpml-ls-item-toggle(href='#')
+				//- 				span.wpml-ls-native EN
+				//- 			ul.js-wpml-ls-sub-menu.wpml-ls-sub-menu(style='visibility: hidden;')
+				//- 				li.wpml-ls-slot-shortcode_actions.wpml-ls-item.wpml-ls-item-vi.wpml-ls-last-item
+				//- 					a.wpml-ls-link(href='#')
+				//- 						span.wpml-ls-native(lang='vi') VN
+				.wpml-ls-statics-shortcode_actions.wpml-ls.wpml-ls-legacy-dropdown-click.js-wpml-ls-legacy-dropdown-click
+					ul
+						li.wpml-ls-slot-shortcode_actions.wpml-ls-item.wpml-ls-item-vi.wpml-ls-current-language.wpml-ls-last-item.wpml-ls-item-legacy-dropdown-click
+							a.js-wpml-ls-item-toggle.wpml-ls-item-toggle(href='#')
+								img.wpml-ls-flag(src='https://boxmonster.webcanhcam.vn/wp-content/plugins/sitepress-multilingual-cms/res/flags/vi.svg' alt='VN' width='18' height='12')
+							ul.js-wpml-ls-sub-menu.wpml-ls-sub-menu(style='visibility: hidden;')
+								li.wpml-ls-slot-shortcode_actions.wpml-ls-item.wpml-ls-item-en.wpml-ls-first-item
+									a.wpml-ls-link(href='https://boxmonster.webcanhcam.vn/en/')
+										img.wpml-ls-flag(src='https://boxmonster.webcanhcam.vn/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.svg' alt='EN' width='18' height='12')
+
+			.button-search
+				i.fa-light.fa-search
+			a(href="mailto: sales-pmdryport@phumy3sip.com").button-email
+				i.fa-light.fa-envelope
+			a(href="tel: 097 716 1417").button-phone
+				i.fa-light.fa-phone
+				span 097 716 1417
+		//- menu horizontal
+		button#buttonMenu(type='button' data-target='#toggleMenu' aria-controls='toggleMenu')
+			span.line
+			span.line
+			span.line
+			span#pulseMe
+				span.bar.left
+				span.bar.top
+				span.bar.right
+				span.bar.bottom
+
+.mobile-wrap
+	.navbar-nav-list
+	.button-flex
+
+.search-wrap
+	+searchBox()

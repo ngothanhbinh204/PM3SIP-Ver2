@@ -1,0 +1,44 @@
+@layer components
+	.container
+		@screen xs
+			@apply max-w-full
+		@screen sm
+			@apply max-w-[96vw]
+		@screen xl
+			@apply max-w-[calc(1440/1920*100rem)]
+
+	.equal-height
+		.row > [class*=col] > *
+			@apply h-full
+		.swiper-slide
+			@apply h-auto
+			> *
+				@apply h-full
+
+	.lozad-bg
+		@apply bg-center bg-no-repeat bg-cover
+
+	.img-cover
+		@apply relative overflow-hidden
+		img
+			@apply w-full h-full object-cover
+
+	.img-contain
+		@apply relative overflow-hidden
+		img
+			@apply w-full h-full object-contain
+
+	.img-zoom
+		@apply relative overflow-hidden
+		img
+			@apply w-full h-full object-cover transition-all duration-300 ease-linear hover:scale-105
+
+	.item-hover
+		.image
+			@apply relative overflow-hidden
+			img
+				@apply transition-all
+		&:hover
+			.image
+				img
+					@apply scale-110

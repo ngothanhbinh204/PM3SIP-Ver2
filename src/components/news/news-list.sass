@@ -1,0 +1,38 @@
+.news-date
+	@apply body-14 font-medium text-neutral-400
+
+.news-category
+	@apply body-14 font-medium text-primary-1 hover:text-primary-2
+	a
+		@apply hover-underline
+
+.news-item
+	@apply flex flex-col gap-5
+	.image
+		@apply aspect-[440/352]
+	.caption
+		@apply py-3
+	.news-date
+		@apply mb-2
+	.title
+		@apply sub-header-24 font-bold text-black text-wrap line-clamp-2 hover:text-primary-2
+	.news-category
+		@apply pt-3 mt-3 border-t border-primary-3 xl:pt-5 xl:mt-5
+	&.is-hor
+		@apply flex-row
+		.image
+			@apply rem:w-[160px] aspect-square
+		.title
+			@apply sub-header-20
+		.caption
+			@apply flex-1
+
+.site-nav-list
+	@apply flex items-center gap-4
+	a
+		@apply body-16 font-normal text-primary-1 px-4 py-2 bg-neutral-100
+		@apply hover:bg-primary-2 hover:text-white
+	li
+		&.active
+			a
+				@apply bg-primary-2 text-white

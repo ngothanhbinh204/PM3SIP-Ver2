@@ -1,0 +1,12 @@
+.dropdown
+	@apply relative
+	.dropdown-toggle
+		@apply text-neutral-700 flex items-center justify-between gap-4 cursor-pointer
+	.dropdown-menu
+		@apply absolute top-full mt-5 left-0 w-full min-w-max z-10 bg-white rounded-1 px-5 py-3 shadow opacity-0 pointer-events-none transition-all duration-200 ease-linear
+	&.open
+		.dropdown-toggle
+			i, em
+				@apply rotate-180
+		.dropdown-menu
+			@apply opacity-100 pointer-events-auto

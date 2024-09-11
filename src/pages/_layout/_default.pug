@@ -1,0 +1,56 @@
+block var
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+		// disable format number to phone (Safari)
+		meta(name="format-detection" content="telephone=no")
+
+		// link font google
+		link(rel="preconnect" href="https://fonts.googleapis.com")
+		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Saira:ital,wght@0,100..900;1,100..900&display=swap")
+
+		// link css
+		link(rel="stylesheet", href="./css/global.min.css")
+		link(rel="stylesheet", href="./css/main.min.css")
+
+		title #{title}
+
+	body(class=bodyClass)
+		include ../../components/pug-mixin/pug-mixin
+
+		block header
+			include ../../components/global/header
+		main
+			block main
+
+			.backdrop.backdrop-mobile
+			.backdrop.backdrop-search
+
+			.cta-fixed
+				ul
+					li
+						a(href="javascript:;").back-to-top
+							span.icon
+								i.fa-light.fa-arrow-up-to-line
+							span.text Lên đầu trang
+					li
+						a(href="#")
+							span.icon
+								i.fa-light.fa-message-smile
+							span.text Click để đặt mua gói dịch vụ
+					//- li
+					//- 	a(href="tel: 1900 000")
+					//- 		i.fa-light.fa-phone
+
+		block footer
+			include ../../components/global/footer/footer
+
+		script(src="./js/global.min.js")
+		script(src="./js/main.min.js")
+		block script

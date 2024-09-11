@@ -1,0 +1,102 @@
+@layer utilities
+	.container-fuild
+		@apply px-4
+
+	.section
+		@apply py-10 xl:py-16
+
+	.section-t
+		@apply pt-10 xl:pt-16
+
+	.section-b
+		@apply pb-10 xl:pb-16
+
+	.section-small
+		@apply py-8 xl:py-10
+
+	.section-t-small
+		@apply pt-8 xl:pt-10
+
+	.section-b-small
+		@apply pb-8 xl:pb-10
+
+	.section-large
+		@apply py-16 xl:py-20
+
+	.section-t-large
+		@apply pt-16 xl:pt-20
+
+	.section-b-large
+		@apply pb-16 xl:pb-20
+
+	.row
+		@apply flex flex-wrap -mx-4 xl:-mx-5
+		> *
+			@apply px-4 xl:px-5
+
+	.no-gutters
+		@apply mx-0
+		> *
+			@apply px-0
+
+	.swiper-relative
+		@apply relative
+
+	.writing-mode-tb-rl
+		writing-mode: vertical-rl
+		text-orientation: mixed
+
+	.media-scale
+		@apply relative block h-0 overflow-hidden
+		img, iframe, video
+			@apply absolute w-full h-full top-0 left-0 transition-all duration-300 ease-in-out
+
+	.img-scale
+		@apply relative block h-0 overflow-hidden
+		img
+			@apply absolute w-full h-full top-0 left-0 transition-all duration-300 ease-in-out object-cover
+
+	.iframe-scale
+		@apply relative block h-0 overflow-hidden
+		iframe
+			@apply absolute min-w-full w-0 h-full top-0 left-0 transition-all duration-300 ease-in-out
+
+	.video-scale
+		@apply relative block h-0 overflow-hidden
+		video
+			@apply absolute w-full h-full top-0 left-0 transition-all duration-300 ease-in-out object-cover
+
+	.bg-bright-grey
+		@apply backdrop-blur-25
+
+	.absolute-center
+		@apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+
+	.filter-white
+		@apply brightness-0 invert
+
+	.img-zoom-in
+		&:hover
+			img
+				@apply scale-110
+
+	.hover-underline
+		@apply relative
+		background: linear-gradient(0deg, theme('colors.current'), theme('colors.current')) no-repeat right bottom / 0 theme('spacing[px]')
+		transition: background-size 350ms
+		&:hover
+			background-size: 100% theme('spacing[px]')
+			background-position-x: left
+
+	.hover-underline-active
+		background-size: 100% theme('spacing[px]')
+		background-position-x: left
+
+	.desktop-only
+		@apply hidden lg:block
+
+	.mobile-only
+		@apply block lg:hidden
+
+	.text-xs
+		@apply text-[14px] xl:text-[calc(12/1920*100rem)]

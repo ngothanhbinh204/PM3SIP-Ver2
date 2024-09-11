@@ -1,0 +1,157 @@
+section.home-news-feed
+	#news-feed.marquee
+		a(href="#")
+			span Cảng cạn Phú Mỹ không ngừng đa dạng và chuẩn hóa các dịch vụ
+
+		a(href="#")
+			span Đưa vào hoạt động cảng cạn Phú Mỹ vốn đầu tư gần 3.000 tỉ đồng
+
+		a(href="#")
+			span Cảng cạn Phú Mỹ không ngừng đa dạng và chuẩn hóa các dịch vụ
+
+		a(href="#")
+			span Đưa vào hoạt động cảng cạn Phú Mỹ vốn đầu tư gần 3.000 tỉ đồng
+
+		a(href="#")
+			span Cảng cạn Phú Mỹ không ngừng đa dạng và chuẩn hóa các dịch vụ
+
+		a(href="#")
+			span Đưa vào hoạt động cảng cạn Phú Mỹ vốn đầu tư gần 3.000 tỉ đồng
+
+section.home-about.section.section-count-up.is-rounded-bl-l.lozad-bg(data-background-image="./img/home-about-bg.jpg")
+	.container
+		h1.site-title.is-white
+			span GIỚI THIỆU CẢNG CẠN PHÚ MỸ
+			| Niềm tin kết nối - Giá trị gia tăng
+		.site-desc.is-white.mt-5
+			p Là Cảng cạn đầu tiên trên địa bàn tỉnh Bà Rịa - Vũng Tàu, Cảng cạn Phú Mỹ không chỉ là trung tâm hậu cần sau cảng mà còn là địa điểm tập kết và trung chuyển phân phối hàng hoá kỳ vọng sẽ tạo ra những giá trị cộng sinh để đáp ứng nhu cầu phát triển ngày càng gia tăng của doanh nghiệp và các nhà đầu tư trong khu vực.
+		.swiper-relative.five-slider.pb-10.mt-10(class="lg:pb-0 xl:mt-16")
+			.swiper
+				.swiper-wrapper
+					- for(x=1; x<=8; x++)
+						.swiper-slide
+							.home-about-item
+								.icon.img-contain
+									img(src="./img/icon-1.png", alt="")
+								.number
+									span.count-up(data-count="38") 0
+									span ha
+								h3.title Quy mô
+			.mobile-only
+				.swiper-pagination.is-white
+			.desktop-only
+				.swiper-button.is-abs
+					.button-prev
+						i.fa-light.fa-chevron-left
+					.button-next
+						i.fa-light.fa-chevron-right
+		.home-about-list.mt-10
+			- for(x=1; x<=5; x++)
+				.home-about-item
+					.icon.img-contain
+						img(src="./img/icon-1.png", alt="")
+					.number
+						span.count-up(data-count="38") 0
+						span ha
+					h3.title Quy mô
+		.button.mt-10(class="xl:mt-16")
+			a(href="#").btn-lined.is-white
+				span KHÁM PHÁ THÊM
+				span.icon
+					i.fa-solid.fa-arrow-right
+					i.fa-solid.fa-arrow-right
+
+section.home-service.section-t-large
+	.container
+		h2.site-title
+			span DỊCH VỤ
+			| Dịch vụ logistics toàn diện, trọn gói, đa phương thức
+		.home-service-list.mt-10
+			- for(x=1; x<=6; x++)
+				.home-service-item.item-hover.is-rounded-tl
+					.image.img-cover
+						+img(680, 464)
+					.caption
+						h3.title Dịch vụ Hàng container
+						.button.mt-6
+							a(href="#").btn-lined.is-white
+								span KHÁM PHÁ THÊM
+								span.icon
+									i.fa-solid.fa-arrow-right
+									i.fa-solid.fa-arrow-right
+
+section.home-location.section-t-large
+	.container
+		h2.site-title
+			span VỊ TRÍ CHIẾN LƯỢC
+			| Khả năng kết nối đường thủy và đường bộ
+		.image.img-cover.mt-10.is-rounded-tl-l
+			img(src="./img/1.jpg", alt="")
+
+section.home-news.section-large
+	.container
+		h2.site-title Tin tức - Sự kiện
+		nav.site-nav.mt-10
+			ul.site-nav-list
+				li.active
+					a(href="#") Tất cả
+				li
+					a(href="#") Tin công ty
+				li
+					a(href="#") Tin công ty
+		.home-news-list.mt-10
+			- for(x=1; x<=7; x++)
+				.news-item.item-hover
+					.image.img-cover
+						a(href="#")
+							+img(440, 352)
+					.caption
+						p.news-date 20/10/2021
+						h3.title
+							a(href="#") Cảng cạn Phú Mỹ không ngừng đa dạng và chuẩn hóa các dịch vụ
+						p.news-category
+							a(href="#") Tin tức
+
+section.home-register.section-large.is-rounded-bl-l.lozad-bg(data-background-image="./img/home-register-bg.jpg")
+	.container
+		.block-content
+			h2.site-title.is-white
+				span ĐĂNG KÝ TƯ VẤN
+				| Thành công của bạn là Thành công của chúng tôi
+			.site-desc.mt-3.is-white
+				p Cảng cạn Phú Mỹ và KCNCS Phú Mỹ 3 luôn cam kết mang đến những giá trị tốt nhất cho khách hàng và các nhà đầu tư.
+			.button.mt-10
+				a(href="#").btn-lined.is-white
+					span LIÊN HỆ TƯ VẤN
+					span.icon
+						i.fa-solid.fa-arrow-right
+						i.fa-solid.fa-arrow-right
+
+section.home-brand.pt-5
+	.brand-marquee
+		- for(x=1; x<=12; x++)
+			.brand-item.img-contain
+				img(src="./img/brand-1.png", alt="")
+
+section.home-certificate.section-large
+	.container
+		.block-content
+			h2.site-title Chứng chỉ
+		.swiper-relative.certificate-slider.five-slider.mt-10
+			.swiper
+				.swiper-wrapper
+					- for(x=1; x<=7; x++)
+						.swiper-slide
+							.certificate-item
+								.image.img-contain
+									img(src="./img/2.png", alt="")
+								h3.title Top 10 Doanh nghiệp tiêu biểu 2021
+
+			.mobile-only
+				.swiper-pagination
+			.desktop-only
+				.swiper-button.is-abs
+					.button-prev
+						i.fa-light.fa-chevron-left
+					.button-next
+						i.fa-light.fa-chevron-right

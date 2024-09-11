@@ -1,0 +1,22 @@
+section.home-banner
+	.swiper.banner-top
+		.swiper-wrapper
+			- for(x=1; x<=5; x++)
+				.swiper-slide
+					.image.img-cover
+						+img(1840, 880)
+					.caption-title
+						.banner-title Cảng cạn Phú Mỹ - Tiềm năng phát triển dịch vụ hậu cần tại Bà Rịa - Vũng Tàu
+	.caption
+		.swiper-relative.mt-6
+			.swiper.banner-thumbs
+				.swiper-wrapper
+					- for(x=1; x<=5; x++)
+						.swiper-slide
+							.image.img-cover
+								+img(160, 64)
+			.swiper-button
+				.button-prev
+					i.fa-thin.fa-chevron-left
+				.button-next
+					i.fa-thin.fa-chevron-right

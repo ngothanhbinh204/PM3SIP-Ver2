@@ -1,0 +1,53 @@
+@layer base
+	html, body
+		font-size: 16px
+		@screen xl
+			font-size: 1vw
+
+	body
+		@apply accent-blue-700
+		@apply font-sans overflow-y-overlay text-main
+
+	main
+		@apply pt-22 md:pt-25 md:px-4 lg:pt-25 xl:px-10
+
+	h1
+		@apply text-3xl font-bold
+
+	h2
+		@apply text-2xl font-bold
+
+	h3
+		@apply text-xl font-bold
+
+	h4
+		@apply text-lg font-bold
+
+	h5
+		@apply text-base font-bold
+
+	h6
+		@apply text-sm font-bold
+
+	// h1, h2, h3, h4, h5, h6
+	// 	@apply text-balance
+
+	a
+		@apply transition-all ease-linear duration-200 hover:text-current
+
+	img
+		@apply max-w-full inline
+
+	main, div
+		@apply xl:text-base
+
+	::is(tbody, table)
+		> tr:nth-child(odd)
+			background: #0001
+
+	@media (prefers-reduced-motion)
+		*, *::before, *::after
+			animation-duration: 0s !important
+			/* additional recommendation */
+			transition: none !important
+			scroll-behavior: auto !important

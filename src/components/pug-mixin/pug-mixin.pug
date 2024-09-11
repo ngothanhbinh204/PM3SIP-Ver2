@@ -1,0 +1,35 @@
+mixin subscribeForm
+	.subscribe
+		.subscribefrm
+			input.subscribeemail(type="text" placeholder="Nhập email của bạn...")
+			button.subscribebutton Gửi
+			span.fa.fa-exclamation-triangle Vui lòng nhập email.
+			span.fa.fa-exclamation-triangle Email không hợp lệ.
+
+mixin searchBox
+	.searchbox
+		input.searchinput(type="text" placeholder="Tìm kiếm")
+		button.searchbutton(type="button")
+			i.fa-light.fa-magnifying-glass
+
+mixin breadcrumb()
+	//- ol.breadcrumb
+	//- 	li
+	//- 		a(href="/").itemcrumb
+	//- 			span Trang chủ
+	//- 	li
+	//- 		a(href="/about").itemcrumb.active
+	//- 			span Giới thiệu
+	.rank-math-breadcrumb
+		p
+			span
+				a(href="/").itemcrumb
+					span Trang chủ
+			span.separator |
+			span
+				a(href="/about").itemcrumb.active
+					span Giới thiệu
+
+
+mixin img(width, height)
+	img.lozad(data-src=`https://picsum.photos/${width}/${height}?random` loading="lazy" alt="")

@@ -1,0 +1,74 @@
+@function r($size)
+	@return ($size /16px * 1rem)
+
+=img-scale($ratio)
+	padding-top: ($ratio * 100%)
+
+=iframe-scale($ratio)
+	padding-top: ($ratio * 100%)
+
+=video-scale($ratio)
+	padding-top: ($ratio * 100%)
+
+=media-ratio($ratio, $fit:cover)
+	padding-top: ($ratio *100%)
+	img, iframe, video
+		object-fit: $fit
+
+=scroll-x($ratio)
+	&::-webkit-scrollbar
+		height: $ratio
+		border-radius: $ratio / 2
+	&::-webkit-scrollbar-track
+		background: #ebebeb
+		border: thin solid white
+	&::-webkit-scrollbar-thumb
+		background: #cccccc
+		border-radius: $ratio / 2
+	&::-webkit-scrollbar-thumb:hover
+		background: #cccccc
+
+=scroll-y($ratio)
+	&::-webkit-scrollbar
+		width: $ratio
+		border-radius: $ratio / 2
+	&::-webkit-scrollbar-track
+		background: #ebebeb
+		border: thin solid white
+	&::-webkit-scrollbar-thumb
+		background: #cccccc
+		border-radius: $ratio / 2
+	&::-webkit-scrollbar-thumb:hover
+		background: #f1f1f1
+
+=form-text
+	[type='text'],
+	[type='email'],
+	[type='url'],
+	[type='password'],
+	[type='number'],
+	[type='date'],
+	[type='datetime-local'],
+	[type='month'],
+	[type='search'],
+	[type='tel'],
+	[type='time'],
+	[type='week'],
+	textarea,
+	select
+		@content
+
+=form-input
+	[type='text'],
+	[type='email'],
+	[type='url'],
+	[type='password'],
+	[type='number'],
+	[type='date'],
+	[type='datetime-local'],
+	[type='month'],
+	[type='search'],
+	[type='tel'],
+	[type='time'],
+	[type='week']
+		@content

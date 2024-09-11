@@ -1,0 +1,59 @@
+.header-64
+	@apply text-[32px] leading-normal xl:text-64
+
+.header-48
+	@apply text-[30px] leading-snug xl:text-5xl
+
+.header-40
+	@apply text-[28px] leading-snug xl:text-40
+
+.section-header-32
+	@apply text-[24px] leading-tight xl:text-32
+
+.sub-header-24
+	@apply text-[20px] leading-snug xl:text-2xl
+
+.sub-header-20
+	@apply text-[18px] leading-snug xl:text-xl
+
+.body-18
+	@apply text-[16px] leading-normal xl:text-lg
+
+.body-16
+	@apply text-[16px] leading-tight xl:text-base
+
+.body-14
+	@apply text-[14px] leading-tight xl:text-sm
+
+.label-12
+	@apply text-[12px] leading-snug xl:text-sm
+
+.site-title
+	@apply header-48 font-bold text-black
+	span
+		@apply block mb-3 body-16 font-semibold tracking-[0.64px] text-neutral-500 uppercase
+	&.is-white
+		@apply text-white
+		span
+			@apply text-white
+
+.site-sub-title
+	@apply section-header-32
+
+.site-desc
+	@apply body-18 font-normal text-black -tracking-[0.36px]
+	&.is-white
+		@apply text-white
+
+.full-content
+	@apply prose max-w-none
+	@apply body-16 font-normal text-main
+	> *
+		@apply first:mt-0 last:mb-0
+	p
+		img
+			@apply m-0
+	ul
+		@apply list-disc pl-4
+	ol
+		@apply list-decimal pl-4

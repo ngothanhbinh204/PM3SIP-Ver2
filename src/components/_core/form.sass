@@ -1,0 +1,59 @@
++form-text
+	@apply border border-neutral-200 pl-5 pr-10 py-2 rounded-full text-base font-normal leading-normal text-neutral-950 w-full bg-no-repeat h-12 m-0
+	@apply focus:outline-none focus:ring-2 focus:ring-primary-1 focus:ring-offset-0
+
++form-input
+	@apply placeholder:text-neutral-950
+	// @apply placeholder-shown:bg-white
+	@apply disabled:bg-neutral-950/50 disabled:border-neutral-950/75 disabled:text-neutral-900
+	@apply read-only:bg-neutral-950/50 read-only:border-neutral-950/75 read-only:text-neutral-900
+
+select
+	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'><path stroke='%23A6BD39' stroke-linecap='round' stroke-linejoin='round' stroke-width='1' d='M6 8l4 4 4-4'/></svg>")
+	@apply bg-right appearance-none
+
+select[multiple]
+	@apply min-h-[calc(48/1920*100rem)] py-3 h-auto bg-none
+
+textarea
+	@apply h-20 py-3 rounded-4 xl:rem:h-[137px] xl:py-4
+
+input[type='file']
+	@apply hidden
+	~ label
+		@apply relative w-max bg-neutral-600 border-none h-12 px-6 py-3 text-base text-primary-700 font-normal flex-center gap-3 cursor-pointer m-0 transition-all duration-200 ease-linear hover:bg-neutral-700
+
+input[type='checkbox']
+	@apply hidden
+	~ label
+		@apply relative pl-5
+		&::before
+			@apply font-awesome content-['\f0c8'] absolute top-1/2 -translate-y-1/2 left-0 text-base text-neutral-800 font-normal
+	&:checked
+		~ label
+			&::before
+				@apply content-['\f14a']
+
+input[type='radio']
+	@apply hidden
+	~ label
+		@apply relative pl-5
+		&::before
+			@apply font-awesome content-['\f111'] absolute top-1/2 -translate-y-1/2 left-0 text-base text-neutral-800 font-normal
+	&:checked
+		~ label
+			&::before
+				@apply content-['\f192']
+
+.form-group
+	@apply relative
+	> label
+		@apply relative block text-base font-normal leading-normal text-neutral-800
+	[class*='fa-ex']
+		@apply text-[12px] text-red-700 italic block mt-1 font-sans font-normal
+
+// button submit
+.frm-btnwrap
+	label.label, .frm-btn-reset
+		@apply hidden
+	// input[type='submit']

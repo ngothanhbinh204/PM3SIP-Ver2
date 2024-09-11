@@ -1,0 +1,22 @@
+.button
+	@apply flex flex-wrap gap-5
+
+.link
+
+.btn-solid
+
+.btn-lined
+	@apply flex-center gap-3 h-12 ring-1 ring-primary-2 rounded-full p-2 pl-5 body-16 font-semibold text-primary-2 tracking-[0.64px] uppercase
+	.icon
+		@apply size-8 rounded-full bg-primary-2 text-white flex items-center overflow-hidden
+		> *
+			@apply size-full min-w-8 flex-center transition-all duration-500 ease-in-out -translate-x-full
+	&:hover
+		@apply ring-2 text-primary-2
+		.icon
+			> *
+				@apply translate-x-0
+	&.is-white
+		@apply ring-white text-white
+		.icon
+			@apply bg-white text-primary-2

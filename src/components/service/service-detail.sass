@@ -1,0 +1,39 @@
+.service-dt-1-section
+	.full-content
+		@apply rem:max-h-[312px]
+		strong
+			@apply text-primary-1
+	.service-top
+		.image
+			@apply aspect-[800/450]
+	.swiper-button
+		> *
+			@apply absolute top-1/2 -translate-y-1/2 z-1 bg-black/50 opacity-100 hover:bg-primary-2
+			&.button-prev
+				@apply left-4 xl:left-6
+			&.button-next
+				@apply right-4 xl:right-6
+	.service-thumbs
+		.image
+			@apply relative aspect-[148/84]
+			&::before
+				content: ''
+				@apply absolute inset-0 border border-primary-2 z-1 opacity-0 transition-all duration-200 ease-in-out
+		.swiper-slide-thumb-active
+			.image
+				&::before
+					@apply opacity-100
+
+.service-dt-2-section
+	.block-content
+		@apply rem:max-w-[590px]
+	.site-title
+		@apply leading-[1.17]
+	.wrap-form
+		input, textarea
+			@apply bg-transparent border-white text-white
+			@apply placeholder:text-white/50
+		.row
+			@apply -mx-2
+			> *
+				@apply px-2

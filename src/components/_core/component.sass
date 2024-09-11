@@ -1,0 +1,102 @@
+// button toggle menu
+#buttonMenu
+	@apply relative z-50 min-w-[28px] w-[28px] h-[32px] rotate-0 transition-all cursor-pointer border-none m-0 p-0 bg-none
+	.line
+		@apply absolute block h-[2px] w-full bg-primary-1 rounded-full opacity-100 left-0 rotate-0 transition-all
+		&:nth-child(1)
+			@apply top-[4px]
+		&:nth-child(2)
+			@apply top-1/2 -translate-y-1/2
+		&:nth-child(3)
+			@apply bottom-[4px]
+	#pulseMe
+		@apply flex justify-center items-center absolute top-1/2 left-1/2 min-w-[34px] w-[30px] h-[34px] -translate-x-1/2 -translate-y-1/2 z-1
+	.bar
+		@apply bg-primary-1 rounded-1 absolute shadow-bar
+		&.left
+			@apply w-px animate-left-bar
+		&.top
+			@apply h-px animate-top-bar
+		&.right
+			@apply w-px animate-right-bar
+		&.bottom
+			@apply h-px animate-bottom-bar
+	&.open, &:hover
+		.line
+			&:nth-child(2)
+				@apply w-[15px]
+		.bar
+			@apply hidden
+	@screen xl
+		display: none !important
+
+// alert
+.alert
+	@apply relative py-3 px-4 mb-1 border border-solid border-transparent rounded-md block leading-tight text-sm
+	& button
+		@apply hidden
+	&.alert-danger
+		color: #721c24
+		background-color: #f8d7da
+		border-color: #f5c6cb
+	&.alert-success
+		color: #155724
+		background-color: #d4edda
+		border-color: #c3e6cb
+
+.backdrop
+	@apply fixed z-50 size-full top-0 left-0 bg-black/75 backdrop-blur hidden
+
+.cta-fixed
+	@apply fixed z-50 bottom-16 right-0 pointer-events-none
+	li
+		@apply rem:pt-[10px] rem:pb-[14px] rem:max-w-[220px]
+	a
+		@apply flex items-center gap-2 bg-primary-600 rounded-tl-4 body-14 font-bold text-white shadow-drop-shadow-medium pointer-events-auto
+		@apply translate-x-[calc(100%-(48/1920*100rem))] hover:pointer-events-auto
+		@apply xl:translate-x-[calc(100%-(64/1920*100rem))] xl:hover:translate-x-0
+	.icon
+		@apply size-12 flex-center text-xl xl:text-2xl xl:size-16
+	.text
+		@apply flex-1 rem:pl-[10px] pr-2 border-l border-white body-16 font-normal text-white
+	.back-to-top
+		@apply opacity-0
+		&.active
+			@apply opacity-100
+
+.social-list
+	ul
+		@apply flex flex-wrap rem:gap-[10px]
+	a
+		@apply w-10 h-10 rounded-full flex-center text-white text-base bg-primary-1 hover:bg-primary-2
+
+.searchbox
+	@apply relative container px-0
+	input
+		@apply w-full h-12 border-neutral-700 border rounded-1 pl-5 pr-12 text-base text-neutral-950
+		@apply placeholder:text-neutral-700
+		@apply focus:outline-none focus:border-primary-1
+	button
+		@apply absolute top-1/2 -translate-y-1/2 right-1 z-1 w-11 h-11 flex-center text-xl text-primary-1
+
+.is-rounded-bl-l
+	@apply overflow-hidden rounded-bl-10 lg:rounded-bl-20 xl:rounded-bl-30
+.is-rounded-tl-l
+	@apply overflow-hidden rounded-tl-10 lg:rounded-tl-20 xl:rounded-tl-30
+.is-rounded-bl
+	@apply overflow-hidden rounded-bl-8 lg:rounded-bl-15 xl:rounded-bl-20
+.is-rounded-tl
+	@apply overflow-hidden rounded-tl-8 lg:rounded-tl-15 xl:rounded-tl-20
+.is-rounded-bl-s
+	@apply overflow-hidden rounded-bl-5 lg:rounded-bl-10 xl:rounded-bl-15
+.is-rounded-tl-s
+	@apply overflow-hidden rounded-tl-5 lg:rounded-tl-10 xl:rounded-tl-15
+
+.custom-scroll
+	@apply overflow-y-auto pr-4 xl:pr-6
+	&::-webkit-scrollbar
+		@apply w-[2px]
+	&::-webkit-scrollbar-track
+		@apply bg-neutral-100
+	&::-webkit-scrollbar-thumb
+		@apply bg-primary-2

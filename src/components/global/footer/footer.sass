@@ -1,0 +1,80 @@
+.footer-top
+	@apply bg-secondary-4 px-5 py-10 rounded-tl-10
+	@screen md
+		@apply p-10 rounded-tl-20
+	@screen xl
+		@apply p-20 rounded-tl-30
+
+.footer-logo
+	@apply rem:w-[124px] rem:h-[72px]
+	img
+		@apply size-full object-contain
+
+.footer-info
+	@apply body-16 font-normal text-white
+	h4
+		@apply sub-header-24 font-bold text-white uppercase mb-5
+	li
+		@apply flex gap-2 py-3 border-t border-white/20
+	a
+		@apply hover-underline
+	.icon
+		@apply size-6 min-w-6 text-base flex-center leading-normal
+
+.footer-news-letter
+	@apply body-16 font-normal text-white
+	h4
+		@apply sub-header-24 font-bold text-white uppercase mb-5
+	p
+		@apply font-saira
+	.form-group
+		@apply mt-5 relative
+		input
+			@apply border border-white bg-transparent bg-none rounded-full py-1 pl-5 pr-25 h-12
+			@apply placeholder:text-white/50
+		button
+			@apply absolute top-0 right-0 h-12 p-2 body-16 font-semibold text-white tracking-[0.64px] uppercase bg-transparent bg-none border-none rounded-none flex items-center gap-3
+			.icon
+				@apply size-8 bg-white text-primary-2 text-xl rounded-full flex items-center overflow-hidden
+				> *
+					@apply size-full min-w-8 flex-center transition-all duration-500 ease-in-out -translate-x-full
+			&:hover
+				.icon
+					> *
+						@apply translate-x-0
+
+.footer-xl-flex
+	@apply flex flex-col gap-5 xl:flex-row
+
+.footer-title
+	@apply sub-header-24 font-bold text-white uppercase mb-5
+
+.footer-menu
+	@apply space-y-3
+	a
+		@apply body-16 font-normal text-white hover-underline
+
+.footer-copyright
+	@apply body-14 font-medium text-neutral-500 text-center lg:text-left
+
+.footer-policy
+	@apply body-14 font-medium text-neutral-500 flex items-center
+	p
+		@apply px-4 text-black/20
+	a
+		@apply hover-underline
+
+.footer-bot
+	@apply px-4 py-6 flex flex-col items-center gap-5 justify-between bg-white md:px-0 xl:pb-8 lg:flex-row
+
+footer
+	@apply relative z-100 md:px-4 xl:px-10 xl:z-0
+	@screen xl
+		.col-cus-1
+			@apply w-[calc(620/1720*100%)]
+		.col-cus-2
+			@apply w-[calc(360/1720*100%)]
+		.col-cus-3
+			@apply w-[calc(360/1720*100%)]
+		.col-cus-4
+			@apply w-[calc(380/1720*100%)]

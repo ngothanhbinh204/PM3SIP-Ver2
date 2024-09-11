@@ -1,0 +1,38 @@
+.global-breadcrumb
+	@apply bg-white
+	// .breadcrumb
+	// 	@apply flex flex-wrap items-center py-4 gap-x-5 gap-y-2
+	// 	a
+	// 		@apply block text-base leading-normal font-normal text-neutral-700
+	// 		&.active
+	// 			@apply text-secondary-700
+	// 	li
+	// 		@apply flex items-center last:after:hidden
+	// 		&::after
+	// 			content: '/'
+	// 			@apply pl-5 text-neutral-700 text-base leading-none
+	// 		&:first-child
+	// 			a
+	// 				@apply text-0
+	// 				span
+	// 					@apply hidden
+	// 				&::before
+	// 					@apply font-awesome content-['\f015'] text-neutral-700 text-base font-bold leading-none flex-center
+
+	.rank-math-breadcrumb
+		@apply py-2 xl:py-3
+		p
+			@apply flex flex-wrap items-center gap-3
+			> *
+				@apply body-14 font-normal text-neutral-500
+				&:first-child
+					@apply text-0
+					&::before
+						@apply font-awesome content-['\f015'] text-neutral-400 text-base font-normal leading-none flex-center
+			a
+				@apply hover:text-primary-700
+		.separator
+			@apply text-0
+			&::after
+				content: '|'
+				@apply text-base font-normal text-[#D9D9D9] leading-none

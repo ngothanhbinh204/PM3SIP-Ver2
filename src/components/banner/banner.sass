@@ -1,0 +1,35 @@
+.home-banner
+	@apply lg:mx-0 relative
+	.banner-top
+		.image
+			@apply w-screen h-screen lg:rounded-tl-20 lg:size-auto lg:aspect-[1840/880] xl:rounded-tl-30
+			&::before
+				content: ''
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.60) 100%)
+				@apply absolute bottom-0 left-0 w-full z-2 pointer-events-none rem:h-[440px]
+	.swiper-relative
+		@apply md:px-21 md:rem:max-w-[868px] md:w-full md:mx-auto
+	.banner-thumbs
+		@apply hidden md:block
+		.image
+			@apply aspect-[160/64] h-16 bg-primary-2
+			img
+				@apply transition-all
+		.swiper-slide-thumb-active
+			.image
+				img
+					@apply rounded-br-6
+	.banner-title
+		text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.10)
+		@apply absolute left-1/2 -translate-x-1/2 w-full bottom-30 z-10 header-48 font-bold text-white text-center rem:max-w-[1168px] px-5 mx-auto lg:rem:bottom-[128px]
+	.caption
+		@apply absolute bottom-0 left-0 w-full z-2 p-4 pt-10 md:pb-10 xl:rem:h-[440px] xl:flex xl:flex-col xl:justify-end xl:items-center
+	.swiper-button
+		@apply flex-center gap-5
+		> *
+			@apply size-16 bg-black/20 text-white border-none
+		@screen md
+			.button-prev
+				@apply absolute top-1/2 -translate-y-1/2 left-0
+			.button-next
+				@apply absolute top-1/2 -translate-y-1/2 right-0

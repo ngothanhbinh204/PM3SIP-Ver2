@@ -1,0 +1,104 @@
+section.service-dt-1-section.section-t-small.section-b-large.bg-white
+	.container
+		.row(class="-mt-10")
+			.col(class="w-full mt-10 lg:w-1/2 xl:w-5/12")
+				.block-content
+					h1.site-sub-title.font-bold.text-black Dịch vụ vận chuyển
+					.full-content.mt-10.custom-scroll
+						p
+							strong Dịch vụ vận chuyển sà lan
+						ul
+							li Cảng cạn Phú Mỹ – Các Cảng tại TP Hồ Chí Minh
+							li Cảng cạn Phú Mỹ – Cảng Đồng Nai / Bình Dương
+							li Cảng cạn Phú Mỹ – Đồng Bằng Sông Cửu Long
+							li Cảng cạn Phú Mỹ - Campuchia
+						p
+							strong Dịch vụ vận chuyển đường bộ
+						p Sở hữu đội xe 40 đầu kéo và hơn 100 romooc tất cả đều được gắn thiết bị GPS kiểm soát hành trình cam kết đem tới cho Khách hàng sự yên tâm và chất lượng dịch vụ hoàn hảo nhất
+						ul
+							li Liên hệ với cơ quan Hải quan để xuất trình hồ sơ và xuất trình hàng hoá để kiểm tra thực tế hàng hoá (nếu có, tuỳ theo phân luồng tờ khai hoặc Hải quan yêu cầu)
+							li Liên hệ để kiểm tra chuyên ngành (nếu lô hàng thuộc diện phải kiểm tra chuyên ngành)
+							li Nộp thuế để thông quan tờ khai (nếu khách hàng có yêu cầu)
+							li Nhận hàng tại cảng để giao cho khách hàng
+							li Tiếp nhận thông tin lô hàng
+					.button.mt-10
+						a(href="#").btn-lined
+							span Bảng giá dịch vụ
+							span.icon
+								i.fa-solid.fa-arrow-right
+								i.fa-solid.fa-arrow-right
+
+			.col(class="w-full mt-10 lg:w-1/2 xl:w-7/12")
+				.swiper-relative.service-dt-slider
+					.swiper.service-top
+						.swiper-wrapper
+							- for(x=1; x<=7; x++)
+								.swiper-slide
+									.image.img-cover
+										+img(800, 450)
+						.swiper-button
+							.button-prev
+								i.fa-light.fa-chevron-left
+							.button-next
+								i.fa-light.fa-chevron-right
+					.swiper.service-thumbs.mt-4
+						.swiper-wrapper
+							- for(x=1; x<=7; x++)
+								.swiper-slide
+									.image.img-cover
+										+img(148, 84)
+
+section.service-dt-2-section.section.is-rounded-bl-l.lozad-bg(data-background-image="./img/service-dt-2-bg.jpg")
+	.container
+		.block-content
+			h2.site-title.is-white
+				span ĐĂNG KÝ TƯ VẤN
+				| Thành công của bạn là Thành công của chúng tôi
+			.body-18.font-normal.text-white.mt-3
+				p Bạn đang tìm kiếm đối tác tin cậy để giải quyết các vấn đề về logistics cảng biển? Liên hệ ngay để được tư vấn và hỗ trợ toàn diện.
+			.wrap-form.mt-10
+				.row(class="-mt-4")
+					.form-group.col(class="w-full mt-4 sm:w-1/2")
+						input(type="text" placeholder="Họ và tên")
+					.form-group.col(class="w-full mt-4 sm:w-1/2")
+						input(type="text" placeholder="Email")
+					.form-group.col(class="w-full mt-4 sm:w-1/2")
+						input(type="text" placeholder="Số điện thoại")
+					.form-group.col(class="w-full mt-4 sm:w-1/2")
+						input(type="text" placeholder="Tiêu đề")
+					.form-group.col(class="w-full mt-4")
+						textarea(placeholder="Nội dung")
+					.form-group.col(class="w-full mt-10")
+						button.btn-lined.is-white
+							span Liên hệ tư vấn
+							span.icon
+								i.fa-solid.fa-arrow-right
+								i.fa-solid.fa-arrow-right
+
+section.service-dt-other-section.section-large
+	.container
+		h2.site-sub-title.font-bold.text-black Dịch vụ khác
+		.swiper-relative.mt-10.three-slider
+			.swiper
+				.swiper-wrapper
+					- for(x=1; x<=5; x++)
+						.swiper-slide
+							.home-service-item.item-hover.is-rounded-tl
+								.image.img-cover
+									+img(680, 464)
+								.caption
+									h3.title Dịch vụ Hàng container
+									.button.mt-6
+										a(href="#").btn-lined.is-white
+											span KHÁM PHÁ THÊM
+											span.icon
+												i.fa-solid.fa-arrow-right
+												i.fa-solid.fa-arrow-right
+			.mobile-only
+				.swiper-pagination
+			.desktop-only
+				.swiper-button.is-abs
+					.button-prev
+						i.fa-light.fa-chevron-left
+					.button-next
+						i.fa-light.fa-chevron-right

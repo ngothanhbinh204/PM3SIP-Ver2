@@ -1,0 +1,50 @@
+
+.line-long-arrow
+	@apply h-px w-20 bg-primary-1 relative
+	&::after
+		content: ''
+		border-left: 5px solid theme('colors.primary.1')
+		border-top: 3px solid transparent
+		border-bottom: 3px solid transparent
+		@apply block absolute top-1/2 -translate-y-1/2 right-0
+
+.location-item
+	@apply relative overflow-hidden flex flex-col md:flex-row md:even:flex-row-reverse
+	> *
+		@apply md:w-1/2
+	.image
+		@apply aspect-[700/580]
+	.news-category
+		@apply body-16 font-semibold text-neutral-500 uppercase
+	.title
+		@apply section-header-32 font-bold text-neutral-950
+	.caption
+		@apply p-5 md:p-8 xl:p-20
+	&:nth-child(odd)
+		@apply rounded-tl-10 lg:rounded-tl-20 xl:rounded-tl-30
+		.caption
+			@apply border border-primary-1
+	&:nth-child(even)
+		@apply rounded-tr-10 lg:rounded-tr-20 xl:rounded-tr-30
+		.caption
+			@apply border-0 bg-primary-1
+			*
+				@apply text-white
+		.km-item
+			.desc
+				@apply bg-white text-primary-1
+				i
+					@apply text-current
+		.line-long-arrow
+			@apply bg-white
+			&::after
+				border-left: 5px solid white
+
+.km-item
+	@apply flex items-center gap-4
+	.desc
+		@apply size-15 bg-primary-1 body-16 font-bold text-white flex-center text-center
+		i
+			@apply rem:text-[28px] text-current
+	.title
+		@apply flex-1 sub-header-20 font-medium text-black

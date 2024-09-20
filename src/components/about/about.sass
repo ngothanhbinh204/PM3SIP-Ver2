@@ -2,12 +2,14 @@
 	@apply md:pt-20 xl:rem:pt-[215px]
 	.block-content
 		background: linear-gradient(180deg, #2B46A0 44.94%, rgba(16, 26, 58, 0.00) 100%)
-		@apply p-5 pb-10 md:p-10 md:pb-15 xl:p-16 xl:rem:pb-[113px]
+		@apply p-5 pb-10 md:p-10 md:pb-15 xl:p-16 xl:rem:pb-[113px] xl:rem:max-w-[560px]
 
 .about-3-item
 	@apply bg-neutral-50
 	.image
 		@apply aspect-[320/212]
+		img
+			@apply duration-1000
 	.caption
 		@apply p-5
 	.title
@@ -22,10 +24,18 @@
 		h3
 			@apply sub-header-20 font-bold text-primary-1
 		ul
+			@apply pl-6
 			li
-				@apply marker:text-primary-1
+				@apply marker:text-primary-1 pl-0 -tracking-[0.36px]
 	.block-image
 		@apply aspect-[660/520]
+		img
+			@apply transition-all duration-200 ease-in-out
+		&:hover
+			img
+				@apply scale-110
+	.block-content
+		@apply xl:rem:max-w-[660px]
 
 .about-4-section
 	@apply rem:min-h-[755px] xl:rem:pt-[144px]

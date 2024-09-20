@@ -1,32 +1,32 @@
 .header-64
-	@apply text-[32px] leading-normal xl:text-64
+	@apply text-[32px] leading-[calc(72/64)] xl:text-64
 
 .header-48
-	@apply text-[30px] leading-snug xl:text-5xl
+	@apply text-[30px] leading-[calc(56/48)] xl:text-5xl
 
 .header-40
-	@apply text-[28px] leading-snug xl:text-40
+	@apply text-[28px] leading-[calc(48/40)] xl:text-40
 
 .section-header-32
-	@apply text-[24px] leading-tight xl:text-32
+	@apply text-[24px] leading-[calc(38/32)] xl:text-32
 
 .sub-header-24
-	@apply text-[20px] leading-snug xl:text-2xl
+	@apply text-[20px] leading-[calc(30/24)] xl:text-2xl
 
 .sub-header-20
-	@apply text-[18px] leading-snug xl:text-xl
+	@apply text-[18px] leading-[calc(26/20)] xl:text-xl
 
 .body-18
-	@apply text-[16px] leading-normal xl:text-lg
+	@apply text-[16px] leading-[calc(24/18)] xl:text-lg
 
 .body-16
-	@apply text-[16px] leading-tight xl:text-base
+	@apply text-[16px] leading-[calc(22/16)] xl:text-base
 
 .body-14
-	@apply text-[14px] leading-tight xl:text-sm
+	@apply text-[14px] leading-[calc(18/14)] xl:text-sm
 
 .label-12
-	@apply text-[12px] leading-snug xl:text-sm
+	@apply text-[12px] leading-[calc(16/12)] xl:text-sm
 
 .site-title
 	@apply header-48 font-bold text-black
@@ -41,7 +41,7 @@
 	@apply section-header-32
 
 .site-desc
-	@apply body-18 font-normal text-black -tracking-[0.36px]
+	@apply body-18 font-normal text-black -tracking-[0.36px] space-y-4
 	&.is-white
 		@apply text-white
 

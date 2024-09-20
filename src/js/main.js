@@ -174,6 +174,7 @@ const homeBannerTop = new Swiper(".home-banner .banner-top", {
 	...defaultSettingSwiper,
 	effect: "fade",
 	spaceBetween: 0,
+	rewind: true,
 	navigation: {
 		nextEl: ".home-banner .button-next",
 		prevEl: ".home-banner .button-prev",

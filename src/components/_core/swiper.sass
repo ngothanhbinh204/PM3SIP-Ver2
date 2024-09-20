@@ -13,6 +13,11 @@
 	> *
 		@apply size-16 flex-center rounded-full bg-black/20 text-white text-2xl transition-all
 		@apply hover:bg-primary-2
+		i
+			@apply transition-all duration-200 ease-in-out
+		&:hover
+			i
+				@apply scale-150
 		&.swiper-button-disabled
 			@apply opacity-40
 		&.swiper-button-lock

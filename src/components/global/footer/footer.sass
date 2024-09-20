@@ -3,7 +3,7 @@
 	@screen md
 		@apply p-10 rounded-tl-20
 	@screen xl
-		@apply p-20 rounded-tl-30
+		@apply px-20 rem:py-[74px] rounded-tl-30
 
 .footer-logo
 	@apply rem:w-[124px] rem:h-[72px]
@@ -11,9 +11,9 @@
 		@apply size-full object-contain
 
 .footer-info
-	@apply body-16 font-normal text-white
+	@apply body-16 font-normal text-white flex-1
 	h4
-		@apply sub-header-24 font-bold text-white uppercase mb-5
+		@apply sub-header-20 font-bold text-white uppercase mb-5
 	li
 		@apply flex gap-2 py-3 border-t border-white/20
 	a
@@ -47,7 +47,7 @@
 	@apply flex flex-col gap-5 xl:flex-row
 
 .footer-title
-	@apply sub-header-24 font-bold text-white uppercase mb-5
+	@apply sub-header-20 font-bold text-white uppercase mb-5
 
 .footer-menu
 	@apply space-y-3
@@ -58,7 +58,7 @@
 	@apply body-14 font-medium text-neutral-500 text-center lg:text-left
 
 .footer-policy
-	@apply body-14 font-medium text-neutral-500 flex items-center
+	@apply body-14 font-medium text-neutral-500 flex items-center gap-4
 	p
 		@apply px-4 text-black/20
 	a

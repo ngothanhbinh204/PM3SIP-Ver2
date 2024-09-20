@@ -27,7 +27,12 @@
 	.swiper-button
 		@apply flex-center gap-5
 		> *
-			@apply size-16 bg-black/20 text-white border-none
+			@apply size-16 bg-black/20 text-white border-none hover:bg-primary-2 hover:text-white
+			i
+				@apply transition-all duration-200 ease-in-out
+			&:hover
+				i
+					@apply scale-150
 		@screen md
 			.button-prev
 				@apply absolute top-1/2 -translate-y-1/2 left-0

@@ -2,10 +2,12 @@
 	@apply flex items-center gap-5
 	.line
 		@apply flex-1 h-px bg-[#949494]
+	.news-category
+		@apply hover-underline
 
 .news-detail-section
 	.social-list
-		@apply xl:mt-0 xl:absolute xl:top-0 xl:-left-19
+		@apply xl:mt-0 xl:absolute xl:top-0 xl:rem:-left-[63px]
 	.news-item
 		.title
 			@apply sub-header-20
@@ -47,9 +49,9 @@
 
 .career-info-list
 	column-count: 1
-	@apply gap-3 -mb-3
+	@apply gap-3 -mb-3 xl:mb-4
 	> *
-		@apply mb-3
+		@apply mb-3 xl:mb-4
 		strong
 			@apply whitespace-nowrap
 	.info-item

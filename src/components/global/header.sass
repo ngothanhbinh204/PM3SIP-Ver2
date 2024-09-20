@@ -1,5 +1,5 @@
 header
-	@apply fixed top-0 left-0 w-full z-999 bg-white px-4 py-1 flex items-center justify-between shadow-drop-shadow-light h-22 xl:px-10 md:h-25
+	@apply fixed top-0 left-0 w-full z-999 bg-white px-4 py-1 flex items-center justify-between h-22 xl:px-10 md:h-25
 	.logo
 		@apply h-18
 		a, p
@@ -46,8 +46,12 @@ header
 			@apply p-0
 		.button-email, .button-phone
 			@apply hidden md:flex
+	.button-phone
+		@apply py-2 rem:h-[50px]
 	#buttonMenu
 		@apply ml-5
+	&.active
+		@apply shadow-drop-shadow-light
 
 .mobile-wrap
 	@apply fixed top-0 w-screen h-screen bg-white shadow z-998 pt-25 pl-4 pb-4 max-w-xs -left-full opacity-0 transition-all duration-500 ease-in-out pointer-events-none md:pt-30 lg:pt-32 xl:hidden
@@ -91,13 +95,17 @@ header
 		@apply w-full
 		> ul
 			> li
-				@apply flex-center
+				@apply flex-center bg-transparent #{!important}
 				> a
-					@apply flex-center text-base font-normal text-neutral-500 bg-none bg-transparent p-3 border-0 h-12
-					@apply hover:text-white
+					@apply flex-center text-base font-normal text-neutral-500 bg-none bg-transparent p-3 border-0 h-12 rotate-1 overflow-hidden
+					@apply hover:text-white hover:bg-primary-1
 					img
 						@apply size-5 flex-center object-contain
 					&::after
 						@apply font-awesome content-['\f078'] text-sm font-light text-current ml-2 border-none flex static
+				&:hover
+					@apply bg-transparent
+					> a
+						@apply text-white bg-primary-1 shadow-none #{!important}
 				>.wpml-ls-sub-menu
 					@apply border-none absolute top-full

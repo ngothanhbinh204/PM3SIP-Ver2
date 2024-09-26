@@ -1,5 +1,5 @@
 header
-	@apply fixed top-0 left-0 w-full z-999 bg-white px-4 py-1 flex items-center justify-between h-22 xl:px-10 md:h-25
+	@apply fixed top-0 left-0 w-full z-999 bg-white px-4 py-1 flex items-center justify-between h-22 shadow-drop-shadow-light xl:px-10 md:h-25
 	.logo
 		@apply h-18
 		a, p
@@ -28,7 +28,7 @@ header
 					> .sub-menu
 						@apply opacity-100 pointer-events-auto translate-y-0
 	.sub-menu
-		@apply absolute top-full left-0 w-full min-w-max bg-primary-2 p-6 space-y-4 rounded-tl-10 translate-y-3 transition-all duration-200 ease-in-out opacity-0 pointer-events-none
+		@apply absolute top-full right-0 w-full min-w-max bg-primary-2 p-6 space-y-4 rounded-tl-10 translate-y-3 transition-all duration-200 ease-in-out opacity-0 pointer-events-none
 		a
 			@apply body-16 font-normal text-white hover-underline
 		li
@@ -109,3 +109,10 @@ header
 						@apply text-white bg-primary-1 shadow-none #{!important}
 				>.wpml-ls-sub-menu
 					@apply border-none absolute top-full
+
+.page-template-page-home
+	header
+		@apply shadow-none
+		&.active
+			@apply shadow-drop-shadow-light
+

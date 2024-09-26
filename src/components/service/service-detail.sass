@@ -1,11 +1,11 @@
 .service-dt-1-section
 	.full-content
-		@apply rem:max-h-[312px]
+		@apply lg:rem:max-h-[308px]
 		strong
 			@apply text-primary-1
 		ul
 			li
-				@apply my-3
+				@apply my-3 pl-0
 	.service-top
 		.image
 			@apply aspect-[800/450]
@@ -21,7 +21,7 @@
 			@apply relative aspect-[148/84]
 			&::before
 				content: ''
-				@apply absolute inset-0 border border-primary-2 z-1 opacity-0 transition-all duration-200 ease-in-out
+				@apply absolute inset-0 border-2 border-primary-2 z-1 opacity-0 transition-all duration-200 ease-in-out
 		.swiper-slide-thumb-active
 			.image
 				&::before
@@ -42,3 +42,7 @@
 				@apply px-2
 	.body-18
 		@apply -tracking-[0.36px]
+
+.service-dt-other-section
+	.swiper-relative
+		@apply pb-10 lg:pb-0

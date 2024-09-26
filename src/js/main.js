@@ -100,7 +100,7 @@ var APP = {
 	toggleMenuMobile: () => {
 		$(buttonMenu).on('click', function () {
 			mobileWrap.slideDown().toggleClass('active');
-			$('.backdrop-mobile').fadeIn();
+			$('.backdrop-mobile').fadeToggle();
 		});
 
 		$(mobileWrap).find('.close-mobile').on('click', function () {

@@ -17,7 +17,7 @@
 	.title
 		@apply sub-header-24 font-bold text-black text-wrap line-clamp-2 hover:text-primary-2
 	.news-category
-		@apply pt-3 mt-3 border-t border-primary-3 xl:pt-5 xl:mt-5
+		@apply pt-3 mt-3 border-t border-primary-3
 	&.is-hor
 		@apply flex-row
 		.image
@@ -44,6 +44,7 @@
 		.news-item
 			&:nth-child(1)
 				@apply col-span-2
+
 	@screen lg
 		.news-item
 			&:nth-child(1)
@@ -59,6 +60,8 @@
 					@apply aspect-[920/518]
 				.title
 					@apply sub-header-24
+				.news-category
+					@apply pt-5 mt-5
 			&:nth-child(2), &:nth-child(3), &:nth-child(4)
 				@apply col-span-4
 				@apply flex-row

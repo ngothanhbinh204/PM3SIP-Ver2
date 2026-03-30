@@ -33,7 +33,137 @@ $(function () {
 		duplicated: true,
 		pauseOnHover: false,
 	});
+
+	generalNavScrollSpy();
+	infrastructureItemToggle();
+	// honeycombAnimation(); // Replaced with AOS
 });
+
+function generalNavScrollSpy() {
+	if ($('.general-nav').length) {
+		const navHeight = $('.general-nav').outerHeight() + ($('header').outerHeight() || 80);
+		
+		$('.general-nav .nav-link').on('click', function (e) {
+			e.preventDefault();
+			const target = $(this).attr('href');
+			if (target && target !== '#' && $(target).length) {
+				$('html, body').animate({
+					scrollTop: $(target).offset().top - navHeight + 20
+				}, 600);
+			}
+		});
+
+		$(window).on('scroll', function () {
+			let scrollPosition = $(window).scrollTop() + navHeight + 20;
+			$('.general-nav .nav-link').each(function () {
+				const currentLink = $(this);
+				const targetId = currentLink.attr("href");
+				if (targetId && targetId !== '#' && $(targetId).length) {
+					const refElement = $(targetId);
+					if (refElement.offset().top <= scrollPosition && refElement.offset().top + refElement.outerHeight() > scrollPosition) {
+						if (!currentLink.parent().hasClass("active")) {
+							$('.general-nav .nav-item').removeClass("active");
+							currentLink.parent().addClass("active");
+							
+							const container = $('.general-nav .nav-list');
+							if(container.length) {
+								const scrollLeft = currentLink.parent().position().left + container.scrollLeft() - (container.width() / 2) + (currentLink.parent().width() / 2);
+								container.stop().animate({ scrollLeft: scrollLeft }, 300);
+							}
+						}
+					}
+				}
+			});
+		});
+	}
+}
+
+function infrastructureItemToggle() {
+	if ($('.general-infrastructure .infrastructure-item').length) {
+		$('.general-infrastructure .infrastructure-item').on('click', function (e) {
+			// Only work on mobile and tablet (< 1024px)
+			if ($(window).width() < 1024) {
+				const $item = $(this);
+				const isActive = $item.hasClass('active');
+				
+				// Remove active from all items
+				$('.general-infrastructure .infrastructure-item').removeClass('active');
+				
+				// Toggle active on clicked item
+				if (!isActive) {
+					$item.addClass('active');
+					
+					// Optional: smooth scroll to item if needed
+					const infrastructureTop = $('.general-infrastructure').offset().top;
+					const navHeight = $('.general-nav').outerHeight() + ($('header').outerHeight() || 80);
+					const scrollTarget = $item.offset().top - navHeight - 20;
+					
+					// Only scroll if item is not in viewport
+					if (scrollTarget < $(window).scrollTop()) {
+						$('html, body').animate({
+							scrollTop: scrollTarget
+						}, 400);
+					}
+				}
+			}
+		});
+		
+		// Remove active class on window resize to desktop
+		$(window).on('resize', function () {
+			if ($(window).width() >= 1024) {
+				$('.general-infrastructure .infrastructure-item').removeClass('active');
+			}
+		});
+	}
+}
+
+// Honeycomb Animation - COMMENTED OUT (using AOS instead)
+// function honeycombAnimation() {
+// 	if ($('.honeycomb-cluster').length) {
+// 		const hexItems = $('.honeycomb-cluster .hex-item');
+// 		
+// 		// Check if element is in viewport
+// 		function isInViewport(element) {
+// 			const rect = element.getBoundingClientRect();
+// 			return (
+// 				rect.top >= 0 &&
+// 				rect.left >= 0 &&
+// 				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+// 				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+// 			);
+// 		}
+// 		
+// 		// Animate hexagons when in viewport
+// 		function animateHexagons() {
+// 			const cluster = $('.honeycomb-cluster')[0];
+// 			if (cluster && isInViewport(cluster)) {
+// 				hexItems.each(function(index) {
+// 					const $hex = $(this);
+// 					setTimeout(function() {
+// 						$hex.addClass('hex-visible');
+// 					}, index * 100); // Stagger animation
+// 				});
+// 				// Remove scroll listener after animation
+// 				$(window).off('scroll', animateHexagons);
+// 			}
+// 		}
+// 		
+// 		// Initial check
+// 		animateHexagons();
+// 		
+// 		// Check on scroll
+// 		$(window).on('scroll', animateHexagons);
+// 		
+// 		// Add continuous floating animation
+// 		hexItems.each(function(index) {
+// 			const $hex = $(this);
+// 			const delay = index * 0.2;
+// 			$hex.css({
+// 				'animation-delay': delay + 's'
+// 			});
+// 		});
+// 	}
+// }
 
 $(window).on('scroll', function () {
 	APP.fixed();
@@ -200,6 +330,47 @@ const homeBannerSwiper = new Swiper(".banner-slider .swiper", {
 	},
 	pagination: {
 		el: ".banner-slider .swiper-pagination",
+		clickable: true,
+	},
+});
+
+
+const generalBannerThumbs = new Swiper(".general-banner .banner-thumbs", {
+	spaceBetween: 20,
+	slidesPerView: 2,
+	freeMode: true,
+	watchSlidesProgress: true,
+});
+const generalBannerTop = new Swiper(".general-banner .banner-top", {
+	...defaultSettingSwiper,
+	effect: "fade",
+	spaceBetween: 0,
+	rewind: true,
+	navigation: {
+		nextEl: ".general-banner .button-next",
+		prevEl: ".general-banner .button-prev",
+	},
+	thumbs: {
+		swiper: generalBannerThumbs,
+	},
+});
+
+const generalBannerSwiper = new Swiper(".general-banner .banner-slider .swiper", {
+	loop: true,
+	autoplay: {
+		delay: 5000,
+		disableOnInteraction: false,
+		pauseOnMouseEnter: true,
+	},
+	// effect: "fade",
+	speed: 1000,
+	...defaultSettingSwiper,
+	navigation: {
+		nextEl: ".general-banner .button-next",
+		prevEl: ".general-banner .button-prev",
+	},
+	pagination: {
+		el: ".general-banner .swiper-pagination",
 		clickable: true,
 	},
 });
@@ -837,3 +1008,17 @@ function loadMoreItem() {
 		});
 	})
 }
+const height = $("header").height();
+document.documentElement.style.setProperty(
+	"--header-height",
+	`${height}px`,
+);
+
+function updateHeaderHeight() {
+	const header = document.querySelector('header');
+	if (!header) return;
+	const height = header.offsetHeight;
+	document.documentElement.style.setProperty('--header-height', height + 'px');
+}
+window.addEventListener('load', updateHeaderHeight);
+window.addEventListener('resize', updateHeaderHeight);

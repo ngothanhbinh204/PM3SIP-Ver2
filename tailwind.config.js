@@ -180,6 +180,7 @@ module.exports = {
 				'spin-circle': 'rotateCircle 20s linear infinite',
 				'fade-in': 'fadeIn 2s linear infinite',
 				'spin': 'spin 2s linear infinite',
+				'hex-float': 'hexFloat 3s ease-in-out infinite',
 			},
 			backgroundImage: {
 				"gradient": `linear-gradient(180deg, #EF4444 0%, #DC2626 100%)`,
@@ -331,6 +332,10 @@ module.exports = {
 				spin: {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' },
+				},
+				hexFloat: {
+					'0%, 100%': { transform: 'translateY(0px) scale(1)' },
+					'50%': { transform: 'translateY(-10px) scale(1.02)' },
 				}
 			},
 			zIndex: {

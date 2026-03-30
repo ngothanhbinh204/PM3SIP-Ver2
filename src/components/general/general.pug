@@ -1,0 +1,237 @@
+section.general-banner
+	.swiper.banner-top
+		.swiper-wrapper
+			- for(x=1; x<=5; x++)
+				.swiper-slide
+					h1.main-title-banner KHU CÔNG NGHIỆP CHUYÊN SÂU PHÚ MỸ 3
+					.image.img-cover
+						+img(1920, 780)
+					.banner-title
+						h2.top-banner-title TRUNG TÂM CHUỖI CUNG ỨNG TOÀN CẦU PHÚ MỸ
+						h3.bottom-banner-title Hạ tầng tích hợp đa phương thức
+	.caption
+		.swiper-relative.mt-6
+			.swiper.banner-thumbs
+				.swiper-wrapper
+					- for(x=1; x<=5; x++)
+						.swiper-slide
+							.image.img-cover
+								+img(160, 64)
+			.swiper-button
+				.button-prev
+					i.fa-thin.fa-chevron-left
+				.button-next
+					i.fa-thin.fa-chevron-right
+
+section.general-nav
+	.container
+		ul.nav-list
+			li.nav-item.active
+				a.nav-link(href="#gioi-thieu") GIỚI THIỆU
+			li.nav-item
+				a.nav-link(href="#dinh-huong") ĐỊNH HƯỚNG CHIẾN LƯỢC
+			li.nav-item
+				a.nav-link(href="#tiem-nang") TIỀM NĂNG
+			li.nav-item
+				a.nav-link(href="#dich-vu") DỊCH VỤ
+			li.nav-item
+				a.nav-link(href="#chung-chi") CHỨNG CHỈ
+
+section.home-news-feed
+	#news-feed.marquee
+		a(href="#")
+			span Cảng cạn Phú Mỹ không ngừng đa dạng và chuẩn hóa các dịch vụ
+
+		a(href="#")
+			span Đưa vào hoạt động cảng cạn Phú Mỹ vốn đầu tư gần 3.000 tỉ đồng
+
+		a(href="#")
+			span Cảng cạn Phú Mỹ không ngừng đa dạng và chuẩn hóa các dịch vụ
+
+		a(href="#")
+			span Đưa vào hoạt động cảng cạn Phú Mỹ vốn đầu tư gần 3.000 tỉ đồng
+
+		a(href="#")
+			span Cảng cạn Phú Mỹ không ngừng đa dạng và chuẩn hóa các dịch vụ
+
+		a(href="#")
+			span Đưa vào hoạt động cảng cạn Phú Mỹ vốn đầu tư gần 3.000 tỉ đồng
+
+section.general-intro.section-large.full-bleed#gioi-thieu
+	.bg-intro(style="background-image: url('./img/bg_intro_general.png')")
+	.container
+		.intro-header
+			.sub-title GIỚI THIỆU TRUNG TÂM CHUỖI CUNG ỨNG TOÀN CẦU PHÚ MỸ
+			h2.site-title.is-white “Thành công của bạn là thành công của chúng tôi"
+			.desc
+				p Trung tâm chuỗi cung ứng toàn cầu Phú Mỹ đóng vai trò là đầu mối tập kết và trung chuyển hàng hoá chiến lược của khu vực, mang kỳ vọng tạo ra giá trị cộng hưởng mạnh mẽ nhằm đáp ứng nhu cầu phát triển ngày càng tăng của doanh nghiệp và nhà đầu tư
+		.intro-stats
+				.home-about-item
+					.icon.img-contain
+						img(src="./img/icon-1.png", alt="")
+					.number
+						span.count-up(data-count="999") 0
+						span ha
+					h3.title Diện tích đất khu công nghiệp
+				.home-about-item
+					.icon.img-contain
+						img(src="./img/icon-1.png", alt="")
+					.number
+						span.count-up(data-count="38") 0
+						span ha
+					h3.title Diện tích đất khu công nghiệp
+				.home-about-item
+					.icon.img-contain
+						img(src="./img/icon-1.png", alt="")
+					.number
+						span.count-up(data-count="38") 0
+						span ha
+					h3.title Diện tích đất khu công nghiệp
+
+section.general-infrastructure.section-large.full-bleed
+	.container
+		h2.site-title Hạ tầng tích hợp đa phương thức
+	.infrastructure-list
+		.bg-image
+			+img(1920, 780)
+		.items-wrapper.relative.z-10.flex.w-full.h-full
+			- var infraList = ["CẢNG CẠN PHÚ MỸ", "KHO PHÚ MỸ 3", "KHU BỒN CHỨA HÓA CHẤT", "NHÀ MÁY XỬ LÝ NƯỚC THẢI TẬP TRUNG", "TRẠM CUNG CẤP ĐIỆN", "TRẠM CUNG CẤP KHÍ CÔNG NGHIỆP", "TRẠM CUNG CẤP KHÍ TỰ NHIÊN"]
+			each item, index in infraList
+				.infrastructure-item
+					.text-content
+						h3.title= item
+						.content-wrap
+							ul
+								li Tổng diện tích: 46 ha
+								li Độ sâu cầu cảng: -7 m
+								li Tổng chiều dài bến: 600 m
+								li Số lượng cầu bến: 06
+								li Khả năng tiếp nhận: Tàu SB & sà lan 4,500 DWT/ 200 TEUs
+
+section.general-vision-mission.section-large.full-bleed#dinh-huong
+	.bg-gradient
+		img(src="./img/bg-gradient-vision-mission.svg", alt="")
+	.bg-map
+		img(src="./img/map_bg.svg", alt="")
+	.container
+		.row.vision-mission-wrap
+			.col.col-vision
+				h2.site-title.is-white Tầm nhìn
+				.desc Trở thành trung tâm logistics hiện đại, kết nối đa phương thức, dẫn đầu chuỗi cung ứng toàn cầu tại Đông Nam Bộ, đóng góp vào phát triển kinh tế xanh và bền vững.
+			.col.col-hexagon
+				.honeycomb-cluster
+					.hex-item.hex-center(data-aos="zoom-in" data-aos-duration="800" data-aos-delay="0")
+						.flipper
+							.face.front
+								.hex-bg
+									img(src="./img/box_honeycomb.svg", alt="")
+								.hex-icon
+									img(src="./img/icon_innerHoney.svg", alt="")
+							.face.back
+								.hex-bg
+									img(src="./img/box_honeycomb.svg", alt="")
+								.hex-icon
+									img(src="./img/icon_innerHoney.svg", alt="")
+
+					- for(let i = 1; i <= 6; i++)
+						.hex-item(class=`hex-${i}` data-aos="zoom-in" data-aos-duration="800" data-aos-delay=`${i * 100}`)
+							.flipper
+								.face.front
+									.hex-bg
+										img(src="./img/box_honeycomb.svg", alt="")
+									.hex-icon
+										img(src="./img/icon_innerHoney.svg", alt="")
+								.face.back
+									.hex-bg
+										img(src="./img/box_honeycomb.svg", alt="")
+									.hex-icon
+										img(src="./img/icon_innerHoney.svg", alt="")
+			.col.col-mission
+				h2.site-title.is-white Sứ mệnh
+				.desc Cung cấp các giải pháp logistics thông minh, đa dạng, tối ưu chi phí và thời gian, hỗ trợ doanh nghiệp nâng cao năng lực cạnh tranh và mở rộng thị trường quốc tế.
+
+section.general-core-values.section-large
+	.container
+		h2.site-title Giá trị cốt lõi
+		.core-values-diagram
+			+img(1200, 500)
+
+section.general-location.section-large#tiem-nang
+	.container
+		.location-header
+			h2.site-title.is-white Vị trí chiến lược
+			.desc Trung tâm Logistics Phú Mỹ, tại cửa ngõ chiến lược Thành phố Hồ Chí Minh mở rộng (Đông Nam Bộ), liền kề cảng nước sâu Cái Mép - Thị Vải cùng sân bay quốc tế Long Thành và sân bay Tân Sơn Nhất, kiến tạo chuỗi logistics xuất nhập khẩu liền mạch, hiệu quả vượt trội. Hạ tầng xanh đồng bộ tích hợp cảng cạn - kho bãi đa năng, kết nối đa phương thức tối ưu thời gian - chi phí, nâng tầm cạnh tranh bền vững cho doanh nghiệp hội nhập quốc tế.
+			.sub-title Vận tải đa phương thức
+			.tabs-container
+				.btn.btn-primary.active Đường bộ
+				.btn.btn-light Đường thuỷ
+				.btn.btn-light Đường hàng không
+				.btn.btn-light Đường sắt
+	.map-wrapper
+		.image
+			+img(1920, 800)
+		.map-info-box
+			h3.info-title Kết nối đường bộ
+			ul.info-list
+				li #[strong 2km] - Quốc lộ 51
+				li #[strong 2km] - Cụm cảng Cái Mép – Thị Vải
+				li #[strong 28 km] - Sân bay Quốc tế Long Thành
+				li #[strong 65 km] - Trung tâm TP. Hồ Chí Minh
+			h3.info-note-title Chú thích
+			ul.info-note-list
+				li
+					span.line.line-red
+					span Cao tốc
+				li
+					span.line.line-dark
+					span Quốc lộ
+				li
+					span.line.line-pink
+					span Vành đai
+
+section.general-services.section-large#dich-vu
+	.container
+		h2.site-title Dịch vụ logistics toàn diện, trọn gói, đa phương thức
+		.row.services-grid
+			- var svcs = ["KCN CHUYÊN SÂU PHÚ MỸ 3", "DỊCH VỤ CẢNG", "DỊCH VỤ KHO", "KHO BỒN BỂ HÓA CHẤT"]
+			each svc in svcs
+				.col.col-service
+					.service-card
+						.image.absolute-full.img-cover
+							+img(800, 450)
+						.caption
+							h3.title= svc
+						.bottom
+							span Tìm hiểu thêm
+
+section.general-partners
+	.brand-marquee
+		- for(x=1; x<=12; x++)
+			.brand-item.img-contain
+				+img(200, 80)
+
+section.general-certificates.section-large#chung-chi
+	.container
+		h2.site-title Hệ thống chứng chỉ đạt chuẩn quốc tế
+		.four-slider.cert-slider-wrapper
+			.swiper
+				.swiper-wrapper
+					-
+						var certs = [
+							"Giấy chứng nhận quản lý chất lượng ISO 9001:2015",
+							"Giấy chứng nhận quản lý môi trường ISO 14001:2015",
+							"Giấy chứng nhận ATVSLĐ ISO 45001:2018",
+							"Giấy chứng nhận khí nhà kính ISO 14064",
+							"Chứng nhận CTPAT Quan hệ Đối tác Thương mại"
+						]
+					each cert in certs
+						.swiper-slide
+							.cert-item
+								.image.img-contain
+									+img(300, 400)
+								.title= cert
+			.swiper-button
+				.button-prev
+					i.fa-regular.fa-chevron-left
+				.button-next
+					i.fa-regular.fa-chevron-right

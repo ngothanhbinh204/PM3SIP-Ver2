@@ -1,0 +1,460 @@
+.general-banner
+	@apply full-bleed #{!important} 
+	@apply lg:mx-0 relative
+	.main-title-banner
+		@apply text-white text-center font-bold text-3xl md:text-5xl lg:rem:text-[52px]
+		@apply absolute rem:top-[80px] left-1/2 -translate-x-1/2 w-full z-10
+	.banner-top
+		.image
+			@apply w-screen h-screen rounded-none lg:size-auto lg:aspect-[1920/780]
+			&::before
+				content: ''
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%)
+				@apply absolute inset-0 w-full h-full z-2 pointer-events-none
+	.swiper-relative
+		@apply md:px-21 md:rem:max-w-[868px] md:w-full md:mx-auto
+	.banner-thumbs
+		@apply hidden md:block
+		.image
+			@apply aspect-[320/140] rem:h-[140px] bg-primary-2
+			img
+				@apply transition-all
+		.swiper-slide-thumb-active
+			.image
+				img
+					@apply rounded-br-6
+	.banner-title
+		@apply absolute left-1/2 -translate-x-1/2 w-full bottom-30 z-10 header-48 font-bold text-white text-center rem:max-w-full px-5 mx-auto lg:rem:bottom-[200px]
+		.top-banner-title
+			@apply text-white text-center w-fit font-bold text-3xl lg:rem:text-[40px] leading-[1.2] mx-auto
+			@apply pb-3 border-b-4 border-white mb-3
+			text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.10)
+		.bottom-banner-title
+			@apply text-white text-center font-bold text-xl lg:text-2xl leading-[1.25]
+			text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.10)
+	.caption
+		@apply absolute bottom-0 left-0 w-full z-2 p-4 pt-10 md:pb-10 xl:rem:h-[440px] xl:flex xl:flex-col xl:justify-end xl:items-center
+	.swiper-button
+		@apply flex-center gap-5
+		> *
+			@apply size-16 bg-black/20 text-white border-none hover:bg-primary-2 hover:text-white
+			i
+				@apply transition-all duration-200 ease-in-out
+			&:hover
+				i
+					@apply scale-150
+		@screen md
+			.button-prev
+				@apply absolute top-1/2 -translate-y-1/2 left-0
+			.button-next
+				@apply absolute top-1/2 -translate-y-1/2 right-0
+			
+
+.general-nav
+	@apply sticky left-0 w-full z-40 bg-[#f5f5f5]
+	@apply top-[var(--header-height)]
+	.nav-list
+		@apply flex items-center justify-between overflow-x-auto gap-6 lg:gap-12 xl:gap-16
+		&::-webkit-scrollbar
+			@apply hidden
+	.nav-item
+		@apply flex-1 text-center whitespace-nowrap min-w-max lg:min-w-0 px-4 lg:px-0
+	.nav-link
+		@apply block py-3 lg:py-4 text-black font-medium uppercase transition-all duration-300 text-base md:text-xl border-b-[2px] border-transparent
+		&:hover
+			@apply text-primary-1
+	.nav-item.active
+		.nav-link
+			@apply text-primary-1 border-primary-1 font-bold
+
+.general-intro
+	@apply relative lg:rem:py-[128px]
+	.bg-intro
+		@apply w-full h-full
+		@apply absolute inset-0 w-full h-full bg-[#4C69B1] z-0
+		@apply bg-no-repeat bg-center bg-cover
+		// mix-blend-mode: plus-darker
+	.container
+		@apply relative z-10
+	.intro-header
+		@apply text-center text-white
+		.sub-title
+			@apply uppercase text-sm md:text-base lg:text-2xl font-normal
+		.site-title
+			@apply text-2xl md:text-3xl lg:text-5xl font-bold mt-3
+		.desc
+			@apply mt-4 lg:rem:mt-[30px] mx-auto rem:max-w-[1240px] text-center text-lg
+			@apply tracking-[-0.36px]
+	.intro-stats
+		@apply mt-12 xl:mt-20 gap-y-10 flex flex-row
+		@apply lg:rem:px-[120px]
+		.home-about-item
+			@apply flex-1 pl-5 lg:pl-10
+
+
+
+.general-infrastructure
+	.site-title
+		@apply text-center pb-6 lg:pb-12
+	.infrastructure-list
+		@apply relative w-full overflow-hidden
+		@apply min-h-[600px] md:min-h-[800px] lg:h-[600px] xl:rem:h-[680px]
+	.bg-image
+		@apply absolute inset-0 z-0 w-full h-full bg-cover bg-center
+		img
+			@apply w-full h-full object-cover
+	.items-wrapper
+		@apply relative z-10 w-full h-full
+		@apply flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row
+		@apply gap-px md:gap-0
+	.infrastructure-item
+		@apply relative overflow-hidden cursor-pointer
+		@apply bg-black/10
+		@apply h-[250px] md:h-auto lg:h-full
+		@apply lg:flex-1
+		@apply border-b border-white last:border-b-0
+		@apply md:border-b-0 md:border-r md:last:border-r-0
+		@apply lg:border-b-0 lg:border-r lg:last:border-r-0
+		transition: all 0.4s ease-in-out
+		&::before
+			content: ''
+			@apply absolute inset-0 w-full h-full z-1 pointer-events-none
+			backdrop-filter: blur(0px)
+			transition: backdrop-filter 0.4s ease-in-out, background 0.4s ease-in-out
+		// Mobile & Tablet: active state (click)
+		&.active
+			@apply h-auto min-h-[350px] md:min-h-[400px]
+			&::before
+				@apply bg-black/60
+				backdrop-filter: blur(8px)
+			.text-content
+				@apply top-1/2
+				transform: translateY(-50%)
+			.title
+				@apply pb-4 mb-4
+				border-bottom: 2px solid rgba(255, 255, 255, 0.5)
+			.content-wrap
+				opacity: 1
+				max-height: 500px
+				pointer-events: auto
+				visibility: visible
+				margin-top: 0
+		// Desktop: hover effect
+		@screen lg
+			&:hover
+				&::before
+					@apply bg-black/60
+					backdrop-filter: blur(8px)
+				.text-content
+					@apply top-1/2
+					transform: translateY(-50%)
+				.title
+					@apply pb-4 mb-4
+				.content-wrap
+					opacity: 1
+					max-height: 500px
+					pointer-events: auto
+					visibility: visible
+					margin-top: 0
+			// Remove active state on desktop
+			&.active
+				@apply h-full min-h-0
+				&::before
+					@apply bg-black/10
+					backdrop-filter: blur(0px)
+				.text-content
+					@apply top-[85%]
+				.title
+					@apply pb-0 mb-0
+					border-bottom: none
+				.content-wrap
+					opacity: 0
+					max-height: 0
+					pointer-events: none
+					visibility: hidden
+					margin-top: -20px
+		.text-content
+			@apply absolute left-0 w-full z-10 text-base text-white leading-[1.37]
+			@apply px-5 py-20
+			top: 50%
+			transform: translateY(-50%)
+			@apply md:top-[80%] lg:top-[85%]
+			transition: all 0.5s ease-in-out
+		.title
+			@apply text-white font-bold leading-[1.3] uppercase rem:min-h-[50px]
+			@apply text-sm md:text-base lg:text-xl
+			@apply text-center
+			transition: all 0.4s ease-in-out
+		.content-wrap
+			max-height: 0
+			opacity: 0
+			pointer-events: none
+			visibility: hidden
+			margin-top: -20px
+			transition: all 0.5s ease-in-out
+			ul
+				@apply text-white list-disc text-left flex flex-col gap-2 mx-auto
+				@apply pl-4 text-xs md:text-sm lg:text-base
+				@apply max-w-[280px] md:max-w-[320px]
+				li
+					@apply leading-relaxed
+					text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)
+
+.general-vision-mission
+	@apply relative overflow-hidden
+	@apply py-16 md:py-20 lg:py-24 xl:rem:py-[140px]
+	// Background gradient layer (lower z-index)
+	.bg-gradient
+		@apply absolute inset-0 w-full h-full z-0 pointer-events-none
+		img
+			@apply w-full h-full object-cover opacity-100
+	// Background map layer (higher z-index than gradient)
+	.bg-map
+		@apply absolute inset-0 w-full h-full z-1 pointer-events-none
+		img
+			@apply w-full h-full object-cover opacity-10
+	.container
+		@apply relative z-10
+	.vision-mission-wrap
+		@apply items-center justify-between
+		@apply flex-col lg:flex-row gap-12 xl:gap-20
+	.col-vision, .col-mission
+		@apply w-full lg:w-[280px] xl:w-[320px] text-white
+		@apply text-left
+		.site-title
+			@apply mb-6 text-3xl md:text-4xl lg:text-5xl font-bold
+		.desc
+			@apply opacity-90 text-base md:text-lg leading-[1.6]
+	.col-mission
+		@apply lg:text-left
+.honeycomb-cluster
+	@apply relative
+	// 130/19.2 = 6.771rem | 112/19.2 = 5.833rem
+	--hex-w: 6.771rem
+	--hex-h: 5.833rem
+	width: calc(var(--hex-w) * 2.8)
+	height: calc(var(--hex-h) * 3)
+
+	@screen md
+		// 155/19.2 = 8.073rem | 134/19.2 = 6.979rem
+		--hex-w: 8.073rem
+		--hex-h: 6.979rem
+
+	@screen lg
+		// 176/19.2 = 9.167rem | 151/19.2 = 7.865rem
+		--hex-w: 9.167rem
+		--hex-h: 7.865rem
+
+.hex-item
+	@apply absolute cursor-pointer flex flex-col justify-center items-center
+	width: var(--hex-w)
+	height: var(--hex-h)
+	perspective: 800px
+	transform-style: preserve-3d
+	z-index: 5
+	.flipper
+		@apply absolute inset-0 w-full h-full
+		transform-style: preserve-3d
+		transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1)
+
+	&:hover .flipper
+		transform: rotateY(180deg)
+	.face
+		@apply absolute inset-0 w-full h-full
+		backface-visibility: hidden
+		-webkit-backface-visibility: hidden
+		.hex-bg
+			@apply absolute inset-0 w-full h-full z-0
+			img
+				@apply w-full h-full object-contain
+		.hex-icon
+			@apply absolute inset-0 w-full h-full z-10
+			@apply flex items-center justify-center my-auto
+			@apply rem:max-h-[64px]
+			img
+				@apply w-full h-full object-contain
+				filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2))
+	.face.back
+		transform: rotateY(180deg)
+		.hex-icon img
+			filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(130deg)
+	// .face.back
+	// 	@apply absolute inset-0 w-full h-full
+	// 	backface-visibility: hidden
+	// 	-webkit-backface-visibility: hidden
+	// 	.hex-bg
+	// 		@apply absolute inset-0 w-full h-full z-0
+	// 		img
+	// 			@apply w-full h-full object-contain
+	// 			filter: hue-rotate(180deg) brightness(1.2) saturate(1.5)
+		.hex-icon
+			@apply absolute inset-0 w-full h-full z-10
+			@apply flex items-center justify-center my-auto
+			@apply rem:max-h-[64px]
+			img
+				@apply w-full h-full object-contain
+				filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(130deg)
+
+	.hex-bg
+		@apply absolute inset-0 w-full h-full z-0
+		img
+			@apply w-full h-full object-contain
+
+	.hex-icon
+		@apply absolute inset-0 w-full h-full
+		@apply flex items-center justify-center my-auto
+		@apply rem:max-h-[64px]
+		z-index: 1
+		transition: all 0.4s ease-in-out
+		img
+			@apply w-full h-full object-contain
+			filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2))
+
+  
+.hex-center
+	@apply left-1/2 top-1/2
+	transform: translate(-50%, -50%)
+	z-index: 10
+
+.hex-1
+	@apply left-1/2 top-1/2
+	transform: translate(-50%, calc(-50% - var(--hex-h) * 0.99))
+
+.hex-2
+	@apply left-1/2 top-1/2
+	transform: translate(calc(-50% + var(--hex-w) * 0.746), calc(-50% - var(--hex-h) * 0.495))
+
+.hex-3
+	@apply left-1/2 top-1/2
+	transform: translate(calc(-50% + var(--hex-w) * 0.746), calc(-50% + var(--hex-h) * 0.495))
+.hex-4
+	@apply left-1/2 top-1/2
+	transform: translate(-50%, calc(-50% + var(--hex-h) * 0.99))
+
+.hex-5
+	@apply left-1/2 top-1/2
+	transform: translate(calc(-50% - var(--hex-w) * 0.746), calc(-50% + var(--hex-h) * 0.495))
+
+.hex-6
+	@apply left-1/2 top-1/2
+	transform: translate(calc(-50% - var(--hex-w) * 0.746), calc(-50% - var(--hex-h) * 0.495))
+
+
+.hex-center
+	animation-delay: 0s
+
+@for $i from 1 through 6
+	.hex-#{$i}
+		animation-delay: #{$i * 0.3}s
+
+@keyframes hexFloat
+	0%, 100%
+		translate: 0 0
+	50%
+		translate: 0 -0.417rem
+.general-core-values
+	.site-title
+		@apply text-center
+	.core-values-diagram
+		@apply mt-12 text-center
+
+.general-location
+	@apply bg-neutral-900
+	.location-header
+		@apply text-center
+		.site-title
+			@apply text-center
+		.desc
+			@apply text-white opacity-80 mt-4 mx-auto rem:max-w-[900px]
+		.sub-title
+			@apply text-white text-xl font-bold mt-8 mb-6
+	.tabs-container
+		@apply flex items-center justify-center gap-x-2 gap-y-4 flex-wrap
+		.btn
+			@apply px-8 py-3 rounded-none transition-colors
+		.btn-primary
+			@apply bg-primary-500 text-white
+		.btn-light
+			@apply bg-white text-primary-700 hover:bg-primary-500 hover:text-white
+	.map-wrapper
+		@apply mt-10 relative w-full
+	.map-info-box
+		box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1)
+		@apply bg-white p-8 w-full max-w-sm lg:absolute lg:top-1/2 lg:left-[10%] lg:-translate-y-1/2
+		.info-title
+			@apply font-bold text-primary-700 text-xl mb-6
+		.info-list
+			@apply space-y-4
+		.info-note-title
+			@apply font-bold text-primary-700 text-lg mt-8 mb-4
+		.info-note-list
+			@apply space-y-4
+			li
+				@apply flex items-center gap-4
+			.line
+				@apply block w-12 h-[2px] relative
+				&::before, &::after
+					content: ''
+					@apply w-2 h-2 rounded-full absolute -top-[3px]
+				&::before
+					@apply left-0
+				&::after
+					@apply right-0
+			.line-red
+				@apply bg-red-500
+				&::before, &::after
+					@apply bg-red-500
+			.line-dark
+				@apply bg-neutral-800
+				&::before, &::after
+					@apply bg-neutral-800
+			.line-pink
+				@apply bg-fuchsia-600
+				&::before, &::after
+					@apply bg-fuchsia-600
+
+.general-services
+	@apply bg-neutral-50
+	.site-title
+		@apply text-center
+	.services-grid
+		@apply mt-10
+	.col-service
+		@apply w-full md:w-6/12 mb-6
+	.service-card
+		@apply relative rounded-20 overflow-hidden aspect-video cursor-pointer
+		.caption
+			@apply absolute top-0 left-0 w-full p-6 z-10
+			.title
+				@apply text-white font-bold text-xl xl:text-2xl uppercase border-b border-white pb-4 w-min whitespace-nowrap
+		.bottom
+			@apply absolute bottom-0 left-0 w-full text-center p-4 text-neutral-900 font-bold z-10
+			@apply bg-white/80 backdrop-blur-sm opacity-0 transition-all duration-300 md:translate-y-4
+		&:hover
+			.bottom
+				@apply opacity-100 translate-y-0
+.general-partners
+	@apply py-10 border-y border-neutral-200 overflow-hidden
+	.brand-item
+		@apply px-6
+
+.general-certificates
+	.site-title
+		@apply text-center
+	.cert-slider-wrapper
+		@apply mt-10 relative
+	.cert-item
+		@apply border border-neutral-200 p-4 text-center bg-white transition-shadow hover:shadow-lg cursor-pointer
+		.image
+			@apply aspect-[3/4]
+		.title
+			@apply mt-4 font-bold text-neutral-900 h-[48px] line-clamp-2
+	.swiper-button
+		@apply flex items-center justify-center mt-8 gap-4
+		@apply xl:absolute xl:top-1/2 xl:-translate-y-1/2 xl:w-full xl:justify-between xl:left-0 xl:px-4 xl:mt-0 xl:pointer-events-none
+		.button-prev, .button-next
+			@apply w-12 h-12 rounded-full bg-neutral-200 flex items-center justify-center text-neutral-600 hover:bg-primary-500 hover:text-white transition-colors cursor-pointer xl:pointer-events-auto
+		.button-prev
+			@apply xl:-ml-16
+		.button-next
+			@apply xl:-mr-16

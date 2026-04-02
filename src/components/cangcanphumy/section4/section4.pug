@@ -1,0 +1,39 @@
+section.section-cangcanphumy-infrastructure
+	.background-layer.img-cover
+		img(src='./img/bg-cosohatang.png', alt='Co so ha tang va trang thiet bi')
+	.curve-top(aria-hidden='true')
+	.curve-bottom(aria-hidden='true')
+	.container
+		-
+			var section4Data = {
+				title: 'Cơ sở hạ tầng và trang thiết bị',
+				items: [
+					{
+						icon: './img/icon_cosohatang.svg',
+						title: 'QUY MÔ',
+						desc: 'Diện tích: 38 ha\nĐộ sâu trước bến: -7 m\n06 cầu bến (600 m)\nNăng lực tiếp nhận\n5.000 DWT/200 TEUs'
+					},
+					{
+						icon: './img/icon_cosohatang.svg',
+						title: 'PHẦN MỀM',
+						desc: 'VTOS: quản lý, điều hành cảng\nECUS: khai báo hải quan điện tử'
+					},
+					{
+						icon: './img/icon_cosohatang.svg',
+						title: 'HỆ THỐNG',
+						desc: 'An ninh cảng\nPhòng cháy chữa cháy'
+					}
+				]
+			}
+		.section-header
+			h2.section-title= section4Data.title
+		.infrastructure-panel
+			each item, index in section4Data.items
+				.infrastructure-item
+					.item-icon
+						img(src=item.icon, alt=item.title)
+					.item-content
+						h3.item-title= item.title
+						.item-desc
+							each line in item.desc.split('\n')
+								p= line

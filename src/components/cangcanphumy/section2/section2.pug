@@ -1,0 +1,53 @@
+section.section-cangcanphumy-feature-grid
+	.container-full
+		-
+			var section2Items = [
+				{
+					type: 'image',
+					image: './img/home-about-bg.jpg',
+					alt: 'Cang can Phu My aerial view 1'
+				},
+				{
+					type: 'text',
+					title: 'Vị Trí Chiến Lược & Vai Trò Kết Nối',
+					desc: 'Cảng Cạn Phú Mỹ nằm tại trung tâm cụm cảng Cái Mép - Thị Vải, giữ vai trò mắt xích quan trọng của chuỗi cung ứng phía Nam. Với quy mô 38 ha, hệ thống 6 bến cảng, Depot và bãi container thông minh, chúng tôi góp phần giảm ùn tắc, giảm phát thải và thúc đẩy logistics xanh.'
+				},
+				{
+					type: 'image',
+					image: './img/about-2-bg.jpg',
+					alt: 'Cang can Phu My aerial view 2'
+				},
+				{
+					type: 'text',
+					title: 'Năng Lực Khai Thác & Dịch Vụ Linh Hoạt',
+					desc: 'Với đội ngũ chuyên nghiệp và thiết bị hiện đại, cảng đáp ứng hiệu quả nhu cầu vận chuyển hàng rời, container và hàng dự án. Quy mô hoạt động rộng khắp phục vụ doanh nghiệp tại các khu công nghiệp và các dự án lớn.',
+					hasCorner: true,
+					cornerAlign: 'left'
+				},
+				{
+					type: 'image',
+					image: './img/bg_intro_general.png',
+					alt: 'Cang can Phu My aerial view 3'
+				},
+				{
+					type: 'text',
+					title: 'Cam Kết Đồng Hành Cùng Doanh Nghiệp',
+					desc: 'Cảng Cạn Phú Mỹ cam kết cung cấp giải pháp logistics an toàn, hiệu quả, đúng tiến độ và tối ưu chi phí, mang lại giá trị bền vững cho khách hàng.',
+					hasCorner: true,
+					cornerAlign: 'right'
+				}
+			]
+		.feature-grid
+			each item, index in section2Items
+				article.feature-card(class=[`is-${item.type}`, item.hasCorner ? 'has-corner' : '', item.cornerAlign ? `corner-${item.cornerAlign}` : ''])
+					if item.type === 'image'
+						.card-image.img-cover
+							img(src=item.image, alt=item.alt)
+					else
+						if item.hasCorner
+							.card-corner(aria-hidden='true')
+								img(src='./img/svg-of-text-corner-bottom.svg', alt='')
+						.card-content
+							h2.card-title= item.title
+							.card-desc
+								p= item.desc

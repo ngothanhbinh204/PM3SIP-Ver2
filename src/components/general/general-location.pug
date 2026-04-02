@@ -1,0 +1,97 @@
+
+
+section.general-location.section-large#tiem-nang
+	.container
+		.location-header
+			h2.site-title Vị trí chiến lược
+			.desc Trung tâm Logistics Phú Mỹ, tại cửa ngõ chiến lược Thành phố Hồ Chí Minh mở rộng (Đông Nam Bộ), liền kề cảng nước sâu Cái Mép - Thị Vải cùng sân bay quốc tế Long Thành và sân bay Tân Sơn Nhất, kiến tạo chuỗi logistics xuất nhập khẩu liền mạch, hiệu quả vượt trội. Hạ tầng xanh đồng bộ tích hợp cảng cạn - kho bãi đa năng, kết nối đa phương thức tối ưu thời gian - chi phí, nâng tầm cạnh tranh bền vững cho doanh nghiệp hội nhập quốc tế.
+			.sub-title Vận tải đa phương thức
+			.tabs-container
+				.btn.btn-primary.active(data-target="#location-tab-1")
+					span Đường bộ
+				.btn.btn-light(data-target="#location-tab-2") 
+					span Đường thuỷ
+				.btn.btn-light(data-target="#location-tab-3") 
+					span Đường hàng không
+				.btn.btn-light(data-target="#location-tab-4") 
+					span Đường sắt
+	.map-wrapper
+		//- Tab 1
+		.map-pane.bg-map.active#location-tab-1
+			.image
+				include ../../img/map_plane.svg
+			.map-info-box
+				.group
+					h3.info-title Kết nối đường bộ
+					ul.list-custom-marker
+						li #[strong 2km] - Quốc lộ 51
+						li #[strong 2km] - Cụm cảng Cái Mép – Thị Vải
+						li #[strong 28 km] - Sân bay Quốc tế Long Thành
+						li #[strong 65 km] - Trung tâm TP. Hồ Chí Minh
+				.group
+					h3.info-note-title Chú thích
+					ul.info-note-list
+						li
+							.line-wrapper.wrapper-red
+								span.line.line-red
+								span Cao tốc
+						li
+							.line-wrapper.wrapper-dark
+								span.line.line-dark
+								span Quốc lộ
+						li
+							.line-wrapper.wrapper-pink
+								span.line.line-pink
+								span Vành đai
+		//- Tab 2
+		.map-pane.bg-map#location-tab-2
+			.image
+				img.w-full.h-full.object-cover(src="./img/duongbo_map.svg", alt="")
+			.map-info-box
+				h3.info-title Kết nối đường thuỷ
+				ul.info-list
+					li #[strong 2km] - Cụm cảng Cái Mép – Thị Vải
+					li #[strong 28 km] - Cảng ABC
+				h3.info-note-title Chú thích
+				ul.info-note-list
+					li
+						span.line.line-blue
+						span Tuyến đường thuỷ
+					
+		//- Tab 3
+		.map-pane.bg-map#location-tab-3
+			.image
+				img.w-full.h-full.object-cover(src="./img/location-map-3.png", alt="")
+			.map-info-box
+				h3.info-title Kết nối đường hàng không
+				ul.info-list
+					li #[strong 28 km] - Sân bay Quốc tế Long Thành
+					li #[strong 65 km] - Sân bay Tân Sơn Nhất
+					
+		//- Tab 4
+		.map-pane.bg-map#location-tab-4
+			.image
+				img.w-full.h-full.object-cover(src="./img/location-map-4.png", alt="")
+			.map-info-box
+				h3.info-title Kết nối đường sắt
+				ul.info-list
+					li #[strong 15 km] - Ga đường sắt Biên Hoà - Vũng Tàu
+		
+		.map-controls
+			.nav-arrows
+				.control-btn.btn-up
+					i.fa-regular.fa-chevron-up
+				.control-btn.btn-left
+					i.fa-regular.fa-chevron-left
+				.control-btn.btn-right
+					i.fa-regular.fa-chevron-right
+				.control-btn.btn-down
+					i.fa-regular.fa-chevron-down
+			.zoom-controls
+				.control-btn.btn-plus
+					i.fa-regular.fa-plus
+				.control-btn.btn-minus
+					i.fa-regular.fa-minus
+				.control-btn.btn-fullscreen
+					i.fa-regular.fa-expand
+

@@ -6,7 +6,20 @@
 
 =iframe-scale($ratio)
 	padding-top: ($ratio * 100%)
-
+=img-ratio($ratio,$fit:cover)
+	position: relative
+	display: block
+	height: 0
+	overflow: hidden
+	padding-top: $ratio *100%
+	img,iframe,video
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		object-fit: $fit
+		transition: .3s ease-in-out all
 =video-scale($ratio)
 	padding-top: ($ratio * 100%)
 

@@ -1,0 +1,178 @@
+.section-cangcanphumy-services
+	@apply relative overflow-hidden full-bleed rem:py-[56px] lg:rem:py-[90px]
+	.background-layer
+		@apply absolute inset-0 z-0 opacity-60
+		img
+			@apply w-full h-full object-cover
+
+	.container
+		@apply relative z-10
+
+	.section-header
+		@apply text-center
+
+	.section-title
+		@apply font-bold text-black leading-[1.15]
+		@apply rem:text-[28px] md:rem:text-[36px] lg:rem:text-[52px]
+
+	.service-layout
+		@apply mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,706px)] lg:items-start xl:rem:mt-[52px] xl:gap-[88px]
+
+	.service-tab-list
+		@apply flex flex-col gap-4 lg:rem:pt-[56px]
+
+	.service-tab-item
+		@apply w-full flex items-center gap-4 text-left text-black transition-all duration-300
+		@apply rem:text-[18px] md:rem:text-[22px] lg:rem:text-[20px] xl:rem:text-[24px]
+		.item-icon
+			@apply inline-flex items-center justify-center text-black transition-all duration-300
+			@apply rem:w-[26px] rem:text-[18px]
+		.item-title
+			@apply font-normal leading-[1.35] transition-all duration-300
+
+		&.active
+			.item-icon, .item-title
+				@apply text-primary-1
+			.item-title
+				@apply font-bold
+
+		&:not(.active):hover
+			.item-icon, .item-title
+				@apply text-primary-1
+
+	.service-pane-list
+		@apply relative
+
+	.service-pane
+		@apply hidden relative overflow-hidden rounded-8 bg-neutral-950/5 shadow-drop-shadow-light
+		@apply lg:aspect-[706/538]
+
+		&.active
+			@apply block
+
+	.pane-image
+		@apply absolute inset-0 z-0
+		img
+			@apply w-full h-full object-cover
+
+	.pane-overlay
+		background: linear-gradient(180deg, rgba(16, 31, 73, 0.02) 16.57%, rgba(15, 18, 25, 0.68) 100%)
+		@apply absolute inset-0 z-[1]
+
+	.pane-content
+		@apply absolute inset-x-0 bottom-0 z-[3] flex flex-col items-center text-center text-white
+		@apply rem:px-[28px] rem:pb-[26px] md:rem:px-[42px] md:rem:pb-[34px]
+
+	.pane-subtitle
+		@apply font-medium leading-[1.32] tracking-[-0.02em] text-white
+		@apply rem:text-[18px] md:rem:text-[22px] lg:rem:text-[24px] rem:max-w-[500px]
+		text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2)
+
+	.service-more-btn
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 50%, rgba(255, 255, 255, 0.00) 100%)
+		@apply mt-6 font-bold text-black leading-none text-center w-full transition-all duration-300
+		@apply rem:px-[42px] rem:py-[16px] rem:text-[18px] md:rem:text-[20px]
+
+	.service-popup
+		@apply fixed inset-0 z-[120] hidden items-center justify-center p-4 md:p-6
+
+		&.active
+			@apply flex
+
+	.service-popup-overlay
+		@apply absolute inset-0 bg-black/55
+
+	.service-popup-dialog
+		@apply relative z-[2] w-full max-w-full overflow-hidden rounded-10
+		@apply xl:rem:max-w-[1400px]
+		background: #ffffff
+
+	.service-popup-close
+		@apply absolute z-[4] bg-white text-primary-1 rounded-full flex-center transition-all duration-300
+		@apply top-4 right-4 rem:size-[48px] lg:rem:top-[22px] lg:rem:right-[22px] lg:rem:size-[64px]
+		i
+			@apply rem:text-xl lg:rem:text-[32px] font-medium
+
+	.service-popup-grid
+		@apply grid grid-cols-1
+		@apply lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)]
+
+	.service-popup-copy
+		background: linear-gradient(71deg, #2B46A0 -12.57%, #0093E9 100%)
+		@apply relative overflow-hidden flex flex-col justify-center text-center text-white
+		@apply p-10
+
+	.service-popup-title
+		@apply relative z-2 mx-auto font-bold text-white leading-[1.08]
+		@apply text-xl lg:rem:text-[32px]
+
+	.service-popup-desc
+		@apply relative z-2 mt-5 mx-auto body-base-18 text-white space-y-5
+
+	.popup-copy-corner
+		@apply absolute right-0 bottom-0 pointer-events-none
+		@apply rem:w-[180px] md:rem:w-[287px] h-auto
+		img
+			@apply w-full h-full object-cover
+			transform: scaleX(-1)
+					
+
+	.service-popup-media
+		@apply relative bg-white
+
+	.service-popup-slider
+		@apply h-full flex flex-col
+
+	.service-popup-top
+		@apply w-full bg-neutral-100
+		.image
+			@apply aspect-[840/626]
+			img
+				@apply w-full h-full object-cover
+
+	.service-popup-controls
+		@apply absolute bottom-0 left-0 right-0 z-[3] flex items-center justify-center
+		@apply flex items-center gap-4
+		@apply rem:px-[24px] rem:py-[18px] md:rem:px-[45px] md:rem:py-5
+		background: rgba(0, 8, 34, 0.50)
+		backdrop-filter: blur(6px)
+
+		.button-prev, .button-next
+			@apply shrink-0 rounded-full bg-black/20 text-white flex-center transition-all duration-300
+			@apply rem:size-[64px] md:rem:size-[72px]
+			&:hover
+				@apply bg-primary-1
+			i
+				@apply rem:text-[24px]
+
+	.service-popup-thumbs
+		@apply min-w-0 flex-1
+		.swiper-slide
+			@apply cursor-pointer opacity-70 transition-all duration-300
+			&.swiper-slide-thumb-active
+				@apply opacity-100
+				.thumb-image
+					@apply ring-2 ring-white/80
+
+	.thumb-image
+		@apply overflow-hidden aspect-[164/122]
+		img
+			@apply w-full h-full object-cover
+
+body.service-popup-open
+	overflow: hidden
+
+// @screen max-lg
+// 	.section-cangcanphumy-services
+// 		.service-pane
+// 			@apply aspect-[706/538]
+
+@screen md
+	.section-cangcanphumy-services
+		.service-tab-list
+			@apply rem:max-w-[560px]
+
+@screen lg
+	.section-cangcanphumy-services
+		.service-popup-dialog
+			@apply min-h-0

@@ -1,504 +1,505 @@
 # Rules for each section
 
--   Always wrap section by tag section with name context by section
--   rule for naming class section within tag main not header and footer: section.section-[name]
+- Always wrap section by tag section with name context by section
+- rule for naming class section within tag main not header and footer: section.section-[name]
 
 # Rules before start coding
 
--   Always re-read design before start coding
--   Always re-read file tailwind.config.js (./tailwind.config.js) before start coding
--   Always use @apply to style
+- Always re-read design before start coding
+- Always re-read file tailwind.config.js (./tailwind.config.js) before start coding
+- Always use @apply to style
 
 # Rule for coding
 
--   Always priority use grid and flexbox to layout
--   If use flexbox for layout then always like below
-    ```pug
-    div.row
-    	div.col(class="lg:w-6/12")
-    	div.col(class="lg:w-6/12")
-    ```
--   If use jitmode text-[16px] then you must to use rem:text-[16px]
--   Structure html optimize for SEO noted tag h1, etc
--   Always use tailwindcss, sass for style and pug for html, jquery for javascript
--   All js will input in file src/js/main.js, if slide then will put in file src/js/swiper.js
--   Don't use select option, only use when it's form
--   all class will use input within tag class like div(class="")
--   Image will put in folder /img/
--   Don't use svg for icon, use font awesome
--   Always use tailwindcss in attributes class like div (class="")
--   Always use mixins +PugImg() to import image (i just default params img you don't need input path image on it)
+- Always priority use grid and flexbox to layout
+- If use flexbox for layout then always like below
+```pug
+div.row
+div.col(class="lg:w-6/12")
+div.col(class="lg:w-6/12")
+```
+- If use jitmode text-[16px] then you must to use rem:text-[16px]
+- Structure html optimize for SEO noted tag h1, etc
+- Always use tailwindcss, sass for style and pug for html, jquery for javascript
+- All js will input in file src/js/main.js, if slide then will put in file src/js/swiper.js
+- Don't use select option, only use when it's form
+- all class will use input within tag class like div(class="")
+- Image will put in folder /img/
+- Don't use svg for icon, use font awesome
+- Always use tailwindcss in attributes class like div (class="")
+- Always use mixins +PugImg() to import image (i just default params img you don't need input path image on it)
 # Tailwindcss.config.js
 
 ```js
 const plugin = require("tailwindcss/plugin");
 const calcTW = function (size) {
-	return `calc(${size}/1920*100rem) /* ${size}px */`;
+return `calc(${size}/1920*100rem) /* ${size}px */`;
 };
 const calcClampTW = function (size) {
-	return `clamp(10px,calc(${size}/1920*100rem),calc(${size}/1920*100rem))`;
+return `clamp(10px,calc(${size}/1920*100rem),calc(${size}/1920*100rem))`;
 };
 // console.log(defaultTheme);
 module.exports = {
-	content: ["./src/dist/**/*.{html,js}", "./src/pages/**/*.{html,pug}", "./src/components/**/*.{html,pug,sass,js}"],
-	theme: {
-		aspectRatio: {
-			auto: "auto",
-			square: "1 / 1",
-			video: "16 / 9",
-		},
-		screens: { // => @media (min-width: 320px) { ... }
-			xs: '320px',
-			sm: '576px',
-			md: '768px',
-			lg: '1024px',
-			xl: '1200px',
-			'2xl': '1400px',
-			'3xl': '1600px',
-		},
-		borderWidth: {
-			DEFAULT: "1px",
-			0: "0px",
-			2: calcTW(2),
-			3: calcTW(3),
-			4: calcTW(4),
-			5: calcTW(5),
-			6: calcTW(6),
-			7: calcTW(7),
-			8: calcTW(8),
-			9: calcTW(9),
-			10: calcTW(10),
-		},
-		container: {
-			center: true,
-			padding: {
-				DEFAULT: "15px",
-				xl: calcTW(20),
-			},
-			screens: {
-				xs: "100vw",
-				sm: "100vw",
-				md: "768px",
-				lg: "1024px",
-				xl: calcTW(1440),
-			},
-		},
-		fontFamily: {
-			sans: ["Roboto", "sans-serif"],
-			awesome: ['"Font Awesome 6 Pro"'],
-		},
-		fontSize: {
-			xs: calcClampTW(12),
-			sm: calcClampTW(14),
-			base: calcClampTW(16),
-			lg: calcTW(18),
-			xl: calcTW(20),
-			'2xl': calcTW(24),
-			'3xl': calcTW(30),
-			'4xl': calcTW(36),
-			'5xl': calcTW(48),
-			'6xl': calcTW(60),
-			'7xl': calcTW(72),
-			'8xl': calcTW(84),
-			'9xl': calcTW(96),
-			'0': 0,
-			'28': calcTW(28),
-			'32': calcTW(32),
-			'34': calcTW(34),
-			'40': calcTW(40),
-			'56': calcTW(56),
-			'64': calcTW(64),
-		},
-		spacing: {
-			0: '0 /* 0px */',
-			px: '1px',
-			1: calcTW(4),
-			2: calcTW(8),
-			3: calcTW(12),
-			4: calcTW(16),
-			5: calcTW(20),
-			6: calcTW(24),
-			7: calcTW(28),
-			8: calcTW(32),
-			9: calcTW(36),
-			10: calcTW(40),
-			11: calcTW(44),
-			12: calcTW(48),
-			13: calcTW(52),
-			14: calcTW(56),
-			15: calcTW(60),
-			16: calcTW(64),
-			17: calcTW(68),
-			18: calcTW(72),
-			19: calcTW(76),
-			20: calcTW(80),
-			21: calcTW(84),
-			22: calcTW(88),
-			23: calcTW(92),
-			24: calcTW(96),
-			25: calcTW(100),
-			26: calcTW(104),
-			27: calcTW(108),
-			28: calcTW(112),
-			29: calcTW(116),
-			30: calcTW(120),
-			31: calcTW(124),
-			32: calcTW(128),
-			33: calcTW(132),
-			34: calcTW(136),
-			35: calcTW(140),
-			36: calcTW(144),
-			37: calcTW(148),
-			38: calcTW(152),
-			39: calcTW(156),
-			40: calcTW(160),
-			50: calcTW(200),
-			100: calcTW(400),
-			full: '100%',
-		},
-		scale: {
-			0: "0",
-			50: ".5",
-			70: ".70",
-			75: ".75",
-			80: ".8",
-			85: ".85",
-			90: ".9",
-			95: ".95",
-			100: "1",
-			105: "1.05",
-			110: "1.1",
-			115: "1.15",
-			120: "1.2",
-			125: "1.25",
-			150: "1.5",
-			200: "2",
-		},
-		opacity: {
-			0: "0",
-			5: "0.05",
-			10: "0.1",
-			15: "0.15",
-			20: "0.2",
-			25: "0.25",
-			30: "0.3",
-			35: "0.35",
-			40: "0.4",
-			45: "0.45",
-			50: "0.5",
-			55: "0.55",
-			60: "0.6",
-			65: "0.65",
-			70: "0.7",
-			75: "0.75",
-			80: "0.8",
-			85: "0.85",
-			90: "0.9",
-			95: "0.95",
-			100: "1",
-		},
-		outlineOffset: {
-			0: '0px',
-			px: '1px',
-			2: calcTW(2),
-			3: calcTW(3),
-			4: calcTW(4),
-			5: calcTW(5),
-			6: calcTW(6),
-			7: calcTW(7),
-			8: calcTW(8),
-			9: calcTW(9),
-			10: calcTW(10),
-		},
-		extend: {
-			colors: {
-				primary: {
-					'50': '#eff3ff',
-					'100': '#dbe4fe',
-					'200': '#bfd0fe',
-					'300': '#93affd',
-					'400': '#6088fa',
-					'500': '#3b6cf6',
-					'600': '#2559eb',
-					'700': '#1d4ed8' /* main */,
-					'800': '#1e44af',
-					'900': '#1e3a8a',
-					'950': '#172754',
-				},
-				secondary: {
-					'50': '#f8f3ff',
-					'100': '#f1e9fe',
-					'200': '#e6d6fe',
-					'300': '#d1b5fd',
-					'400': '#b68bfa',
-					'500': '#985cf6',
-					'600': '#803aed',
-					'700': '#6d28d9' /* main */,
-					'800': '#5b21b6',
-					'900': '#4c1d95',
-					'950': '#311065',
-				},
-				neutral: {
-					'50': '#F6F6F6',
-					'100': '#EFEFEF',
-					'200': '#DCDCDC',
-					'300': '#BDBDBD',
-					'400': '#989898',
-					'500': '#818181' /* main */,
-					'600': '#656565',
-					'700': '#525252',
-					'800': '#464646',
-					'900': '#3D3D3D',
-					'950': '#231F20',
-				},
-				black: '#000000',
-				white: '#ffffff',
-				button: '#E9F1FA',
-				'base-background': '#0f0f0f',
-				dark: '#111111',
-				main: '#333333',
-				light: '#eeeeee',
-				translucentDark: "rgba(0, 0, 0, 0.63)",
-				translucentLight: "rgba(255, 255, 255, 0.63)",
-			},
-			animation: {
-				'left-bar': 'leftBar 2s linear infinite',
-				'top-bar': 'topBar 2s linear infinite',
-				'right-bar': 'rightBar 2s linear infinite',
-				'bottom-bar': 'bottomBar 2s linear infinite',
-				'spin-circle': 'rotateCircle 20s linear infinite',
-				'fade-in': 'fadeIn 2s linear infinite',
-				'spin': 'spin 2s linear infinite',
-			},
-			backgroundImage: {
-				"bg": `linear-gradient(120deg, #319FEE 0%, #21409A 71.41%)`,
-				"gradient-1": `radial-gradient(176.48% 141.42% at 100% 100%, #0057A0 0%, #7AC6D3 100%)`,
-				"gradient-2": `linear-gradient(70deg, #205A3B 0%, #6CAF67 100%)`,
-				"dark-blue-gradient": `radial-gradient(294.79% 141.42% at 0% 0%, #0057A0 0%, #D0E5FF 46%, #94ABD9 100%)`,
-				"light-blue-gradient": `radial-gradient(1603.12% 141.42% at 0% 0%, #FFC93E 0%, #FFE56D 48%, #FFB800 100%)`,
-				"dark": `linear-gradient(180deg, #202020 0%, #494949 100%)`,
-				"light": `linear-gradient(180deg, #F5F5F5 0%, rgba(245, 245, 245, 0.60) 100%)`,
-			},
-			backgroundPosition: {
-				"pos-100-0": "100% 0%",
-			},
-			backgroundSize: {
-				"0-100": "0 100%",
-				"100-100": "100% 100%",
-				"200-100": "200% 100%",
-			},
-			blur: {
-				DEFAULT: "6px",
-			},
-			borderRadius: {
-				1: calcTW(4),
-				2: calcTW(8),
-				3: calcTW(12),
-				4: calcTW(16),
-				5: calcTW(20),
-				6: calcTW(24),
-				7: calcTW(28),
-				8: calcTW(32),
-				9: calcTW(36),
-				10: calcTW(40),
-				15: calcTW(60),
-				20: calcTW(80),
-				25: calcTW(100),
-			},
-			boxShadow: {
-				DEFAULT: "0px 4px 4px rgba(0, 0, 0, 0.1)",
-				bar: `0 0 0 theme('colors.primary.700'), 0 0 1px theme('colors.primary.700'), 0 0 8px theme('colors.primary.700'), 0 0 16px theme('colors.primary.700')`,
-				'drop-shadow-light': '4px 4px 32px 16px rgba(0, 0, 0, 0.08)',
-				'drop-shadow-medium': '4px 4px 8px 4px rgba(0, 0, 0, 0.24)',
-				'drop-shadow-hard': '8px 8px 16px 8px rgba(0, 0, 0, 0.40)',
-			},
-			lineClamp: {
-				6: "6",
-				7: "7",
-				8: "8",
-				9: "9",
-				10: "10",
-			},
-			lineHeight: {
-				1.125: '1.125',
-				1.2: '1.2',
-				1.3: '1.3',
-				1.33: '1.33',
-				1.4: '1.4',
-				1.44: '1.44',
-			},
-			keyframes: {
-				leftBar: {
-					'0%': { height: 0, top: '100%', left: 0 },
-					'20%': { height: '100%', top: 0, left: 0 },
-					'40%': { height: 0, top: 0, left: 0 },
-				},
-				topBar: {
-					'0%, 20%': { width: 0, top: 0, left: 0 },
-					'40%': { width: '100%', top: 0, left: 0 },
-					'60%': { width: 0, top: 0, left: 'calc(100% - 1px)' },
-				},
-				rightBar: {
-					'0%, 40%': { height: 0, top: 0, left: 'calc(100% - 1px)' },
-					'60%': { height: '100%', top: 0, left: 'calc(100% - 1px)' },
-					'80%': { height: 0, top: '100%', left: 'calc(100% - 1px)' },
-				},
-				bottomBar: {
-					'0%, 60%': { width: 0, top: '100%', left: '100%' },
-					'80%': { width: '100%', top: '100%', left: 0 },
-					'100%': { width: 0, top: '100%', left: 0 },
-				},
-				rotateCircle: {
-					'0%': { transform: 'translate(-50%, -50%) rotate(0)' },
-					'100%': { transform: 'translate(-50%, -50%) rotate(360deg)' },
-				},
-				bgGradient: {
-					"0%": { backgroundPosition: "0% 50%" },
-					"50%": { backgroundPosition: "100% 50%" },
-					"100%": { backgroundPosition: "0% 50%" },
-				},
-				fadeIn: {
-					'0%': { opacity: '0' },
-					'50%': { opacity: '1' },
-					'100%': { opacity: '0' },
-				},
-				spin: {
-					'0%': { transform: 'rotate(0deg)' },
-					'100%': { transform: 'rotate(360deg)' },
-				}
-			},
-			zIndex: {
-				'1': '1',
-				'2': '2',
-				'3': '3',
-				'3': '3',
-				'4': '4',
-				'5': '5',
-				'6': '6',
-				'7': '7',
-				'8': '8',
-				'9': '9',
-				'10': '10',
-				'11': '11',
-				'12': '12',
-				'21': '21',
-				'50': '50',
-				'51': '51',
-				'100': '100',
-				'200': '200',
-				'998': '998',
-				'999': '999',
-				'1000': '1000',
-				'1001': '1001',
-			},
-		},
-	},
-	corePlugins: {
-		aspectRatio: true,
-	},
-	variants: {
-		aspectRatio: ["responsive", "hover"],
-		lineClamp: ["responsive", "hover"],
-	},
-	plugins: [
-		require('@tailwindcss/aspect-ratio'),
-		require('@tailwindcss/typography'),
-		require('tailwindcss-animation-delay'),
-		plugin(function ({ addBase, addComponents, addVariant, matchUtilities, addUtilities, theme }) {
-			addBase({});
-			addComponents({
-				".flex-center": {
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-				},
-				".flex-between": {
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "space-between",
-				},
-				'.overflow-y-overlay': {
-					overflowY: 'overlay',
-				},
-				'.overflow-x-overlay': {
-					overflowX: 'overlay',
-				},
-				".overflow-overlay": {
-					overflowY: "overlay",
-				},
-				".absolute-full": {
-					position: "absolute",
-					top: "0",
-					left: "0",
-					width: "100%",
-					height: "100%",
-				},
-				".filter-white": {
-					filter: "brightness(0) invert(1)",
-				},
-			});
-			matchUtilities(
-				{
-					sq: value => ({
-						height: value,
-						width: value,
-					}),
-				},
-				{ values: theme("spacing") }
-			);
-			const newUtilities = {
-				".horizontal-tb": {
-					writingMode: "horizontal-tb",
-				},
-				".vertical-rl": {
-					writingMode: "vertical-rl",
-				},
-				".vertical-lr": {
-					writingMode: "vertical-lr",
-				},
-			};
-			addUtilities(newUtilities);
-			addVariant("optional", "&:optional");
-			addVariant("hocus", ["&:hover", "&:focus"]);
-			addVariant("supports-grid", "@supports (display: grid)");
-		}),
-		plugin(({ addVariant, e }) => {
-			addVariant("rem", ({ container, separator }) => {
-				const rootFontSize = 19.2; // This is your HTML root font-size
-				container.walkRules((rule) => {
-					rule.selector = `.${e(`rem${separator}`)}${rule.selector.slice(1)}`;
-					rule.walkDecls((decl) => {
-						if (decl.value.includes("px")) {
-							// Convert the pixel number to rem
-							const value = decl.value.replace(/(\d+)px/g, (match, p1) => `${p1 / rootFontSize}rem`);
-							decl.value = value;
-						}
-					});
-				});
-			});
-		}),
-		plugin(({ addVariant, e }) => {
-			addVariant("ratio", ({ container, separator }) => {
-				container.walkRules((rule) => {
-					rule.selector = `.${e(`ratio${separator}`)}${rule.selector.slice(1)}`;
-					rule.walkDecls((decl) => {
-						const ratioValues = decl.value.split(" ");
-						if (ratioValues.length === 2) {
-							const num1 = parseInt(ratioValues[0]);
-							const num2 = parseInt(ratioValues[1]);
-							if (!isNaN(num1) && !isNaN(num2) && num2 !== 0) {
-								const percentage = `${(num1 / num2) * 100}%`;
-								decl.value = `${percentage}`;
-							}
-						}
-					});
-				});
-			});
-		}),
-	],
+content: ["./src/dist/**/*.{html,js}", "./src/pages/**/*.{html,pug}", "./src/components/**/*.{html,pug,sass,js}"],
+theme: {
+aspectRatio: {
+auto: "auto",
+square: "1 / 1",
+video: "16 / 9",
+},
+screens: { // => @media (min-width: 320px) { ... }
+xs: '320px',
+sm: '576px',
+md: '768px',
+lg: '1024px',
+xl: '1200px',
+'2xl': '1400px',
+'3xl': '1600px',
+},
+borderWidth: {
+DEFAULT: "1px",
+0: "0px",
+2: calcTW(2),
+3: calcTW(3),
+4: calcTW(4),
+5: calcTW(5),
+6: calcTW(6),
+7: calcTW(7),
+8: calcTW(8),
+9: calcTW(9),
+10: calcTW(10),
+},
+container: {
+center: true,
+padding: {
+DEFAULT: "15px",
+xl: calcTW(20),
+},
+screens: {
+xs: "100vw",
+sm: "100vw",
+md: "768px",
+lg: "1024px",
+xl: calcTW(1440),
+},
+},
+fontFamily: {
+sans: ["Roboto", "sans-serif"],
+awesome: ['"Font Awesome 6 Pro"'],
+},
+fontSize: {
+xs: calcClampTW(12),
+sm: calcClampTW(14),
+base: calcClampTW(16),
+lg: calcTW(18),
+xl: calcTW(20),
+'2xl': calcTW(24),
+'3xl': calcTW(30),
+'4xl': calcTW(36),
+'5xl': calcTW(48),
+'6xl': calcTW(60),
+'7xl': calcTW(72),
+'8xl': calcTW(84),
+'9xl': calcTW(96),
+'0': 0,
+'28': calcTW(28),
+'32': calcTW(32),
+'34': calcTW(34),
+'40': calcTW(40),
+'56': calcTW(56),
+'64': calcTW(64),
+},
+spacing: {
+0: '0 /* 0px */',
+px: '1px',
+1: calcTW(4),
+2: calcTW(8),
+3: calcTW(12),
+4: calcTW(16),
+5: calcTW(20),
+6: calcTW(24),
+7: calcTW(28),
+8: calcTW(32),
+9: calcTW(36),
+10: calcTW(40),
+11: calcTW(44),
+12: calcTW(48),
+13: calcTW(52),
+14: calcTW(56),
+15: calcTW(60),
+16: calcTW(64),
+17: calcTW(68),
+18: calcTW(72),
+19: calcTW(76),
+20: calcTW(80),
+21: calcTW(84),
+22: calcTW(88),
+23: calcTW(92),
+24: calcTW(96),
+25: calcTW(100),
+26: calcTW(104),
+27: calcTW(108),
+28: calcTW(112),
+29: calcTW(116),
+30: calcTW(120),
+31: calcTW(124),
+32: calcTW(128),
+33: calcTW(132),
+34: calcTW(136),
+35: calcTW(140),
+36: calcTW(144),
+37: calcTW(148),
+38: calcTW(152),
+39: calcTW(156),
+40: calcTW(160),
+50: calcTW(200),
+100: calcTW(400),
+full: '100%',
+},
+scale: {
+0: "0",
+50: ".5",
+70: ".70",
+75: ".75",
+80: ".8",
+85: ".85",
+90: ".9",
+95: ".95",
+100: "1",
+105: "1.05",
+110: "1.1",
+115: "1.15",
+120: "1.2",
+125: "1.25",
+150: "1.5",
+200: "2",
+},
+opacity: {
+0: "0",
+5: "0.05",
+10: "0.1",
+15: "0.15",
+20: "0.2",
+25: "0.25",
+30: "0.3",
+35: "0.35",
+40: "0.4",
+45: "0.45",
+50: "0.5",
+55: "0.55",
+60: "0.6",
+65: "0.65",
+70: "0.7",
+75: "0.75",
+80: "0.8",
+85: "0.85",
+90: "0.9",
+95: "0.95",
+100: "1",
+},
+outlineOffset: {
+0: '0px',
+px: '1px',
+2: calcTW(2),
+3: calcTW(3),
+4: calcTW(4),
+5: calcTW(5),
+6: calcTW(6),
+7: calcTW(7),
+8: calcTW(8),
+9: calcTW(9),
+10: calcTW(10),
+},
+extend: {
+colors: {
+primary: {
+'50': '#eff3ff',
+'100': '#dbe4fe',
+'200': '#bfd0fe',
+'300': '#93affd',
+'400': '#6088fa',
+'500': '#3b6cf6',
+'600': '#2559eb',
+'700': '#1d4ed8' /* main */,
+'800': '#1e44af',
+'900': '#1e3a8a',
+'950': '#172754',
+},
+secondary: {
+'50': '#f8f3ff',
+'100': '#f1e9fe',
+'200': '#e6d6fe',
+'300': '#d1b5fd',
+'400': '#b68bfa',
+'500': '#985cf6',
+'600': '#803aed',
+'700': '#6d28d9' /* main */,
+'800': '#5b21b6',
+'900': '#4c1d95',
+'950': '#311065',
+},
+neutral: {
+'50': '#F6F6F6',
+'100': '#EFEFEF',
+'200': '#DCDCDC',
+'300': '#BDBDBD',
+'400': '#989898',
+'500': '#818181' /* main */,
+'600': '#656565',
+'700': '#525252',
+'800': '#464646',
+'900': '#3D3D3D',
+'950': '#231F20',
+},
+black: '#000000',
+white: '#ffffff',
+button: '#E9F1FA',
+'base-background': '#0f0f0f',
+dark: '#111111',
+main: '#333333',
+light: '#eeeeee',
+translucentDark: "rgba(0, 0, 0, 0.63)",
+translucentLight: "rgba(255, 255, 255, 0.63)",
+},
+animation: {
+'left-bar': 'leftBar 2s linear infinite',
+'top-bar': 'topBar 2s linear infinite',
+'right-bar': 'rightBar 2s linear infinite',
+'bottom-bar': 'bottomBar 2s linear infinite',
+'spin-circle': 'rotateCircle 20s linear infinite',
+'fade-in': 'fadeIn 2s linear infinite',
+'spin': 'spin 2s linear infinite',
+},
+backgroundImage: {
+"bg": `linear-gradient(120deg, #319FEE 0%, #21409A 71.41%)`,
+"gradient-1": `radial-gradient(176.48% 141.42% at 100% 100%, #0057A0 0%, #7AC6D3 100%)`,
+"gradient-2": `linear-gradient(70deg, #205A3B 0%, #6CAF67 100%)`,
+"dark-blue-gradient": `radial-gradient(294.79% 141.42% at 0% 0%, #0057A0 0%, #D0E5FF 46%, #94ABD9 100%)`,
+"light-blue-gradient": `radial-gradient(1603.12% 141.42% at 0% 0%, #FFC93E 0%, #FFE56D 48%, #FFB800 100%)`,
+"dark": `linear-gradient(180deg, #202020 0%, #494949 100%)`,
+"light": `linear-gradient(180deg, #F5F5F5 0%, rgba(245, 245, 245, 0.60) 100%)`,
+},
+backgroundPosition: {
+"pos-100-0": "100% 0%",
+},
+backgroundSize: {
+"0-100": "0 100%",
+"100-100": "100% 100%",
+"200-100": "200% 100%",
+},
+blur: {
+DEFAULT: "6px",
+},
+borderRadius: {
+1: calcTW(4),
+2: calcTW(8),
+3: calcTW(12),
+4: calcTW(16),
+5: calcTW(20),
+6: calcTW(24),
+7: calcTW(28),
+8: calcTW(32),
+9: calcTW(36),
+10: calcTW(40),
+15: calcTW(60),
+20: calcTW(80),
+25: calcTW(100),
+},
+boxShadow: {
+DEFAULT: "0px 4px 4px rgba(0, 0, 0, 0.1)",
+bar: `0 0 0 theme('colors.primary.700'), 0 0 1px theme('colors.primary.700'), 0 0 8px theme('colors.primary.700'), 0 0
+16px theme('colors.primary.700')`,
+'drop-shadow-light': '4px 4px 32px 16px rgba(0, 0, 0, 0.08)',
+'drop-shadow-medium': '4px 4px 8px 4px rgba(0, 0, 0, 0.24)',
+'drop-shadow-hard': '8px 8px 16px 8px rgba(0, 0, 0, 0.40)',
+},
+lineClamp: {
+6: "6",
+7: "7",
+8: "8",
+9: "9",
+10: "10",
+},
+lineHeight: {
+1.125: '1.125',
+1.2: '1.2',
+1.3: '1.3',
+1.33: '1.33',
+1.4: '1.4',
+1.44: '1.44',
+},
+keyframes: {
+leftBar: {
+'0%': { height: 0, top: '100%', left: 0 },
+'20%': { height: '100%', top: 0, left: 0 },
+'40%': { height: 0, top: 0, left: 0 },
+},
+topBar: {
+'0%, 20%': { width: 0, top: 0, left: 0 },
+'40%': { width: '100%', top: 0, left: 0 },
+'60%': { width: 0, top: 0, left: 'calc(100% - 1px)' },
+},
+rightBar: {
+'0%, 40%': { height: 0, top: 0, left: 'calc(100% - 1px)' },
+'60%': { height: '100%', top: 0, left: 'calc(100% - 1px)' },
+'80%': { height: 0, top: '100%', left: 'calc(100% - 1px)' },
+},
+bottomBar: {
+'0%, 60%': { width: 0, top: '100%', left: '100%' },
+'80%': { width: '100%', top: '100%', left: 0 },
+'100%': { width: 0, top: '100%', left: 0 },
+},
+rotateCircle: {
+'0%': { transform: 'translate(-50%, -50%) rotate(0)' },
+'100%': { transform: 'translate(-50%, -50%) rotate(360deg)' },
+},
+bgGradient: {
+"0%": { backgroundPosition: "0% 50%" },
+"50%": { backgroundPosition: "100% 50%" },
+"100%": { backgroundPosition: "0% 50%" },
+},
+fadeIn: {
+'0%': { opacity: '0' },
+'50%': { opacity: '1' },
+'100%': { opacity: '0' },
+},
+spin: {
+'0%': { transform: 'rotate(0deg)' },
+'100%': { transform: 'rotate(360deg)' },
+}
+},
+zIndex: {
+'1': '1',
+'2': '2',
+'3': '3',
+'3': '3',
+'4': '4',
+'5': '5',
+'6': '6',
+'7': '7',
+'8': '8',
+'9': '9',
+'10': '10',
+'11': '11',
+'12': '12',
+'21': '21',
+'50': '50',
+'51': '51',
+'100': '100',
+'200': '200',
+'998': '998',
+'999': '999',
+'1000': '1000',
+'1001': '1001',
+},
+},
+},
+corePlugins: {
+aspectRatio: true,
+},
+variants: {
+aspectRatio: ["responsive", "hover"],
+lineClamp: ["responsive", "hover"],
+},
+plugins: [
+require('@tailwindcss/aspect-ratio'),
+require('@tailwindcss/typography'),
+require('tailwindcss-animation-delay'),
+plugin(function ({ addBase, addComponents, addVariant, matchUtilities, addUtilities, theme }) {
+addBase({});
+addComponents({
+".flex-center": {
+display: "flex",
+alignItems: "center",
+justifyContent: "center",
+},
+".flex-between": {
+display: "flex",
+alignItems: "center",
+justifyContent: "space-between",
+},
+'.overflow-y-overlay': {
+overflowY: 'overlay',
+},
+'.overflow-x-overlay': {
+overflowX: 'overlay',
+},
+".overflow-overlay": {
+overflowY: "overlay",
+},
+".absolute-full": {
+position: "absolute",
+top: "0",
+left: "0",
+width: "100%",
+height: "100%",
+},
+".filter-white": {
+filter: "brightness(0) invert(1)",
+},
+});
+matchUtilities(
+{
+sq: value => ({
+height: value,
+width: value,
+}),
+},
+{ values: theme("spacing") }
+);
+const newUtilities = {
+".horizontal-tb": {
+writingMode: "horizontal-tb",
+},
+".vertical-rl": {
+writingMode: "vertical-rl",
+},
+".vertical-lr": {
+writingMode: "vertical-lr",
+},
+};
+addUtilities(newUtilities);
+addVariant("optional", "&:optional");
+addVariant("hocus", ["&:hover", "&:focus"]);
+addVariant("supports-grid", "@supports (display: grid)");
+}),
+plugin(({ addVariant, e }) => {
+addVariant("rem", ({ container, separator }) => {
+const rootFontSize = 19.2; // This is your HTML root font-size
+container.walkRules((rule) => {
+rule.selector = `.${e(`rem${separator}`)}${rule.selector.slice(1)}`;
+rule.walkDecls((decl) => {
+if (decl.value.includes("px")) {
+// Convert the pixel number to rem
+const value = decl.value.replace(/(\d+)px/g, (match, p1) => `${p1 / rootFontSize}rem`);
+decl.value = value;
+}
+});
+});
+});
+}),
+plugin(({ addVariant, e }) => {
+addVariant("ratio", ({ container, separator }) => {
+container.walkRules((rule) => {
+rule.selector = `.${e(`ratio${separator}`)}${rule.selector.slice(1)}`;
+rule.walkDecls((decl) => {
+const ratioValues = decl.value.split(" ");
+if (ratioValues.length === 2) {
+const num1 = parseInt(ratioValues[0]);
+const num2 = parseInt(ratioValues[1]);
+if (!isNaN(num1) && !isNaN(num2) && num2 !== 0) {
+const percentage = `${(num1 / num2) * 100}%`;
+decl.value = `${percentage}`;
+}
+}
+});
+});
+});
+}),
+],
 };
 ```
 
 # Your task
 
--   Based on design, create pug file by image, you don't need make complex style tailwindcss, you need only make col for lay out use flex or grid and textCenter or color for text just simple style.
+- Based on design, create pug file by image, you don't need make complex style tailwindcss

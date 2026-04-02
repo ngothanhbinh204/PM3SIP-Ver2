@@ -1,0 +1,45 @@
+section.general-vision-mission.section-large.full-bleed#dinh-huong
+	.bg-gradient
+		img(src="./img/bg-gradient-vision-mission.svg", alt="")
+	.bg-map
+		img(src="./img/map_bg.svg", alt="")
+	.container
+		.vision-mission-wrap
+			.col-vision
+				h2.site-title.is-white Tầm nhìn
+				.desc Trở thành trung tâm logistics hiện đại, kết nối đa phương thức, dẫn đầu chuỗi cung ứng toàn cầu tại Đông Nam Bộ, đóng góp vào phát triển kinh tế xanh và bền vững.
+			.col-hexagon
+				.arrow-svg.arrow-left
+					img(src="./img/arrow_vsms_left.svg", alt="")
+				.arrow-svg.arrow-right
+					img(src="./img/arrow_vsms_right.svg", alt="")
+				.honeycomb-cluster
+					.hex-item.hex-center(data-aos="zoom-in" data-aos-duration="800" data-aos-delay="0")
+						.flipper
+							.face.front
+								.hex-bg
+									img(src="./img/box_honeycomb.svg", alt="")
+								.hex-icon
+									img(src="./img/icon_innerHoney.svg", alt="")
+							.face.back
+								.hex-bg
+									img(src="./img/box_honeycomb.svg", alt="")
+								.hex-icon
+									img(src="./img/icon_innerHoney.svg", alt="")
+
+					- for(let i = 1; i <= 6; i++)
+						.hex-item(class=`hex-${i}` data-aos="zoom-in" data-aos-duration="800" data-aos-delay=`${i * 100}`)
+							.flipper
+								.face.front
+									.hex-bg
+										img(src="./img/box_honeycomb.svg", alt="")
+									.hex-icon
+										img(src="./img/icon_innerHoney.svg", alt="")
+								.face.back
+									.hex-bg
+										img(src="./img/box_honeycomb.svg", alt="")
+									.hex-icon
+										img(src="./img/icon_innerHoney.svg", alt="")
+			.col-mission
+				h2.site-title.is-white Sứ mệnh
+				.desc Cung cấp các giải pháp logistics thông minh, đa dạng, tối ưu chi phí và thời gian, hỗ trợ doanh nghiệp nâng cao năng lực cạnh tranh và mở rộng thị trường quốc tế.

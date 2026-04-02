@@ -1,0 +1,93 @@
+.section-cangcanphumy-infrastructure
+	@apply relative overflow-hidden full-bleed
+	@apply rem:py-10 lg:rem:py-20
+	@apply lg:rem:h-[880px]
+	.container
+		@apply flex flex-col items-center text-center relative z-10 justify-between h-full
+	.background-layer
+		@apply absolute inset-0 z-0 rem:pt-[74px]
+		img
+			@apply w-full h-full object-cover
+		// &::before
+		// 	content: ''
+		// 	@apply absolute inset-0 z-1
+		// 	background: linear-gradient(180deg, rgba(3, 24, 74, 0.30) 0%, rgba(7, 100, 196, 0.18) 45%, rgba(5, 46, 109, 0.32) 100%)
+
+	.curve-top, .curve-bottom
+		@apply absolute left-1/2 -translate-x-1/2 z-2 bg-white rem:h-[545px]
+		@apply rem:w-[1650px] md:rem:w-[2602px]
+		// border-radius: 2602px
+
+	.curve-top
+		@apply rem:-top-[430px] lg:rem:-top-[350px]
+		border-radius: 100% 0% 70% 70% / 0% 0% 100% 100% 
+
+	.curve-bottom
+		@apply rem:-bottom-[460px] lg:rem:-bottom-[380px]
+		border-radius: 70% 70% 100% 0% / 100% 100% 0% 0%
+
+	.container
+		@apply relative z-10
+
+	.section-header
+		@apply text-center
+
+	.section-title
+		@apply text-black font-bold leading-[1.2]
+		@apply text-2xl md:text-3xl lg:rem:text-5xl
+
+	.infrastructure-panel
+		@apply my-24 lg:m-auto w-full px-10 py-10
+		@apply grid grid-cols-1 md:grid-cols-3 items-stretch
+		@apply lg:rem:h-[346px] lg:rem:max-w-[1376px]
+		@apply lg:rem:px-[80px] lg:rem:py-[40px]
+		@apply rounded-10 overflow-hidden
+		background: rgba(255, 255, 255, 0.60)
+		backdrop-filter: blur(6px)
+		-webkit-backdrop-filter: blur(6px)
+
+	.infrastructure-item
+		@apply relative flex flex-col items-center text-center gap-y-5 h-full w-full
+
+		&:first-child
+			@apply pb-10
+
+		&:not(:first-child):not(:last-child)
+			@apply py-10
+
+		&:last-child
+			@apply pt-10
+
+		&:not(:last-child)
+			&::after
+				content: ''
+				@apply absolute left-1/2 bottom-0 -translate-x-1/2 w-full h-px bg-primary-1/30
+		
+	@screen lg
+		.infrastructure-item
+			&:first-child
+				@apply pr-16 pb-0
+			&:not(:first-child):not(:last-child)
+				@apply px-16 py-0
+			&:last-child
+				@apply pl-16 pt-0
+
+			&:not(:last-child)
+				&::after
+					content: ''
+					@apply absolute right-0 top-1/2 left-auto bottom-auto translate-x-0 -translate-y-1/2 h-full rem:w-[2px] bg-primary-1/70
+
+	.item-icon
+		@apply rem:max-h-[80px] flex-center
+		img
+			@apply rem:max-h-[80px] w-auto h-auto object-contain
+
+	.item-content
+		@apply flex flex-col gap-y-5
+
+	.item-title
+		@apply text-lg lg:text-xl font-bold text-primary-1 uppercase leading-[1.25]
+
+	.item-desc
+		@apply text-left body-18 text-black tracking-[-0.36px] leading-[1.33]
+

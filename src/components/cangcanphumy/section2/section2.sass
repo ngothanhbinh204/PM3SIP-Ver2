@@ -1,0 +1,49 @@
+.section-cangcanphumy-feature-grid
+	@apply full-bleed overflow-hidden
+
+	.container-full
+		@apply px-0
+
+	.feature-grid
+		@apply grid grid-cols-1 lg:grid-cols-3
+
+	.feature-card
+		@apply relative overflow-hidden min-h-[260px] sm:min-h-[320px] lg:min-h-0 lg:aspect-[640/360]
+
+		&.is-image
+			.card-image
+				@apply absolute inset-0 img-zoom
+				img
+					@apply w-full h-full object-cover object-center transition-transform duration-300
+					
+
+		&.is-text
+			background: linear-gradient(71deg, #2B46A0 -12.57%, #0093E9 100%)
+			@apply flex items-center justify-center text-center text-white px-5 py-10 md:px-10 lg:rem:px-15
+
+			.card-content
+				@apply relative z-2 mx-auto
+
+			.card-title
+				@apply font-bold text-white leading-[1.25]
+				@apply rem:text-[22px] md:rem:text-[26px] lg:rem:text-[18px] xl:rem:text-[22px]
+
+			.card-desc
+				@apply mt-5 body-18 text-white tracking-[-0.36px] leading-[1.33] font-normal
+
+
+		&.has-corner
+			.card-corner
+				@apply absolute bottom-0 z-1 rem:w-[180px] md:rem:w-[220px] lg:rem:w-[180px] xl:rem:w-[287px] pointer-events-none
+				img
+					@apply w-full h-auto object-contain
+
+		&.corner-left
+			.card-corner
+				@apply left-0
+
+		&.corner-right
+			.card-corner
+				@apply right-0
+				img
+					transform: scaleX(-1)

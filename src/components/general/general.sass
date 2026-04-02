@@ -86,10 +86,10 @@
 			@apply mt-4 lg:rem:mt-[30px] mx-auto rem:max-w-[1240px] text-center text-lg
 			@apply tracking-[-0.36px]
 	.intro-stats
-		@apply mt-12 xl:mt-20 gap-y-10 flex flex-row
+		@apply mt-12 xl:mt-20 gap-y-10 flex flex-col md:flex-row
 		@apply lg:rem:px-[120px]
 		.home-about-item
-			@apply flex-1 pl-5 lg:pl-10
+			@apply flex-1 pl-5 lg:pl-10 min-w-[160px]
 
 
 
@@ -98,15 +98,25 @@
 		@apply text-center pb-6 lg:pb-12
 	.infrastructure-list
 		@apply relative w-full overflow-hidden
-		@apply min-h-[600px] md:min-h-[800px] lg:h-[600px] xl:rem:h-[680px]
-	.bg-image
-		@apply absolute inset-0 z-0 w-full h-full bg-cover bg-center
-		img
-			@apply w-full h-full object-cover
+	.desktop-view
+		@apply relative w-full overflow-hidden
+		@apply lg:h-[600px] xl:rem:h-[680px]
+	.bg-image-list
+		@apply absolute inset-0 z-0 w-full h-full
+		.bg-item
+			@apply absolute inset-0 w-full h-full bg-cover bg-center opacity-0 transition-opacity duration-700
+			img
+				@apply w-full h-full object-cover
+			&.active
+				@apply opacity-100 z-10
 	.items-wrapper
 		@apply relative z-10 w-full h-full
 		@apply flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row
 		@apply gap-px md:gap-0
+	.desktop-view
+		@apply hidden lg:block
+	.mobile-view
+		@apply block lg:hidden px-4 pb-10
 	.infrastructure-item
 		@apply relative overflow-hidden cursor-pointer
 		@apply bg-black/10
@@ -199,145 +209,32 @@
 				li
 					@apply leading-relaxed
 					text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)
+					
+	.mobile-view
+		@apply w-full
+		.mobile-infra-item
+			@apply relative rounded-10 overflow-hidden w-full h-[400px] md:h-[500px]
+			.bg-image
+				@apply absolute inset-0 z-0
+				&::before
+					content: ''
+					@apply absolute inset-0 z-10 w-full h-full bg-black/60
+				img
+					@apply w-full h-full object-cover
+			.text-content
+				@apply absolute inset-0 z-20 p-6 md:p-10 flex flex-col justify-end
+				.title
+					@apply text-white font-bold text-xl md:text-2xl mb-4
+					@apply pb-4 border-b-2 border-white/50 w-full
+				.content-wrap
+					@apply w-full
+					ul
+						@apply text-white list-disc pl-4 space-y-2 text-sm md:text-base
+						li
+							@apply leading-relaxed
+							text-shadow: 0 2px 8px rgba(0,0,0,0.5)
 
-.general-vision-mission
-	@apply relative overflow-hidden
-	@apply py-16 md:py-20 lg:py-24 xl:rem:py-[140px]
-	// Background gradient layer (lower z-index)
-	.bg-gradient
-		@apply absolute inset-0 w-full h-full z-0 pointer-events-none
-		img
-			@apply w-full h-full object-cover opacity-100
-	// Background map layer (higher z-index than gradient)
-	.bg-map
-		@apply absolute inset-0 w-full h-full z-1 pointer-events-none
-		img
-			@apply w-full h-full object-cover opacity-10
-	.container
-		@apply relative z-10
-	.vision-mission-wrap
-		@apply items-center justify-between
-		@apply flex-col lg:flex-row gap-12 xl:gap-20
-	.col-vision, .col-mission
-		@apply w-full lg:w-[280px] xl:w-[320px] text-white
-		@apply text-left
-		.site-title
-			@apply mb-6 text-3xl md:text-4xl lg:text-5xl font-bold
-		.desc
-			@apply opacity-90 text-base md:text-lg leading-[1.6]
-	.col-mission
-		@apply lg:text-left
-.honeycomb-cluster
-	@apply relative
-	// 130/19.2 = 6.771rem | 112/19.2 = 5.833rem
-	--hex-w: 6.771rem
-	--hex-h: 5.833rem
-	width: calc(var(--hex-w) * 2.8)
-	height: calc(var(--hex-h) * 3)
 
-	@screen md
-		// 155/19.2 = 8.073rem | 134/19.2 = 6.979rem
-		--hex-w: 8.073rem
-		--hex-h: 6.979rem
-
-	@screen lg
-		// 176/19.2 = 9.167rem | 151/19.2 = 7.865rem
-		--hex-w: 9.167rem
-		--hex-h: 7.865rem
-
-.hex-item
-	@apply absolute cursor-pointer flex flex-col justify-center items-center
-	width: var(--hex-w)
-	height: var(--hex-h)
-	perspective: 800px
-	transform-style: preserve-3d
-	z-index: 5
-	.flipper
-		@apply absolute inset-0 w-full h-full
-		transform-style: preserve-3d
-		transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1)
-
-	&:hover .flipper
-		transform: rotateY(180deg)
-	.face
-		@apply absolute inset-0 w-full h-full
-		backface-visibility: hidden
-		-webkit-backface-visibility: hidden
-		.hex-bg
-			@apply absolute inset-0 w-full h-full z-0
-			img
-				@apply w-full h-full object-contain
-		.hex-icon
-			@apply absolute inset-0 w-full h-full z-10
-			@apply flex items-center justify-center my-auto
-			@apply rem:max-h-[64px]
-			img
-				@apply w-full h-full object-contain
-				filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2))
-	.face.back
-		transform: rotateY(180deg)
-		.hex-icon img
-			filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(130deg)
-	// .face.back
-	// 	@apply absolute inset-0 w-full h-full
-	// 	backface-visibility: hidden
-	// 	-webkit-backface-visibility: hidden
-	// 	.hex-bg
-	// 		@apply absolute inset-0 w-full h-full z-0
-	// 		img
-	// 			@apply w-full h-full object-contain
-	// 			filter: hue-rotate(180deg) brightness(1.2) saturate(1.5)
-		.hex-icon
-			@apply absolute inset-0 w-full h-full z-10
-			@apply flex items-center justify-center my-auto
-			@apply rem:max-h-[64px]
-			img
-				@apply w-full h-full object-contain
-				filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(130deg)
-
-	.hex-bg
-		@apply absolute inset-0 w-full h-full z-0
-		img
-			@apply w-full h-full object-contain
-
-	.hex-icon
-		@apply absolute inset-0 w-full h-full
-		@apply flex items-center justify-center my-auto
-		@apply rem:max-h-[64px]
-		z-index: 1
-		transition: all 0.4s ease-in-out
-		img
-			@apply w-full h-full object-contain
-			filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2))
-
-  
-.hex-center
-	@apply left-1/2 top-1/2
-	transform: translate(-50%, -50%)
-	z-index: 10
-
-.hex-1
-	@apply left-1/2 top-1/2
-	transform: translate(-50%, calc(-50% - var(--hex-h) * 0.99))
-
-.hex-2
-	@apply left-1/2 top-1/2
-	transform: translate(calc(-50% + var(--hex-w) * 0.746), calc(-50% - var(--hex-h) * 0.495))
-
-.hex-3
-	@apply left-1/2 top-1/2
-	transform: translate(calc(-50% + var(--hex-w) * 0.746), calc(-50% + var(--hex-h) * 0.495))
-.hex-4
-	@apply left-1/2 top-1/2
-	transform: translate(-50%, calc(-50% + var(--hex-h) * 0.99))
-
-.hex-5
-	@apply left-1/2 top-1/2
-	transform: translate(calc(-50% - var(--hex-w) * 0.746), calc(-50% + var(--hex-h) * 0.495))
-
-.hex-6
-	@apply left-1/2 top-1/2
-	transform: translate(calc(-50% - var(--hex-w) * 0.746), calc(-50% - var(--hex-h) * 0.495))
 
 
 .hex-center
@@ -358,100 +255,22 @@
 	.core-values-diagram
 		@apply mt-12 text-center
 
-.general-location
-	@apply bg-neutral-900
-	.location-header
-		@apply text-center
-		.site-title
-			@apply text-center
-		.desc
-			@apply text-white opacity-80 mt-4 mx-auto rem:max-w-[900px]
-		.sub-title
-			@apply text-white text-xl font-bold mt-8 mb-6
-	.tabs-container
-		@apply flex items-center justify-center gap-x-2 gap-y-4 flex-wrap
-		.btn
-			@apply px-8 py-3 rounded-none transition-colors
-		.btn-primary
-			@apply bg-primary-500 text-white
-		.btn-light
-			@apply bg-white text-primary-700 hover:bg-primary-500 hover:text-white
-	.map-wrapper
-		@apply mt-10 relative w-full
-	.map-info-box
-		box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1)
-		@apply bg-white p-8 w-full max-w-sm lg:absolute lg:top-1/2 lg:left-[10%] lg:-translate-y-1/2
-		.info-title
-			@apply font-bold text-primary-700 text-xl mb-6
-		.info-list
-			@apply space-y-4
-		.info-note-title
-			@apply font-bold text-primary-700 text-lg mt-8 mb-4
-		.info-note-list
-			@apply space-y-4
-			li
-				@apply flex items-center gap-4
-			.line
-				@apply block w-12 h-[2px] relative
-				&::before, &::after
-					content: ''
-					@apply w-2 h-2 rounded-full absolute -top-[3px]
-				&::before
-					@apply left-0
-				&::after
-					@apply right-0
-			.line-red
-				@apply bg-red-500
-				&::before, &::after
-					@apply bg-red-500
-			.line-dark
-				@apply bg-neutral-800
-				&::before, &::after
-					@apply bg-neutral-800
-			.line-pink
-				@apply bg-fuchsia-600
-				&::before, &::after
-					@apply bg-fuchsia-600
-
-.general-services
-	@apply bg-neutral-50
-	.site-title
-		@apply text-center
-	.services-grid
-		@apply mt-10
-	.col-service
-		@apply w-full md:w-6/12 mb-6
-	.service-card
-		@apply relative rounded-20 overflow-hidden aspect-video cursor-pointer
-		.caption
-			@apply absolute top-0 left-0 w-full p-6 z-10
-			.title
-				@apply text-white font-bold text-xl xl:text-2xl uppercase border-b border-white pb-4 w-min whitespace-nowrap
-		.bottom
-			@apply absolute bottom-0 left-0 w-full text-center p-4 text-neutral-900 font-bold z-10
-			@apply bg-white/80 backdrop-blur-sm opacity-0 transition-all duration-300 md:translate-y-4
-		&:hover
-			.bottom
-				@apply opacity-100 translate-y-0
-.general-partners
-	@apply py-10 border-y border-neutral-200 overflow-hidden
-	.brand-item
-		@apply px-6
 
 .general-certificates
+	@apply px-6
 	.site-title
 		@apply text-center
 	.cert-slider-wrapper
 		@apply mt-10 relative
 	.cert-item
-		@apply border border-neutral-200 p-4 text-center bg-white transition-shadow hover:shadow-lg cursor-pointer
+		@apply border border-black p-4 text-center bg-neutral-50 cursor-pointer
 		.image
-			@apply aspect-[3/4]
+			@apply aspect-[71/90]
 		.title
-			@apply mt-4 font-bold text-neutral-900 h-[48px] line-clamp-2
+			@apply mt-6 font-bold text-black line-clamp-2 rem:max-w-[221px] mx-auto
 	.swiper-button
 		@apply flex items-center justify-center mt-8 gap-4
-		@apply xl:absolute xl:top-1/2 xl:-translate-y-1/2 xl:w-full xl:justify-between xl:left-0 xl:px-4 xl:mt-0 xl:pointer-events-none
+		@apply relative
 		.button-prev, .button-next
 			@apply w-12 h-12 rounded-full bg-neutral-200 flex items-center justify-center text-neutral-600 hover:bg-primary-500 hover:text-white transition-colors cursor-pointer xl:pointer-events-auto
 		.button-prev

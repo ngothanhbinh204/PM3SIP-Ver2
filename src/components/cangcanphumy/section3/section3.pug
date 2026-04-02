@@ -1,0 +1,28 @@
+section.section-cangcanphumy-documents
+	.background-layer.img-cover
+		img(src='./img/document-background.png', alt='Document background')
+	.container
+		-
+			var section3Data = {
+				title: 'Tài liệu tham khảo',
+				documents: [
+					{
+						title: 'Profile - VN',
+						file: '#'
+					},
+					{
+						title: 'Profile - ENG',
+						file: '#'
+					}
+				]
+			}
+		.section-header
+			h2.section-title= section3Data.title
+		.document-list
+			each item in section3Data.documents
+				a.document-card(href=item.file, download)
+					.card-action(aria-label='Download file')
+						i.fa-light.fa-download
+					.card-icon
+						img(src='./img/pdf-icon.svg', alt='PDF file')
+					.card-name= item.title

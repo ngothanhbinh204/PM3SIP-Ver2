@@ -403,6 +403,23 @@ module.exports = {
 					});
 				});
 			});
+
+			addVariant("ratio", ({ container, separator }) => {
+				container.walkRules((rule) => {
+					rule.selector = `.${e(`ratio${separator}`)}${rule.selector.slice(1)}`;
+					rule.walkDecls((decl) => {
+						const ratioValues = decl.value.split(" ");
+						if (ratioValues.length === 2) {
+							const num1 = parseInt(ratioValues[0]);
+							const num2 = parseInt(ratioValues[1]);
+							if (!isNaN(num1) && !isNaN(num2) && num2 !== 0) {
+								const percentage = `${(num1 / num2) * 100}%`;
+								decl.value = `${percentage}`;
+							}
+						}
+					});
+				});
+			});
 		})
 	],
 }

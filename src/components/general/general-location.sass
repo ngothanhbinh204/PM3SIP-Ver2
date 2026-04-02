@@ -1,0 +1,157 @@
+.general-location
+	@apply bg-[#F4F7FB] relative overflow-hidden
+	@apply py-16 md:py-20 lg:py-24 xl:rem:py-[100px]
+	@apply pb-0
+	.container
+		@apply relative z-10
+	.location-header
+		@apply text-center
+		.site-title
+			@apply text-center text-neutral-900 mb-4 relative z-10
+		.desc
+			@apply text-neutral-600 mt-4 mx-auto md:max-w-4xl text-justify md:text-center text-base leading-relaxed
+		.sub-title
+			@apply text-neutral-900 text-xl font-bold mt-10 mb-6
+	.tabs-container
+		@apply flex items-center justify-center gap-x-4 gap-y-4 flex-wrap pb-10
+		.btn
+			@apply px-4 py-2 md:px-6 md:py-3 rounded-none font-medium cursor-pointer transition-all duration-300 text-base md:text-xl border border-transparent
+			&.active
+				@apply bg-primary-1 text-white pointer-events-none
+			&:not(.active)
+				@apply bg-neutral-100 text-primary-1 hover:bg-primary-1 hover:text-white
+	.map-wrapper
+		@apply relative w-full bg-neutral-200 overflow-hidden rem:h-[640px]		
+	.map-pane
+		@apply absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-500 z-0
+		&.active
+			@apply opacity-100 z-10 pointer-events-auto
+		.image
+			@apply w-full h-full absolute inset-0
+			img
+				@apply w-full h-full object-cover object-center
+		.map-info-box
+			@apply bg-white p-6 border w-[90%] md:w-full rem:max-w-[408px] absolute right-auto md:left-auto bottom-0 top-auto left-0 z-20 transition-all duration-500 transform opacity-0
+			@apply md:p-10
+			@apply border-0
+			@apply border-t border-r border-black
+			@apply flex flex-col gap-5 lg:gap-10
+			backdrop-filter: blur(10px)
+			.info-title, .info-note-title
+				@apply font-bold text-primary-1 text-lg md:text-xl mb-2 md:mb-3
+			.list-custom-marker
+				@apply list-none space-y-1 md:space-y-2 text-black p-0
+				li
+					@apply text-base md:text-lg leading-normal relative pl-6 
+					&::before
+						content: ""
+						@apply absolute left-0 rem:top-[10px] shrink-0 translate-x-full
+						@apply rem:w-[6px] rem:h-[6px] rounded-full 
+						@apply bg-black
+				
+			.info-note-list
+				@apply space-y-2
+				li
+					@apply flex items-center gap-4 text-base md:text-lg
+				.line
+					@apply block w-20 rem:h-[1px] relative
+					&::before, &::after
+						content: ''
+						@apply rem:w-[6px] rem:h-[6px] rounded-full absolute rem:-top-[2px]
+					&::before
+						@apply left-0
+					&::after
+						@apply right-0
+				.line-wrapper
+					@apply flex items-center gap-4
+					&.wrapper-red
+						@apply text-[#FE595A]
+						.line-red
+							@apply bg-[#FE595A]
+							&::before, &::after
+								@apply bg-[#FE595A]
+					&.wrapper-dark
+						@apply text-[#3F3F3F]
+						.line-dark
+							@apply bg-[#3F3F3F]
+							&::before, &::after
+								@apply bg-[#3F3F3F]
+					&.wrapper-pink
+						@apply text-[#A700AF]
+						.line-pink
+							@apply bg-[#A700AF]
+							&::before, &::after
+								@apply bg-[#A700AF]
+					&.wrapper-blue
+						@apply text-primary-1
+						.line-blue
+							@apply bg-primary-1
+						&::before, &::after
+							@apply bg-primary-1
+		&.active .map-info-box
+			@apply translate-x-0 opacity-100
+	.map-controls
+		@apply absolute right-4 bottom-4 lg:right-[5%] lg:bottom-[10%] flex gap-4 items-end z-20 pointer-events-auto
+		.nav-arrows
+			@apply relative rem:min-w-[96px] rem:min-h-[96px] md:rem:min-w-[168px] md:rem:min-h-[168px]
+		.control-btn
+			@apply absolute w-12 h-12 bg-white rounded-full flex items-center justify-center cursor-pointer text-neutral-900 
+			@apply shadow-[4px_4px_8px_4px_rgba(0,0,0,0.08)] hover:bg-primary-1 hover:text-white transition-colors duration-300 select-none
+			@apply text-lg lg:text-2xl
+			&.btn-up
+				@apply top-0 left-1/2 -translate-x-1/2
+			&.btn-left
+				@apply left-0 top-1/2 -translate-y-1/2
+			&.btn-right
+				@apply right-0 top-1/2 -translate-y-1/2
+			&.btn-down
+				@apply bottom-0 left-1/2 -translate-x-1/2
+			span
+				@apply text-xl md:text-2xl pointer-events-none
+		.zoom-controls
+			@apply flex flex-col gap-2 md:gap-3 relative
+			.control-btn
+				@apply relative md:w-10 md:h-10 inset-auto transform-none
+
+.bg-map
+	svg
+		path[stroke-dasharray]
+			animation: dash-move 30s linear infinite
+			
+		.airport-point
+			animation: pulse-effect 2s infinite
+			transform-box: fill-box
+			transform-origin: center
+
+@keyframes dash-move
+	to
+		stroke-dashoffset: -500
+
+@keyframes pulse-effect
+	0%
+		box-shadow: 0 0 0 0 rgba(0, 151, 178, 0.7)
+		transform: scale(0.95)
+	70%
+		box-shadow: 0 0 0 15px rgba(0, 151, 178, 0)
+		transform: scale(1.1)
+	100%
+		box-shadow: 0 0 0 0 rgba(0, 151, 178, 0)
+		transform: scale(0.95)
+
+.scroll-hint 
+	@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-neutral-900/65 text-white px-5 py-2 rounded-lg text-sm pointer-events-none whitespace-nowrap
+	animation: fadeInOut 2s ease forwards
+  
+
+
+@keyframes fadeInOut
+	0%   
+		opacity: 0
+		transform: translate(-50%, -50%) scale(0.95)
+ 	15%  
+		opacity: 1
+		transform: translate(-50%, -50%) scale(1)
+	75%  
+		opacity: 1
+	100% 
+		opacity: 0

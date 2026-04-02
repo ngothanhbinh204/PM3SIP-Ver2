@@ -1,0 +1,66 @@
+.section-cangcanphumy-banner
+	@apply relative overflow-hidden rem:py-[60px] lg:rem:py-[110px]
+	@apply full-bleed
+	.banner-background
+		@apply absolute inset-0 z-0
+		img
+			@apply w-full h-full object-cover
+		&::before
+			content: ''
+			background: linear-gradient(180deg, rgba(19, 70, 135, 0.78) 0%, rgba(30, 80, 140, 0.38) 44%, rgba(8, 21, 56, 0.28) 100%)
+			@apply absolute inset-0 z-1
+
+	.container
+		@apply relative z-10
+
+	.banner-inner
+		@apply rem:max-w-[1520px] mx-auto
+
+	.banner-heading
+		@apply relative text-center font-bold uppercase leading-[1.15] text-primary-1
+		@apply rem:text-[24px] sm:rem:text-[32px] md:rem:text-[40px] lg:rem:text-[52px]
+		@apply max-w-full mx-auto
+
+		&::before
+			content: attr(data-text)
+			@apply absolute inset-0 z-0 text-transparent pointer-events-none
+			-webkit-text-stroke: 2px #ffffff
+	
+
+		span
+			@apply relative z-1 block
+
+	.banner-card-list
+		@apply mt-8 flex flex-col lg:flex-row gap-6 lg:gap-8 xl:rem:mt-20
+
+	.banner-card
+		@apply relative overflow-hidden flex flex-col
+		@apply rem:h-[420px] rem:w-[680px]
+	
+		.card-image
+			@apply absolute inset-0 z-0
+			img
+				@apply w-full h-full object-contain
+
+		.card-caption
+			@apply absolute left-0 bottom-0 z-2 w-full text-center rem:px-[24px] rem:py-6
+			background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 50%, rgba(255, 255, 255, 0.00) 100%)
+
+			.card-title
+				@apply relative inline-block font-bold uppercase leading-[1.15]
+				@apply rem:text-[16px] sm:rem:text-[18px] md:rem:text-[22px] lg:rem:text-2xl
+				background: linear-gradient(180deg, #0A2A91 0%, #439EFF 100%)
+				background-clip: text
+				-webkit-background-clip: text
+				-webkit-text-fill-color: transparent
+
+		&.is-left
+			@apply ml-auto
+
+		&.is-right
+			@apply mr-auto
+			.card-caption
+				@apply rem:max-w-[554px] right-0 left-auto
+	@screen md
+		.banner-card-list
+			@apply items-end

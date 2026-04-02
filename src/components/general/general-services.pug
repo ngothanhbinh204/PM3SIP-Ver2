@@ -1,0 +1,34 @@
+section.general-services.section-large#dich-vu
+	.container
+		h2.site-title Dịch vụ logistics toàn diện, trọn gói, đa phương thức
+		.services-grid
+			-
+				var svcs = [
+					{
+						title: "KCN CHUYÊN SÂU PHÚ MỸ 3",
+						desc: "Khu Công nghiệp Chuyên sâu Phú Mỹ 3 là dự án hợp tác trọng điểm Việt - Nhật, mô hình KCN chuyên sâu kiểu mẫu đầu tiên tại Việt Nam với quy mô gần 1.000 ha. Sở hữu vị trí đắc địa liền kề Cảng nước sâu Cái Mép - Thị Vải và hạ tầng đạt chuẩn quốc tế, Phú Mỹ 3 cung cấp giải pháp toàn diện về logistics và sản xuất xanh (kinh tế tuần hoàn). Đây cũng là địa chỉ tin cậy cho các nhà đầu tư FDI đang tìm kiếm sự ổn định, ưu đãi vượt trội và phát triển bền vững."
+					},
+					{
+						title: "DỊCH VỤ CẢNG",
+						desc: "Cảng tổng hợp và bến thủy nội địa tại PM3SIP được đầu tư trang thiết bị hiện đại, hệ thống quản lý chuẩn quốc tế giúp tối ưu hóa luân chuyển hàng hóa."
+					},
+					{
+						title: "DỊCH VỤ KHO",
+						desc: "Hệ thống kho bãi đa năng, hiện đại đáp ứng các tiêu chuẩn khắt khe về lưu trữ và bảo quản đa dạng các loại hàng hóa."
+					},
+					{
+						title: "KHO BỒN BỂ HÓA CHẤT",
+						desc: "Hệ thống bồn bể chuyên dụng cho hóa chất và khí hóa lỏng được thiết kế theo tiêu chuẩn an toàn nghiêm ngặt quốc tế."
+					}
+				]
+			each svc in svcs
+				.service-card
+					.image
+						+img(800, 450)
+					.overlay
+					.caption
+						h3.title= svc.title
+						.line
+						.desc= svc.desc
+					.bottom
+						span Tìm hiểu thêm

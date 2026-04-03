@@ -1,7 +1,7 @@
 .section-cangcanphumy-services
 	@apply relative overflow-hidden full-bleed rem:py-[56px] lg:rem:py-[90px]
 	.background-layer
-		@apply absolute inset-0 z-0 opacity-60
+		@apply absolute inset-0 z-0
 		img
 			@apply w-full h-full object-cover
 
@@ -16,52 +16,88 @@
 		@apply rem:text-[28px] md:rem:text-[36px] lg:rem:text-[52px]
 
 	.service-layout
-		@apply mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,706px)] lg:items-start xl:rem:mt-[52px] xl:gap-[88px]
-
+		@apply mt-8 grid gap-8 grid-cols-1 lg:grid-cols-2 lg:items-start xl:mt-10
 	.service-tab-list
-		@apply flex flex-col gap-4 lg:rem:pt-[56px]
+		@apply flex flex-col gap-10 lg:rem:pt-[56px]
 
 	.service-tab-item
-		@apply w-full flex items-center gap-4 text-left text-black transition-all duration-300
-		@apply rem:text-[18px] md:rem:text-[22px] lg:rem:text-[20px] xl:rem:text-[24px]
+		@apply w-full flex items-center gap-5 text-left text-black transition-all duration-300
+		@apply rem:text-xl lg:rem:text-[30px] xl:rem:text-[32px]
+		.item-icon, .item-title
+			transition: color .32s ease, transform .32s ease, opacity .32s ease
 		.item-icon
 			@apply inline-flex items-center justify-center text-black transition-all duration-300
 			@apply rem:w-[26px] rem:text-[18px]
+			svg
+				@apply fill-black transition-all duration-300
+				transition: fill .32s ease, transform .32s ease
 		.item-title
 			@apply font-normal leading-[1.35] transition-all duration-300
 
 		&.active
 			.item-icon, .item-title
 				@apply text-primary-1
+			.item-icon
+				transform: translateX(6px)
+				svg
+					@apply fill-primary-1
 			.item-title
 				@apply font-bold
+				transform: translateX(6px)
 
 		&:not(.active):hover
 			.item-icon, .item-title
 				@apply text-primary-1
+			.item-icon
+				transform: translateX(4px)
+			.item-title
+				transform: translateX(4px)
 
 	.service-pane-list
-		@apply relative
+		@apply relative w-full rem:max-w-[680px] mx-auto rem:min-h-[320px] lg:rem:w-[680px]
+		@apply lg:rem:h-[500px]
 
 	.service-pane
-		@apply hidden relative overflow-hidden rounded-8 bg-neutral-950/5 shadow-drop-shadow-light
-		@apply lg:aspect-[706/538]
+		@apply absolute inset-0 overflow-hidden rounded-10
+		min-height: 100%
+		@apply opacity-0 invisible pointer-events-none
+		transform: translate3d(0, 24px, 0) scale(.985)
+		transition: opacity .45s ease, transform .55s cubic-bezier(.22, 1, .36, 1), visibility .45s ease
+		will-change: opacity, transform
 
 		&.active
-			@apply block
+			@apply opacity-100 visible pointer-events-auto
+			transform: translate3d(0, 0, 0) scale(1)
+			z-index: 2
 
 	.pane-image
 		@apply absolute inset-0 z-0
+		transform: scale(1.06)
+		transition: transform .75s cubic-bezier(.22, 1, .36, 1)
 		img
 			@apply w-full h-full object-cover
 
 	.pane-overlay
-		background: linear-gradient(180deg, rgba(16, 31, 73, 0.02) 16.57%, rgba(15, 18, 25, 0.68) 100%)
+		background: #00000040
 		@apply absolute inset-0 z-[1]
+		opacity: .72
+		transition: opacity .45s ease
 
 	.pane-content
 		@apply absolute inset-x-0 bottom-0 z-[3] flex flex-col items-center text-center text-white
-		@apply rem:px-[28px] rem:pb-[26px] md:rem:px-[42px] md:rem:pb-[34px]
+		@apply pb-6
+		opacity: 0
+		transform: translate3d(0, 24px, 0)
+		transition: opacity .42s ease .06s, transform .52s cubic-bezier(.22, 1, .36, 1) .06s
+
+	.service-pane.active
+		.pane-image
+			transform: scale(1)
+		.pane-overlay
+			opacity: 1
+		.pane-content
+			opacity: 1
+			transform: translate3d(0, 0, 0)
 
 	.pane-subtitle
 		@apply font-medium leading-[1.32] tracking-[-0.02em] text-white
@@ -74,22 +110,34 @@
 		@apply rem:px-[42px] rem:py-[16px] rem:text-[18px] md:rem:text-[20px]
 
 	.service-popup
-		@apply fixed inset-0 z-[120] hidden items-center justify-center p-4 md:p-6
+		@apply fixed inset-0 z-999 flex items-center justify-center p-4 md:p-6
+		@apply opacity-0 invisible pointer-events-none
+		transition: opacity .35s ease, visibility .35s ease
 
 		&.active
-			@apply flex
+			@apply opacity-100 visible pointer-events-auto
 
 	.service-popup-overlay
-		@apply absolute inset-0 bg-black/55
+		@apply absolute inset-0 bg-black/20
+		opacity: 0
+		transition: opacity .38s ease
 
 	.service-popup-dialog
 		@apply relative z-[2] w-full max-w-full overflow-hidden rounded-10
 		@apply xl:rem:max-w-[1400px]
 		background: #ffffff
+		opacity: 0
+		transform: translate3d(0, 48px, 0) scale(.96)
+		transform-origin: center center
+		transition: opacity .42s ease, transform .58s cubic-bezier(.22, 1, .36, 1)
+		will-change: opacity, transform
 
 	.service-popup-close
 		@apply absolute z-[4] bg-white text-primary-1 rounded-full flex-center transition-all duration-300
 		@apply top-4 right-4 rem:size-[48px] lg:rem:top-[22px] lg:rem:right-[22px] lg:rem:size-[64px]
+		opacity: 0
+		transform: scale(.86)
+		transition: opacity .28s ease .18s, transform .4s cubic-bezier(.22, 1, .36, 1) .18s, background-color .3s ease, color .3s ease
 		i
 			@apply rem:text-xl lg:rem:text-[32px] font-medium
 
@@ -101,6 +149,9 @@
 		background: linear-gradient(71deg, #2B46A0 -12.57%, #0093E9 100%)
 		@apply relative overflow-hidden flex flex-col justify-center text-center text-white
 		@apply p-10
+		opacity: 0
+		transform: translate3d(-32px, 0, 0)
+		transition: opacity .42s ease .08s, transform .56s cubic-bezier(.22, 1, .36, 1) .08s
 
 	.service-popup-title
 		@apply relative z-2 mx-auto font-bold text-white leading-[1.08]
@@ -119,6 +170,9 @@
 
 	.service-popup-media
 		@apply relative bg-white
+		opacity: 0
+		transform: translate3d(32px, 0, 0)
+		transition: opacity .42s ease .14s, transform .56s cubic-bezier(.22, 1, .36, 1) .14s
 
 	.service-popup-slider
 		@apply h-full flex flex-col
@@ -132,45 +186,62 @@
 
 	.service-popup-controls
 		@apply absolute bottom-0 left-0 right-0 z-[3] flex items-center justify-center
-		@apply flex items-center gap-4
+		@apply flex items-center gap-6 lg:gap-8
 		@apply rem:px-[24px] rem:py-[18px] md:rem:px-[45px] md:rem:py-5
 		background: rgba(0, 8, 34, 0.50)
 		backdrop-filter: blur(6px)
 
 		.button-prev, .button-next
 			@apply shrink-0 rounded-full bg-black/20 text-white flex-center transition-all duration-300
-			@apply rem:size-[64px] md:rem:size-[72px]
+			@apply rem:size-12 md:rem:size-16
 			&:hover
 				@apply bg-primary-1
 			i
-				@apply rem:text-[24px]
+				@apply rem:text-2xl font-extralight
 
 	.service-popup-thumbs
 		@apply min-w-0 flex-1
 		.swiper-slide
 			@apply cursor-pointer opacity-70 transition-all duration-300
+			transform: translate3d(0, 16px, 0)
+			transition: opacity .35s ease, transform .45s cubic-bezier(.22, 1, .36, 1)
 			&.swiper-slide-thumb-active
 				@apply opacity-100
 				.thumb-image
-					@apply ring-2 ring-white/80
+					img
+						@apply rounded-br-6
 
 	.thumb-image
-		@apply overflow-hidden aspect-[164/122]
+		@apply overflow-hidden aspect-[165/122] bg-primary-2 
 		img
-			@apply w-full h-full object-cover
+			@apply w-full h-full object-cover transition-all duration-300
+
+	.service-popup.active
+		.service-popup-overlay
+			opacity: 1
+		.service-popup-dialog
+			opacity: 1
+			transform: translate3d(0, 0, 0) scale(1)
+		.service-popup-close
+			opacity: 1
+			transform: scale(1)
+		.service-popup-copy
+			opacity: 1
+			transform: translate3d(0, 0, 0)
+		.service-popup-media
+			opacity: 1
+			transform: translate3d(0, 0, 0)
+		.service-popup-thumbs
+			.swiper-slide
+				transform: translate3d(0, 0, 0)
 
 body.service-popup-open
 	overflow: hidden
 
-// @screen max-lg
-// 	.section-cangcanphumy-services
-// 		.service-pane
-// 			@apply aspect-[706/538]
-
 @screen md
 	.section-cangcanphumy-services
 		.service-tab-list
-			@apply rem:max-w-[560px]
+			@apply rem:max-w-[600px]
 
 @screen lg
 	.section-cangcanphumy-services

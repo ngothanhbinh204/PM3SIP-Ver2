@@ -1,0 +1,120 @@
+$hex-clip: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
+
+.section-khophumy-infrastructure
+	@apply bg-cover bg-center bg-no-repeat rem:py-12 lg:rem:py-[106px]
+	@apply lg:aspect-[1920/860] rem:min-h-[860px] relative
+
+	.container
+		@apply rem:max-w-[1192px] mx-auto
+
+	&__inner
+		@apply flex flex-col items-center relative
+		.bg-svg
+			@apply hidden lg:block absolute bottom-0 z-0 translate-y-[40%] rem:w-[1142px]
+			img
+				@apply w-full h-auto 
+
+	&__title
+		@apply text-white font-bold text-center rem:mb-10
+		@apply rem:text-3xl md:rem:text-5xl
+
+	&__polygon-list
+		@apply flex flex-col items-center w-full
+		gap: 1.042rem
+
+		@screen lg
+			@apply flex-row justify-center items-start gap-0
+	&__polygon-item
+		@apply relative flex-shrink-0 aspect-[406/350] rem:w-[406px]
+
+		@screen lg
+			&:nth-child(2)
+				@apply rem:translate-y-[50%]
+				@apply rem:mx-[-48px]
+
+
+		// ── Accent hexagon (coloured, behind main shape) ──
+		&::before
+			content: ''
+			@apply rem:max-h-[308px] rem:translate-x-[70px] rem:translate-y-[20px] aspect-[357/308]
+			@apply absolute inset-0
+			clip-path: $hex-clip
+			z-index: 0
+		&:nth-child(1)::before
+			background-color: #FF931E 
+		&:nth-child(2)::before
+			background-color: #3FA9F5
+		&:nth-child(3)::before
+			background-color: #7AC943
+
+
+	&__polygon-wrap
+		@apply relative w-full h-full flex flex-col items-center justify-center bg-white rem:px-[70px] lg:rem:px-[60px] rem:py-[75] z-1
+		clip-path: $hex-clip
+		transition: background-color 0.4s ease
+		.bg-overlay
+			@apply absolute inset-0
+			z-index: -1
+			opacity: 0.25
+			background-size: cover
+			background-position: center
+			transition: opacity 0.4s ease
+		&::before
+			content: ''
+			@apply absolute inset-0 z-1
+			background-color: rgba(#fff, 0.25)
+			clip-path: $hex-clip
+			transition: background-color 0.4s ease
+
+		.section-khophumy-infrastructure__polygon-item:hover &
+			@apply bg-white
+			&::before
+				background-color: rgba(#fff, 0.08)
+			.bg-overlay
+				opacity: 0.15
+
+	&__polygon-icon
+		@apply flex items-center justify-center rem:mb-4 z-2 rem:h-[100px]
+		transition: all 0.3s ease
+		img
+			@apply w-full h-full object-contain
+
+		.section-khophumy-infrastructure__polygon-item:hover &
+			opacity: 0
+			transform: scale(0.7)
+			pointer-events: none
+			@apply h-0
+
+	&__polygon-title
+		@apply text-center font-bold uppercase rem:text-lg md:rem:text-xl z-2 text-primary-1
+		transition: color 0.3s ease, transform 0.35s ease
+		// .section-khophumy-infrastructure__polygon-item:hover &
+		// 	transform: translateY(-0.75rem)
+
+	// ── Detail: CSS grid trick for smooth height reveal ──
+	&__polygon-detail
+		@apply w-full z-2 overflow-hidden
+		display: grid
+		grid-template-rows: 0fr
+		opacity: 0
+		transform: translateY(0.5rem)
+		transition: grid-template-rows 0.4s ease, opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s
+		margin-top: 0
+		transition: grid-template-rows 0.4s ease, opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s, margin-top 0.35s ease
+
+		> *
+			overflow: hidden
+			min-height: 0
+
+		.section-khophumy-infrastructure__polygon-item:hover &
+			@apply opacity-100 translate-y-0 mt-2
+			grid-template-rows: 1fr
+
+		ul
+			@apply list-none m-0 p-0
+
+			li
+				@apply relative rem:pl-[16px] body-16 leading-[1.37] text-primary-1
+				&::before
+					content: '•'
+					@apply absolute left-0 text-primary-1

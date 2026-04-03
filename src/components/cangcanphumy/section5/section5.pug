@@ -90,7 +90,10 @@ section.section-cangcanphumy-services#dich-vu-cang
 				each item, index in section5Data.items
 					button.service-tab-item(type='button', class=index === 0 ? 'active' : '', data-target=`#service-pane-${index}`, aria-selected=index === 0 ? 'true' : 'false')
 						span.item-icon(aria-hidden='true')
-							i.fa-light.fa-chevron-right
+							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M31.3371 14.9613L1.62358 1.24733C1.15045 1.03248 0.585894 1.16047 0.25676 1.56732C0.0957054 1.76439 0.00546218 2.00982 0.00048901 2.26428C-0.00448416 2.51874 0.0761006 2.7675 0.229332 2.97071L10.0005 15.999L0.229332 29.0272C-0.0860891 29.4455 -0.0746608 30.0261 0.254474 30.4306C0.476183 30.7072 0.807603 30.8557 1.14359 30.8557C1.30588 30.8557 1.46816 30.8215 1.6213 30.7506L31.3349 17.0367C31.7417 16.8492 32 16.4447 32 15.999C32 15.5533 31.7417 15.1487 31.3371 14.9613Z" fill="currenColor"/>
+							</svg>
+
 						span.item-title= item.title
 			.service-pane-list
 				each item, index in section5Data.items
@@ -98,9 +101,8 @@ section.section-cangcanphumy-services#dich-vu-cang
 						.pane-image.img-cover
 							img(src=item.cardImage, alt=item.title)
 						.pane-overlay
-						//- .pane-frame(aria-hidden='true')
 						.pane-content
-							p.pane-subtitle= item.cardSubtitle
+							div.pane-subtitle= item.cardSubtitle
 							button.service-more-btn(type='button', data-popup-target=`service-popup-${index}`) Tìm hiểu thêm
 		each item, index in section5Data.items
 			.service-popup(id=`service-popup-${index}`, aria-hidden='true')

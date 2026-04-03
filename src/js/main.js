@@ -39,6 +39,7 @@ $(function () {
 	locationTabToggle();
 	section5ServiceTabs();
 	section5ServicePopups();
+	khoPhuyWarehouseAccordion();
 });
 
 
@@ -1078,6 +1079,64 @@ function section5ServicePopups() {
 	});
 }
 
+function khoPhuyWarehouseAccordion() {
+	const $section = $('.section-khophumy-warehouse');
+	if (!$section.length) return;
+
+	// Initialise swiper for a gallery panel (lazy, once only)
+	function initWarehouseSwiper($gallery) {
+		if ($gallery.data('swiperInit')) return;
+		$gallery.data('swiperInit', true);
+
+		const swiperEl = $gallery.find('.swiper')[0];
+		const prevEl = $gallery.find('.button-prev')[0];
+		const nextEl = $gallery.find('.button-next')[0];
+
+		if (!swiperEl) return;
+
+		new Swiper(swiperEl, {
+			preventInteractionOnTransition: true,
+			observer: true,
+			observeParents: true,
+			loop: true,
+			speed: 700,
+			spaceBetween: 0,
+			navigation: {
+				prevEl: prevEl,
+				nextEl: nextEl,
+			},
+		});
+	}
+
+	// Activate the first gallery on page load
+	const $firstGallery = $section.find('.warehouse-gallery.active');
+	if ($firstGallery.length) {
+		initWarehouseSwiper($firstGallery);
+	}
+
+	$section.find('.warehouse-tab-item').on('click', function () {
+		const $item = $(this);
+		if ($item.hasClass('active')) return;
+
+		const target = $item.data('target');
+
+		// Deactivate all
+		$section.find('.warehouse-tab-item').removeClass('active')
+			.find('.warehouse-tab-btn').attr('aria-expanded', 'false');
+		$section.find('.warehouse-gallery').removeClass('active').attr('aria-hidden', 'true');
+
+		// Activate clicked
+		$item.addClass('active')
+			.find('.warehouse-tab-btn').attr('aria-expanded', 'true');
+
+		if (target) {
+			const $gallery = $section.find(target);
+			$gallery.addClass('active').attr('aria-hidden', 'false');
+			initWarehouseSwiper($gallery);
+		}
+	});
+}
+
 function initSection5PopupSlider($popup) {
 	const $slider = $popup.find('.service-popup-slider');
 	if (!$slider.length) {
@@ -1107,7 +1166,7 @@ function initSection5PopupSlider($popup) {
 		breakpoints: {
 			768: {
 				slidesPerView: 3,
-				spaceBetween: 20,
+				spaceBetween: 32,
 			},
 		},
 	});

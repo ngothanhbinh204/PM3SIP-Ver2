@@ -1,0 +1,52 @@
+section.section-cangcanphumy-mooring#dich-vu-ben-phao
+	-
+		var section6Data = {
+			title: 'Dịch vụ bến phao',
+			image: './img/about-2-bg.jpg',
+			imageAlt: 'Khu vực dịch vụ bến phao',
+			stats: [
+				{
+					icon: './img/icon_moc.svg',
+					value: '-14M'
+				},
+				{
+					icon: './img/icon_moc.svg',
+					value: '80.000 DWT'
+				},
+				{
+					icon: './img/icon_moc.svg',
+					value: '~20KM'
+				}
+			],
+			content: [
+				{
+					title: 'Năng lực tiếp nhận vượt trội:',
+					desc: 'Cảng có thể tiếp nhận tàu trọng tải đến 80.000 DWT, đáp ứng hiệu quả nhu cầu xếp dỡ hàng rời và hàng dự án quy mô lớn.'
+				},
+				{
+					title: 'Hạ tầng bến phao tối ưu cho khai thác:',
+					desc: 'Khu vực bến phao sở hữu độ sâu -14m và chiều dài 360m, bảo đảm tàu ra/vào an toàn ngay cả trong điều kiện thủy triều phức tạp.'
+				},
+				{
+					title: 'Vị trí chiến lược - kết nối vận tải linh hoạt:',
+					desc: 'Nằm trên sông Gò Gia, cách Cảng cạn Phú Mỹ 20km, vị trí này giúp rút ngắn hành trình vận chuyển, tối ưu kết nối giữa đường thủy - đường bộ và đảm bảo tiến độ khai thác hàng hóa.'
+				}
+			]
+		}
+	.container-full
+		.mooring-grid
+			.mooring-media
+				.mooring-image.img-cover
+					img(src=section6Data.image, alt=section6Data.imageAlt)
+				.mooring-stats
+					each item in section6Data.stats
+						.article-stat
+							.stat-icon
+								img(src=item.icon, alt='Mooring service stat icon')
+							.stat-value= item.value
+			.mooring-content
+				.content-inner
+					h2.section-title= section6Data.title
+					.content-list
+						each item in section6Data.content
+							.copy-desc= item.desc

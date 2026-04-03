@@ -1,0 +1,113 @@
+.section-khophumy-warehouse
+	@apply full-bleed rem:py-10 lg:rem:py-[64px] relative overflow-hidden
+	@apply rem:min-h-[724px]
+	.bg-kho
+		@apply absolute inset-0 -z-1
+		img
+			@apply w-full h-full object-cover
+
+	.container
+		@apply mx-auto
+
+	.section-header
+		@apply text-center
+
+
+	.warehouse-layout
+		@apply grid grid-cols-1 gap-10 items-center
+		@screen lg
+			@apply grid-cols-2 gap-16
+
+	.warehouse-tab-list
+		@apply flex flex-col
+
+	.warehouse-tab-btn
+		@apply w-full flex items-center gap-5 text-left py-5
+		@apply text-black rem:text-xl lg:rem:text-[28px]
+		transition: color 0.28s ease
+
+		.tab-icon
+			@apply flex-shrink-0 w-8 rem:h-[30px]
+			svg
+				@apply fill-black transition-all duration-300 block
+				transition: fill .32s ease, transform .32s ease
+	.warehouse-tab-item
+		&.active
+			.tab-icon
+				svg
+					transform: rotate(90deg)
+					@apply fill-primary-1
+			.tab-title
+				@apply font-bold text-primary-1
+
+			.warehouse-tab-desc
+				grid-template-rows: 1fr
+				opacity: 1
+				padding-bottom: 1.25rem
+
+		.tab-title
+			@apply font-normal leading-[1.35]
+			transition: color 0.28s ease
+	
+		&:hover
+			.tab-icon
+				svg
+					@apply fill-primary-1
+
+			.tab-title
+				@apply text-primary-1
+
+	.warehouse-tab-desc
+		display: grid
+		grid-template-rows: 0fr
+		opacity: 0
+		padding-bottom: 0
+		transition: grid-template-rows 0.38s ease, opacity 0.32s ease 0.04s, padding-bottom 0.32s ease
+		@apply body-base-18 min-h-0
+
+		> *
+			@apply overflow-hidden
+
+
+	.warehouse-gallery-list
+		@apply relative w-full
+		@apply rem:min-h-[360px] md:rem:min-h-[460px] lg:rem:min-h-[500px] lg:rem:min-w-[680px]
+
+	.warehouse-gallery
+		@apply absolute inset-0
+		@apply opacity-0 invisible pointer-events-none
+		transition: opacity 0.42s ease, visibility 0.42s ease
+
+		&.active
+			@apply opacity-100 visible pointer-events-auto
+
+	.warehouse-slider
+		@apply relative w-full h-full rounded-10 overflow-hidden
+
+		.swiper
+			@apply w-full h-full
+
+		.slide-image
+			@apply w-full h-full
+
+			img
+				@apply w-full h-full object-cover
+
+	.warehouse-slider-controls
+		@apply absolute left-0 bottom-0 z-10
+		@apply flex items-center justify-between rem:p-6 pointer-events-none gap-6
+
+		button
+			@apply shrink-0 rounded-full bg-black/20 text-white flex-center transition-all duration-300 z-10 pointer-events-auto
+			@apply rem:size-12 md:rem:size-16
+			&:hover
+				@apply bg-primary-1
+			i
+				@apply rem:text-2xl font-extralight
+
+			&:hover
+				background: rgba(43, 70, 160, 0.85)
+
+			&.swiper-button-disabled
+				@apply opacity-40 pointer-events-none
+			

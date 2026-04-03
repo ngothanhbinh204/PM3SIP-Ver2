@@ -1,0 +1,65 @@
+.section-cangcanphumy-mooring
+	@apply full-bleed overflow-hidden
+
+	.container-full
+		@apply px-0
+
+	.mooring-grid
+		@apply grid grid-cols-1 lg:grid-cols-2
+
+	.mooring-media
+		@apply relative overflow-hidden rem:min-h-[520px] lg:min-h-0
+
+	.mooring-image
+		@apply absolute inset-0 z-0
+		img
+			@apply w-full h-full object-cover
+
+	.mooring-stats
+		@apply absolute left-0 bottom-0 z-2 w-full py-6 gap-y-6 gap-x-3
+		@apply flex flex-row items-stretch justify-center
+		@apply flex-wrap md:flex-nowrap
+		background: rgba(0, 8, 34, 0.50)
+		backdrop-filter: blur(6px)
+		-webkit-backdrop-filter: blur(6px)
+
+	.article-stat
+		@apply relative flex flex-col rem:w-[180px] md:rem:w-[245px] flex-none items-center justify-start text-center text-white
+
+	.stat-icon
+		@apply rem:h-12 md:rem:h-16 flex-center
+		img
+			@apply h-full w-auto object-contain
+
+	.stat-value
+		@apply mt-3 font-bold text-white leading-none
+		@apply rem:text-[26px] md:rem:text-4xl lg:rem:text-[40px] tracking-[-0.8px]
+
+	.mooring-content
+		@apply relative flex items-center
+		@apply rem:px-[60px] rem:py-[40px] md:rem:px-[80px] md:rem:pr-[190px] md:rem:py-[60px] lg:rem:px-[120px] lg:rem:pr-[260px] lg:rem:py-[94px]
+
+		&::before
+			content: ''
+			@apply absolute inset-0 z-0
+			opacity: .1
+			background: linear-gradient(71deg, #2B46A0 -12.57%, #0093E9 100%)
+
+	.content-inner
+		@apply relative z-1 w-full
+
+	.section-title
+		@apply font-bold text-black leading-[1.12] text-center
+		@apply rem:text-3xl md:rem:text-4xl lg:rem:text-5xl
+
+	.content-list
+		@apply mt-6 lg:rem:mt-8 space-y-4 lg:space-y-6
+
+	.copy-desc
+		@apply mt-2 body-base-18 text-black
+		@apply rem:text-[16px] md:rem:text-[18px]
+
+@screen lg
+	.section-cangcanphumy-mooring
+		.mooring-media, .mooring-content
+			@apply rem:min-h-[585px]

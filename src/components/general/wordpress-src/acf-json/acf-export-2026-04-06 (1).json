@@ -1,0 +1,249 @@
+[
+    {
+        "key": "group_66e2994648b76",
+        "title": "Pages - Contact",
+        "fields": [
+            {
+                "key": "field_pm3ct_bg_svg",
+                "label": "Background SVG",
+                "name": "contact_bg_svg",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Ảnh nền SVG hiển thị bên trong section liên hệ (VD: bg-earth-contact.svg)",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_pm3ct_title_sub",
+                "label": "Subtitle (phụ đề trên tiêu đề)",
+                "name": "contact_title_sub",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Dòng nhỏ phía trên tiêu đề chính, VD: LIÊN HỆ HỖ TRỢ",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_pm3ct_title",
+                "label": "Tiêu đề chính (h1)",
+                "name": "contact_title",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Tiêu đề h1. Xuống dòng trong ô sẽ tự chuyển thành <br> khi hiển thị",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "rows": 3,
+                "placeholder": "TRUNG TÂM\nCHUỖI CUNG ỨNG\nTOÀN CẦU PHÚ MỸ",
+                "new_lines": ""
+            },
+            {
+                "key": "field_pm3ct_info_groups",
+                "label": "Nhóm thông tin liên hệ",
+                "name": "contact_info_groups",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Mỗi hàng là một nhóm liên hệ (VD: Trụ sở chính, Cảng Cạn, Kho)",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Thêm nhóm",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_pm3ct_info_group_title",
+                        "label": "Tiêu đề nhóm",
+                        "name": "info_group_title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "VD: KCN Chuyên sâu Phú Mỹ 3",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_pm3ct_info_groups"
+                    },
+                    {
+                        "key": "field_pm3ct_info_items",
+                        "label": "Danh sách mục thông tin",
+                        "name": "info_items",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "Mỗi hàng là 1 dòng: icon + nội dung",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "table",
+                        "pagination": 0,
+                        "min": 0,
+                        "max": 0,
+                        "collapsed": "",
+                        "button_label": "Thêm mục",
+                        "rows_per_page": 20,
+                        "parent_repeater": "field_pm3ct_info_groups",
+                        "sub_fields": [
+                            {
+                                "key": "field_pm3ct_item_icon",
+                                "label": "Icon (FA class)",
+                                "name": "item_icon",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "VD: fa-solid fa-location-dot / fa-solid fa-phone / fa-solid fa-envelope",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "fa-solid fa-location-dot",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_pm3ct_info_items"
+                            },
+                            {
+                                "key": "field_pm3ct_item_content",
+                                "label": "Nội dung",
+                                "name": "item_content",
+                                "aria-label": "",
+                                "type": "wysiwyg",
+                                "instructions": "Nhập nội dung: địa chỉ, số điện thoại (có thể có link tel:), email (có thể có link mailto:)",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "tabs": "all",
+                                "toolbar": "basic",
+                                "media_upload": 0,
+                                "delay": 0,
+                                "parent_repeater": "field_pm3ct_info_items"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_pm3ct_form_bg",
+                "label": "Background Form",
+                "name": "contact_form_bg",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Ảnh nền hiển thị bên trong khối form liên hệ bên phải (lozad-bg)",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_66e2994649a5a",
+                "label": "Form Contact (shortcode)",
+                "name": "form_contact",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Nhập shortcode Contact Form 7, VD: [contact-form-7 id=\"123\" title=\"Contact\"]",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "[contact-form-7 id=\"123\" title=\"Contact\"]",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "pages\/page-contact.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    }
+]

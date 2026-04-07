@@ -9,6 +9,7 @@ module.exports = {
 			"./node_modules/swiper/swiper-bundle.min.css",
 			"./src/_libs/Font-Awesome-642/css/all.css",
 			"./node_modules/@fancyapps/ui/dist/fancybox/fancybox.css",
+			"./node_modules/aos/dist/aos.css",
 		],
 		globalJs: [
 			"./node_modules/jquery/dist/jquery.min.js",
@@ -20,6 +21,7 @@ module.exports = {
 			"./src/_libs/countUp/waypoints.js",
 			"./src/_libs/countUp/countUp.min.js",
 			"./src/_libs/jquery.marquee/jquery.marquee.min.js",
+			"./node_modules/aos/dist/aos.js",
 		],
 		port: 8000
 	},

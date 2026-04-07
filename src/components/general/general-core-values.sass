@@ -1,19 +1,22 @@
 .section-core-values
-	@apply px-4 py-10 lg:py-20 relative overflow-hidden bg-neutral-50 lg:bg-white
+	@apply px-4 py-10 lg:py-20 relative overflow-hidden 
 	.wrapper-core-values
 		@apply relative
 	.core-values-header
-		@apply text-center mb-8 lg:mb-[60px] relative z-10
+		@apply text-center mb-8 lg:mb-10 relative z-10
 		h2
 			@apply text-[32px] md:text-[40px] lg:text-[48px] leading-tight font-bold text-neutral-950
 	.core-values-body
 		@apply relative mx-auto hidden lg:block items-center 
 		.core-values-image
-			@apply relative z-0 w-full rem:max-w-[360px] mx-auto mb-10 flex justify-center
+			@apply relative w-full rem:max-w-[360px] mx-auto mb-10 flex justify-center z-10
 			@apply lg:rem:max-w-[700px] lg:rem:mt-[80px] lg:mb-0
-			@apply xl:rem:max-w-[980px] xl:rem:mt-[140px] 
+			@apply xl:rem:max-w-[980px] 
+			@apply xl:rem:mt-[120px] 
+			@apply 3xl:rem:mt-[185px]
 			img
 				@apply w-full h-auto object-contain pointer-events-none max-w-full
+
 				
 		.core-values-list
 			@apply flex flex-col gap-6 lg:absolute lg:top-0 lg:left-0 lg:w-full lg:h-full lg:block lg:pointer-events-none z-10 w-full max-w-[400px] lg:max-w-full
@@ -55,19 +58,19 @@
 						@apply lg:rem:top-[20%] lg:rem:left-[10%] xl:rem:top-[15%] xl:rem:left-[10%]
 						@apply flex flex-col
 					&.item-3 
-						@apply lg:rem:max-w-[320px] xl:rem:max-w-[370px] lg:rem:top-[0%] xl:rem:top-[-13%] rem:left-[50%] rem:translate-x-[-50%] rem:translate-y-[-50%]
+						@apply lg:rem:max-w-[320px] xl:rem:max-w-[370px] lg:rem:top-[3%] xl:rem:top-[-8%]  3xl:rem:top-[-20%] rem:left-[50%] rem:translate-x-[-50%] rem:translate-y-[-50%]
 						@apply flex flex-col
 						p.desc
 							@apply max-w-[360px]
 					&.item-4 
-						@apply lg:rem:top-[20%] lg:rem:right-[10%] xl:rem:top-[15%] xl:rem:right-[10%]
+						@apply lg:rem:top-[20%] lg:rem:right-[10%]  xl:rem:top-[15%] xl:rem:right-[10%]
 						@apply flex flex-col
 					&.item-5
 						@apply lg:rem:top-[60%] lg:rem:right-[1%] xl:rem:top-[65%] xl:rem:right-[1%]
 						@apply flex flex-col
 						
 	.core-values-mobile
-		@apply w-full overflow-hidden relative block lg:hidden pb-10 pt-10
+		@apply w-full overflow-hidden relative block lg:hidden pt-10
 		.core-values-mobile-slider
 			@apply w-[100%]
 			.swiper-slide

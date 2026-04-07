@@ -10,7 +10,9 @@ $hex-clip: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
 	&__inner
 		@apply flex flex-col items-center relative
 		.bg-svg
-			@apply hidden lg:block absolute bottom-0 z-0 translate-y-[40%] rem:w-[1142px]
+			@apply hidden lg:block absolute bottom-0 z-0 
+			@apply translate-y-[40%] #{!important}
+			@apply rem:w-[1142px]
 			img
 				@apply w-full h-auto 
 
@@ -26,11 +28,17 @@ $hex-clip: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
 			@apply flex-row justify-center items-start gap-0
 	&__polygon-item
 		@apply relative flex-shrink-0 aspect-[406/350] rem:w-[406px]
-
-		@screen lg
+		@screen md
 			&:nth-child(2)
-				@apply rem:translate-y-[50%]
-				@apply rem:mx-[-48px]
+				@apply rem:my-[-120px] rem:translate-x-[-50%] #{!important}
+			&:nth-child(1), &:nth-child(3)
+				@apply rem:translate-x-[30%] #{!important}
+		@screen lg
+			&:nth-child(1), &:nth-child(3)
+				@apply rem:translate-x-[0%] #{!important}
+			&:nth-child(2)
+				@apply rem:translate-y-[50%] rem:translate-x-[0%] #{!important}
+				@apply rem:mx-[-48px] rem:my-[0px] #{!important}
 
 
 		// ── Accent hexagon (coloured, behind main shape) ──
@@ -67,11 +75,8 @@ $hex-clip: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
 			transition: background-color 0.4s ease
 
 		.section-khophumy-infrastructure__polygon-item:hover &
-			@apply bg-white
 			&::before
-				background-color: rgba(#fff, 0.08)
-			.bg-overlay
-				opacity: 0.15
+				@apply bg-white
 
 	&__polygon-icon
 		@apply flex items-center justify-center rem:mb-4 z-2 rem:h-[100px]

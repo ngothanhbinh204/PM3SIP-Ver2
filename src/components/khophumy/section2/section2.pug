@@ -42,9 +42,9 @@ section.section-khophumy-warehouse#he-thong-kho
 		img(src='./img/bg-kho.png', alt='Hệ thống kho tại Phú Mỹ')
 	.container
 		.section-header
-			h2.section-title= section2Data.title
+			h2.section-title(data-aos="fade-up")= section2Data.title
 		.warehouse-layout
-			.warehouse-tab-list(role='list')
+			.warehouse-tab-list(role='list', data-aos="fade-right" data-aos-delay="100")
 				each item, index in section2Data.items
 					.warehouse-tab-item(class=index === 0 ? 'active' : '', data-index=index, data-target=`#warehouse-gallery-${index}`)
 						button.warehouse-tab-btn(type='button', aria-expanded=index === 0 ? 'true' : 'false', aria-controls=`warehouse-gallery-${index}`)
@@ -54,7 +54,7 @@ section.section-khophumy-warehouse#he-thong-kho
 						if item.description
 							.warehouse-tab-desc
 								p= item.description
-			.warehouse-gallery-list
+			.warehouse-gallery-list(data-aos="fade-left" data-aos-delay="200")
 				each item, index in section2Data.items
 					.warehouse-gallery(id=`warehouse-gallery-${index}`, class=index === 0 ? 'active' : '', aria-hidden=index === 0 ? 'false' : 'true')
 						.warehouse-slider

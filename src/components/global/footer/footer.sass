@@ -1,58 +1,51 @@
+.footer-brand-title
+	@apply text-center mb-5
+	&__text
+		@apply text-40 font-bold uppercase tracking-[-0.8px] leading-[1.8] block w-full
+		background-clip: text
+		-webkit-background-clip: text
+		color: transparent
+		-webkit-text-fill-color: transparent
+		background-size: cover
+		background-position: center
+
 .footer-top
-	@apply bg-secondary-4 px-5 py-10 rounded-tl-10
+	@apply bg-cover bg-no-repeat bg-center px-6 py-10 rounded-tl-10
 	@screen md
-		@apply p-10 rounded-tl-20
+		@apply px-12 rem:py-10 rounded-tl-20
 	@screen xl
-		@apply px-20 rem:py-[74px] rounded-tl-30
+		@apply px-16 rem:py-10 rounded-tl-30
+	.container
+		@apply max-w-full px-0 mx-auto
 
 .footer-logo
-	@apply rem:w-[124px] rem:h-[72px]
+	@apply rem:w-[124px] rem:h-[72px] mx-auto
 	img
 		@apply size-full object-contain
 
-.footer-info
-	@apply body-16 font-normal text-white flex-1
-	h4
-		@apply sub-header-20 font-bold text-white uppercase mb-5
-	li
-		@apply flex gap-2 py-3 border-t border-white/20
-	a
-		@apply hover-underline
-	.icon
-		@apply size-6 min-w-6 text-base flex-center leading-normal
+.footer-address-group
+	@apply flex flex-col gap-12 xl:gap-16
 
-.footer-news-letter
-	@apply body-16 font-normal text-white
-	h4
-		@apply sub-header-24 font-bold text-white uppercase mb-5
+.footer-address-block
+	&__title
+		@apply sub-header-20 font-bold text-white uppercase pb-3 mb-3 border-b border-white
+
+.footer-address-block__content
 	p
-		@apply font-saira
-	.form-group
-		@apply mt-5 relative
-		input
-			@apply border border-white bg-transparent bg-none rounded-full py-1 pl-5 pr-25 h-12
-			@apply placeholder:text-white/50
-		button
-			@apply absolute top-0 right-0 h-12 p-2 body-16 font-semibold text-white tracking-[0.64px] uppercase bg-transparent bg-none border-none rounded-none flex items-center gap-3
-			.icon
-				@apply size-8 bg-white text-primary-2 text-xl rounded-full flex items-center overflow-hidden
-				> *
-					@apply size-full min-w-8 flex-center transition-all duration-500 ease-in-out -translate-x-full
-			&:hover
-				.icon
-					> *
-						@apply translate-x-0
+		@apply body-16 font-normal text-white py-4 border-b border-white/20 block
+		&:has(a)
+			@apply hover-underline
 
-.footer-xl-flex
-	@apply flex flex-col gap-5 xl:flex-row
 
 .footer-title
-	@apply sub-header-20 font-bold text-white uppercase mb-5
+	@apply sub-header-20 font-bold text-white uppercase pb-3 mb-3 border-b border-white
 
 .footer-menu
 	@apply space-y-3
+	a, p
+		@apply body-16 font-normal text-white py-4 border-b border-white/20 block
 	a
-		@apply body-16 font-normal text-white hover-underline
+		@apply hover-underline
 
 .footer-copyright
 	@apply body-14 font-medium text-neutral-500 text-center lg:text-left
@@ -65,16 +58,21 @@
 		@apply hover-underline
 
 .footer-bot
-	@apply px-4 py-6 flex flex-col items-center gap-5 justify-between bg-white md:px-0 xl:pt-4 xl:pb-8 lg:flex-row
+	@apply px-4 py-6 flex flex-col items-center gap-5 justify-between bg-white md:px-0 xl:py-8 lg:flex-row
+
+.footer-grid
+	@apply grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-5 xl:gap-10
+	.footer-grid__item
+		&:first-child
+			@apply col-span-1 md:col-span-2 xl:col-span-1
+
 
 footer
-	@apply relative z-100 md:px-4 xl:px-10 xl:z-0
-	@screen xl
-		.col-cus-1
-			@apply w-[calc(620/1720*100%)]
-		.col-cus-2
-			@apply w-[calc(360/1720*100%)]
-		.col-cus-3
-			@apply w-[calc(360/1720*100%)]
-		.col-cus-4
-			@apply w-[calc(380/1720*100%)]
+	@apply relative z-100 md:px-4 xl:px-10 xl:z-0 mt-10
+	.social-list
+		ul
+			@apply flex flex-wrap rem:gap-8
+		a
+			@apply flex-center text-white text-5xl bg-none
+			&:hover
+				@apply text-primary-2

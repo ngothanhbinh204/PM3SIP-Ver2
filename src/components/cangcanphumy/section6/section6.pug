@@ -35,7 +35,7 @@ section.section-cangcanphumy-mooring#dich-vu-ben-phao
 		}
 	.container-full
 		.mooring-grid
-			.mooring-media
+			.mooring-media(data-aos="fade-right")
 				.mooring-image.img-cover
 					img(src=section6Data.image, alt=section6Data.imageAlt)
 				.mooring-stats
@@ -44,7 +44,7 @@ section.section-cangcanphumy-mooring#dich-vu-ben-phao
 							.stat-icon
 								img(src=item.icon, alt='Mooring service stat icon')
 							.stat-value= item.value
-			.mooring-content
+			.mooring-content(data-aos="fade-left" data-aos-delay="150")
 				.content-inner
 					h2.section-title= section6Data.title
 					.content-list

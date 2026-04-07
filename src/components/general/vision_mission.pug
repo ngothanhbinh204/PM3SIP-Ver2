@@ -14,21 +14,8 @@ section.general-vision-mission.section-large.full-bleed#dinh-huong
 				.arrow-svg.arrow-right
 					img(src="./img/arrow_vsms_right.svg", alt="")
 				.honeycomb-cluster
-					.hex-item.hex-center(data-aos="zoom-in" data-aos-duration="800" data-aos-delay="0")
-						.flipper
-							.face.front
-								.hex-bg
-									img(src="./img/box_honeycomb.svg", alt="")
-								.hex-icon
-									img(src="./img/icon_innerHoney.svg", alt="")
-							.face.back
-								.hex-bg
-									img(src="./img/box_honeycomb.svg", alt="")
-								.hex-icon
-									img(src="./img/icon_innerHoney.svg", alt="")
-
-					- for(let i = 1; i <= 6; i++)
-						.hex-item(class=`hex-${i}` data-aos="zoom-in" data-aos-duration="800" data-aos-delay=`${i * 100}`)
+					.hex-wrap.hex-center(data-aos="zoom-in" data-aos-duration="800" data-aos-delay="0")
+						.hex-item
 							.flipper
 								.face.front
 									.hex-bg
@@ -40,6 +27,21 @@ section.general-vision-mission.section-large.full-bleed#dinh-huong
 										img(src="./img/box_honeycomb.svg", alt="")
 									.hex-icon
 										img(src="./img/icon_innerHoney.svg", alt="")
+
+					- for(let i = 1; i <= 6; i++)
+						.hex-wrap(class=`hex-${i}` data-aos="zoom-in" data-aos-duration="800" data-aos-delay=`${i * 100}`)
+							.hex-item
+								.flipper
+									.face.front
+										.hex-bg
+											img(src="./img/box_honeycomb.svg", alt="")
+										.hex-icon
+											img(src="./img/icon_innerHoney.svg", alt="")
+									.face.back
+										.hex-bg
+											img(src="./img/box_honeycomb.svg", alt="")
+										.hex-icon
+											img(src="./img/icon_innerHoney.svg", alt="")
 			.col-mission
 				h2.site-title.is-white Sứ mệnh
 				.desc Cung cấp các giải pháp logistics thông minh, đa dạng, tối ưu chi phí và thời gian, hỗ trợ doanh nghiệp nâng cao năng lực cạnh tranh và mở rộng thị trường quốc tế.

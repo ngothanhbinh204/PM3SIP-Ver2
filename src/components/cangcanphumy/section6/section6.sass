@@ -18,7 +18,7 @@
 	.mooring-stats
 		@apply absolute left-0 bottom-0 z-2 w-full py-6 gap-y-6 gap-x-3
 		@apply flex flex-row items-stretch justify-center
-		@apply flex-wrap md:flex-nowrap
+		@apply flex-wrap
 		background: rgba(0, 8, 34, 0.50)
 		backdrop-filter: blur(6px)
 		-webkit-backdrop-filter: blur(6px)
@@ -37,7 +37,10 @@
 
 	.mooring-content
 		@apply relative flex items-center
-		@apply rem:px-[60px] rem:py-[40px] md:rem:px-[80px] md:rem:pr-[190px] md:rem:py-[60px] lg:rem:px-[120px] lg:rem:pr-[260px] lg:rem:py-[94px]
+		@apply rem:px-[60px] rem:py-[40px]
+		@apply md:rem:px-[80px] md:rem:pr-[190px] md:rem:py-[60px] 
+		@apply lg:rem:px-[120px] lg:rem:pr-[40px] lg:rem:py-[94px]
+		@apply xl:rem:pr-[260px] 
 
 		&::before
 			content: ''

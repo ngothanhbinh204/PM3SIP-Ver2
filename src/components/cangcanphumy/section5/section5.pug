@@ -84,9 +84,9 @@ section.section-cangcanphumy-services#dich-vu-cang
 		img(src='./img/dich_vu_cang.svg', alt='')
 	.container
 		.section-header
-			h2.section-title= section5Data.title
+			h2.section-title(data-aos="fade-up")= section5Data.title
 		.service-layout
-			.service-tab-list(role='tablist', aria-label=section5Data.title)
+			.service-tab-list(role='tablist', aria-label=section5Data.title, data-aos="fade-right")
 				each item, index in section5Data.items
 					button.service-tab-item(type='button', class=index === 0 ? 'active' : '', data-target=`#service-pane-${index}`, aria-selected=index === 0 ? 'true' : 'false')
 						span.item-icon(aria-hidden='true')
@@ -95,7 +95,7 @@ section.section-cangcanphumy-services#dich-vu-cang
 							</svg>
 
 						span.item-title= item.title
-			.service-pane-list
+			.service-pane-list(data-aos="fade-left" data-aos-delay="150")
 				each item, index in section5Data.items
 					article.service-pane(id=`service-pane-${index}`, class=index === 0 ? 'active' : '')
 						.pane-image.img-cover

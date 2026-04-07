@@ -5,6 +5,13 @@ $(function () {
 	countUpInit();
 	loadMoreItem();
 
+	AOS.init({
+		duration: 800,
+		easing: 'ease-out-cubic',
+		once: true,
+		offset: 100,
+	});
+
 	accordionCollapse();
 
 	$('.marquee').marquee({
@@ -40,6 +47,7 @@ $(function () {
 	section5ServiceTabs();
 	section5ServicePopups();
 	khoPhuyWarehouseAccordion();
+	khoPhuyServicesSlider();
 });
 
 
@@ -301,45 +309,7 @@ const homeBannerSwiper = new Swiper(".banner-slider .swiper", {
 });
 
 
-const generalBannerThumbs = new Swiper(".general-banner .banner-thumbs", {
-	spaceBetween: 20,
-	slidesPerView: 2,
-	freeMode: true,
-	watchSlidesProgress: true,
-});
-const generalBannerTop = new Swiper(".general-banner .banner-top", {
-	...defaultSettingSwiper,
-	effect: "fade",
-	spaceBetween: 0,
-	rewind: true,
-	navigation: {
-		nextEl: ".general-banner .button-next",
-		prevEl: ".general-banner .button-prev",
-	},
-	thumbs: {
-		swiper: generalBannerThumbs,
-	},
-});
 
-const generalBannerSwiper = new Swiper(".general-banner .banner-slider .swiper", {
-	loop: true,
-	autoplay: {
-		delay: 5000,
-		disableOnInteraction: false,
-		pauseOnMouseEnter: true,
-	},
-	// effect: "fade",
-	speed: 1000,
-	...defaultSettingSwiper,
-	navigation: {
-		nextEl: ".general-banner .button-next",
-		prevEl: ".general-banner .button-prev",
-	},
-	pagination: {
-		el: ".general-banner .swiper-pagination",
-		clickable: true,
-	},
-});
 
 $('.one-slider').each(function (index) {
 	var loopDefault = {
@@ -918,27 +888,18 @@ function countUpInit() {
 
 		const countUp = new CountUp(`countUp-${index}`, endVal, options);
 
-		// if (!countUp.error) {
-		// 	countUp.start();
-		// } else {
-		// 	console.error(countUp.error);
-		// }
-
+		const waypointEl = document.getElementsByClassName('section-count-up')[0] || this;
 		var waypoint = new Waypoint({
-			element: document.getElementsByClassName('section-count-up')[0],
+			element: waypointEl,
 			handler: function (direction) {
-
 				if (direction == "up") {
 					countUp.reset();
 				} else {
 					countUp.start();
 				}
-
 			},
 			offset: '50%'
 		});
-
-		// countUp.handleScroll();
 	});
 }
 
@@ -1135,6 +1096,50 @@ function khoPhuyWarehouseAccordion() {
 			initWarehouseSwiper($gallery);
 		}
 	});
+}
+
+function khoPhuyServicesSlider() {
+    if (!$('.section-khophumy-services').length) return;
+
+    new Swiper('.section-khophumy-services .swiper', {
+        preventInteractionOnTransition: true,
+        observer: true,
+        observeParents: true,
+        loop: true,
+        speed: 800,
+        spaceBetween: 24,
+        centeredSlides: false, 
+        slidesOffsetBefore: 20,
+        slidesOffsetAfter: 20,
+        slidesPerView: 1.2, 
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        breakpoints: {
+            576: {
+                slidesPerView: 2.5,
+				slidesOffsetBefore: 80,
+                slidesOffsetAfter: 80,
+            },
+            768: {
+                slidesPerView: 3.5,
+				slidesOffsetBefore: 80,
+                slidesOffsetAfter: 80,
+            },
+            1024: {
+                slidesPerView: 4.5, 
+				slidesOffsetBefore: 60,
+                slidesOffsetAfter: 60,
+            },
+            1440: {
+                slidesPerView: 4.5, 
+				slidesOffsetBefore: 80,
+                slidesOffsetAfter: 80,
+            },
+        },
+    });
 }
 
 function initSection5PopupSlider($popup) {

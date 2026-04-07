@@ -17,12 +17,12 @@ section.section-cangcanphumy-documents
 				]
 			}
 		.section-header
-			h2.section-title= section3Data.title
+			h2.section-title(data-aos="fade-up")= section3Data.title
 		.document-list
-			each item in section3Data.documents
-				a.document-card(href=item.file, download)
+			each item, index in section3Data.documents
+				a.document-card(href=item.file, download, data-aos="fade-up" data-aos-delay=`${index * 150}`)
 					.card-action(aria-label='Download file')
-						i.fa-light.fa-download
+						i.fa-solid.fa-download
 					.card-icon
 						img(src='./img/pdf-icon.svg', alt='PDF file')
 					.card-name= item.title

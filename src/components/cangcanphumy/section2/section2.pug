@@ -39,7 +39,7 @@ section.section-cangcanphumy-feature-grid
 			]
 		.feature-grid
 			each item, index in section2Items
-				article.feature-card(class=[`is-${item.type}`, item.hasCorner ? 'has-corner' : '', item.cornerAlign ? `corner-${item.cornerAlign}` : ''])
+				article.feature-card(class=[`is-${item.type}`, item.hasCorner ? 'has-corner' : '', item.cornerAlign ? `corner-${item.cornerAlign}` : ''] data-aos="fade-up" data-aos-delay=`${(index % 3) * 120}`)
 					if item.type === 'image'
 						.card-image.img-cover
 							img(src=item.image, alt=item.alt)

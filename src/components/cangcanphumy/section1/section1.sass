@@ -14,7 +14,7 @@
 		@apply relative z-10
 
 	.banner-inner
-		@apply rem:max-w-[1520px] mx-auto
+		@apply rem:max-w-[1520px] px-4 lg:px-0 mx-auto
 
 	.banner-heading
 		@apply relative text-center font-bold uppercase leading-[1.15] text-primary-1
@@ -31,17 +31,21 @@
 			@apply relative z-1 block
 
 	.banner-card-list
-		@apply mt-8 flex flex-col lg:flex-row gap-6 lg:gap-8 xl:rem:mt-20
+		@apply mt-8 flex flex-col lg:flex-row gap-6 lg:gap-8 xl:rem:mt-20 justify-center items-center
 
 	.clip-defs
     @apply absolute w-0 h-0 overflow-hidden pointer-events-none
 
 	.banner-card
-		@apply relative flex flex-col flex-shrink-0 rem:w-[680px] rem:h-[420px]
+		@apply relative flex flex-col flex-shrink-0
+		// Thay rem:w-[680px] rem:h-[420px] → giữ tỉ lệ 680:420
+		@apply w-full rem:max-w-[500px] 
+		@apply xl:rem:max-w-[680px]
+		aspect-ratio: 680 / 420
 
 		.card-image
 			@apply absolute inset-0 z-0
-			clip-path: url(#clip-card-left)  
+			clip-path: url(#clip-card-left)
 			img
 				@apply w-full h-full object-cover
 
@@ -55,31 +59,26 @@
 
 			.card-title
 				@apply relative inline-block font-bold uppercase leading-[1.15]
-				@apply rem:text-[16px] sm:rem:text-[18px] md:rem:text-[22px] lg:rem:text-2xl
+				@apply rem:text-[16px] sm:rem:text-[18px] md:rem:text-xl xl:rem:text-2xl
 				background: linear-gradient(180deg, #0A2A91 0%, #439EFF 100%)
 				background-clip: text
 				-webkit-background-clip: text
 				-webkit-text-fill-color: transparent
 
 		&.is-left
-			@apply ml-auto
+			@apply lg:ml-auto
 			.card-image
 				clip-path: url(#clip-card-left)
-			.card-border
-				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='680' height='420' viewBox='0 0 680 420' fill='none'%3E%3Cpath d='M40 2H530.129C541.481 2.00015 552.238 7.07568 559.456 15.8369L612.956 80.7715L669.328 149.192C674.934 155.997 678 164.539 678 173.355V380C678 400.987 660.987 418 640 418H40C19.0132 418 2 400.987 2 380V40C2 19.0132 19.0132 2 40 2Z' stroke='white' stroke-width='4'/%3E%3C/svg%3E")
-				background-size: 100% 100%
 
 		&.is-right
-			@apply mr-auto
+			@apply lg:mr-auto
 			.card-image
 				clip-path: url(#clip-card-right)
-			.card-border
-				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='680' height='420' viewBox='0 0 680 420' fill='none'%3E%3Cpath d='M40 2H640C660.987 2 678 19.0132 678 40V380C678 400.987 660.987 418 640 418H149.871C138.519 418 127.762 412.924 120.544 404.163L67.044 339.228L10.672 270.808C5.066 264.003 2 255.461 2 246.645V40C2 19.0132 19.0132 2 40 2Z' stroke='white' stroke-width='4'/%3E%3C/svg%3E")
-        		background-size: 100% 100%
 			.card-caption
-				@apply rem:max-w-[554px] right-0 left-auto
-	@screen md
-		.banner-card-list
-			@apply items-end
+				@apply rem:max-w-[420px] xl:rem:max-w-[554px] right-0 left-auto
+	// @screen md
+	// 	.banner-card-list
+	// 		@apply justify-center items-center
+	// 		// @apply rem:max-w-[500px]
 .card-border
     @apply absolute inset-0 z-1 pointer-events-none w-full h-full

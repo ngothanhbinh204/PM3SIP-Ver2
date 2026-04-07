@@ -149,3 +149,26 @@ function generalNavScrollSpy() {
 }
 
 generalNavScrollSpy();
+
+
+
+const generalBannerThumbs = new Swiper(".general-banner .banner-thumbs", {
+	spaceBetween: 20,
+	slidesPerView: 2,
+	freeMode: true,
+	watchSlidesProgress: true,
+});
+const generalBannerTop = new Swiper(".general-banner .banner-top", {
+	...defaultSettingSwiper,
+	effect: "fade",
+	spaceBetween: 0,
+	rewind: true,
+	navigation: {
+		nextEl: ".general-banner .button-next",
+		prevEl: ".general-banner .button-prev",
+	},
+	thumbs: {
+		swiper: generalBannerThumbs,
+	},
+});
+

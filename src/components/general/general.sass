@@ -2,7 +2,7 @@
 	@apply full-bleed #{!important} 
 	@apply lg:mx-0 relative
 	.main-title-banner
-		@apply text-white text-center font-bold text-3xl md:text-5xl lg:rem:text-[52px]
+		@apply text-white text-center font-bold text-3xl md:text-5xl lg:rem:text-[52px] px-4
 		@apply absolute rem:top-[80px] left-1/2 -translate-x-1/2 w-full z-10
 	.banner-top
 		.image
@@ -14,9 +14,8 @@
 	.swiper-relative
 		@apply md:px-21 md:rem:max-w-[868px] md:w-full md:mx-auto
 	.banner-thumbs
-		@apply hidden md:block
 		.image
-			@apply aspect-[320/140] rem:h-[140px] bg-primary-2
+			@apply lg:aspect-[320/140] lg:rem:h-[140px] bg-primary-2
 			img
 				@apply transition-all
 		.swiper-slide-thumb-active
@@ -24,7 +23,7 @@
 				img
 					@apply rounded-br-6
 	.banner-title
-		@apply absolute left-1/2 -translate-x-1/2 w-full bottom-30 z-10 header-48 font-bold text-white text-center rem:max-w-full px-5 mx-auto lg:rem:bottom-[200px]
+		@apply absolute left-1/2 -translate-x-1/2 w-full bottom-1/2 z-10 header-48 font-bold text-white text-center rem:max-w-full px-5 mx-auto lg:rem:bottom-[200px]
 		.top-banner-title
 			@apply text-white text-center w-fit font-bold text-3xl lg:rem:text-[40px] leading-[1.2] mx-auto
 			@apply pb-3 border-b-4 border-white mb-3
@@ -35,7 +34,7 @@
 	.caption
 		@apply absolute bottom-0 left-0 w-full z-2 p-4 pt-10 md:pb-10 xl:rem:h-[440px] xl:flex xl:flex-col xl:justify-end xl:items-center
 	.swiper-button
-		@apply flex-center gap-5
+		@apply flex-center gap-5 mt-5 lg:mt-0
 		> *
 			@apply size-16 bg-black/20 text-white border-none hover:bg-primary-2 hover:text-white
 			i
@@ -51,7 +50,7 @@
 			
 
 .general-nav
-	@apply sticky left-0 w-full z-40 bg-[#f5f5f5]
+	@apply sticky left-0 z-40 bg-[#f5f5f5]
 	@apply top-[var(--header-height)]
 	.nav-list
 		@apply flex items-center justify-between overflow-x-auto gap-6 lg:gap-12 xl:gap-16
@@ -68,12 +67,10 @@
 			@apply text-primary-1 border-primary-1 font-bold
 
 .general-intro
-	@apply relative lg:rem:py-[128px]
+	@apply relative lg:rem:py-[128px] overflow-hidden
 	.bg-intro
-		@apply w-full h-full
-		@apply absolute inset-0 w-full h-full bg-[#4C69B1] z-0
+		@apply absolute inset-0 w-full h-full z-0
 		@apply bg-no-repeat bg-center bg-cover
-		// mix-blend-mode: plus-darker
 	.container
 		@apply relative z-10
 	.intro-header
@@ -257,7 +254,7 @@
 
 
 .general-certificates
-	@apply px-6
+	@apply px-4 lg:px-10
 	.site-title
 		@apply text-center
 	.cert-slider-wrapper
@@ -272,7 +269,9 @@
 		@apply flex items-center justify-center mt-8 gap-4
 		@apply relative
 		.button-prev, .button-next
-			@apply w-12 h-12 rounded-full bg-neutral-200 flex items-center justify-center text-neutral-600 hover:bg-primary-500 hover:text-white transition-colors cursor-pointer xl:pointer-events-auto
+			@apply size-12 lg:size-16 rounded-full bg-[rgba(0,0,0,0.2)] flex items-center justify-center text-white hover:bg-primary-500 hover:text-white transition-colors cursor-pointer xl:pointer-events-auto
+			i
+				@apply transition-all duration-200 ease-in-out font-light text-2xl
 		.button-prev
 			@apply xl:-ml-16
 		.button-next

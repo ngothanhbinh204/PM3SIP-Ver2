@@ -1,31 +1,30 @@
 section.section-cangcanphumy-banner
-	svg.clip-defs(aria-hidden="true" focusable="false")
+	svg.clip-defs(aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg")
 		defs
-			//- Card TRÁI — path gốc từ Figma (680×420)
-			clipPath#clip-card-left(clipPathUnits="userSpaceOnUse")
+			clipPath#clip-card-left(clipPathUnits="objectBoundingBox" transform="scale(0.001471, 0.002381)")
 				path(d="M40 2H530.129C541.481 2.00015 552.238 7.07568 559.456 15.8369L612.956 80.7715L669.328 149.192C674.934 155.997 678 164.539 678 173.355V380C678 400.987 660.987 418 640 418H40C19.0132 418 2 400.987 2 380V40C2 19.0132 19.0132 2 40 2Z")
 			
-			clipPath#clip-card-right(clipPathUnits="userSpaceOnUse")
+			clipPath#clip-card-right(clipPathUnits="objectBoundingBox" transform="scale(0.001471, 0.002381)")
 				path(d="M40 2H640C660.987 2 678 19.0132 678 40V380C678 400.987 660.987 418 640 418H149.871C138.519 418 127.762 412.924 120.544 404.163L67.044 339.228L10.672 270.808C5.066 264.003 2 255.461 2 246.645V40C2 19.0132 19.0132 2 40 2Z")
 
 	.banner-background.img-cover
 		img(src="./img/home-about-bg.jpg", alt="")
 	.container-full
 		.banner-inner
-			h1.banner-heading(data-text='"THÀNH CÔNG CỦA BẠN LÀ THÀNH CÔNG CỦA CHÚNG TÔI"')
+			h1.banner-heading(data-text='"THÀNH CÔNG CỦA BẠN LÀ THÀNH CÔNG CỦA CHÚNG TÔI"' data-aos="fade-down" data-aos-duration="900")
 				span "THÀNH CÔNG CỦA BẠN LÀ THÀNH CÔNG CỦA CHÚNG TÔI"
 			.banner-card-list
-				article.banner-card.is-left
+				article.banner-card.is-left(data-aos="fade-right" data-aos-delay="200")
 					.card-image
-						img(src="./img/home-about-bg.jpg", alt="")
+						img(src="./img/about-2-bg.jpg", alt="")
 					svg.card-border(viewBox="0 0 680 420" preserveAspectRatio="none" aria-hidden="true")
 						path(d="M40 2H530.129C541.481 2.00015 552.238 7.07568 559.456 15.8369L612.956 80.7715L669.328 149.192C674.934 155.997 678 164.539 678 173.355V380C678 400.987 660.987 418 640 418H40C19.0132 418 2 400.987 2 380V40C2 19.0132 19.0132 2 40 2Z" fill="none" stroke="white" stroke-width="4")
 					.card-caption
 						h2.card-title HỆ SINH THÁI LOGISTICS TOÀN DIỆN
 
-				article.banner-card.is-right
+				article.banner-card.is-right(data-aos="fade-left" data-aos-delay="350")
 					.card-image
-						img(src="./img/home-about-bg.jpg", alt="")
+						img(src="./img/about-2-bg.jpg", alt="")
 					svg.card-border(viewBox="0 0 680 420" preserveAspectRatio="none" aria-hidden="true")
 						path(d="M40 2H640C660.987 2 678 19.0132 678 40V380C678 400.987 660.987 418 640 418H149.871C138.519 418 127.762 412.924 120.544 404.163L67.044 339.228L10.672 270.808C5.066 264.003 2 255.461 2 246.645V40C2 19.0132 19.0132 2 40 2Z" fill="none" stroke="white" stroke-width="4")
 					.card-caption

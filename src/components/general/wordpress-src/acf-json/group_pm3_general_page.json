@@ -1,0 +1,636 @@
+{
+    "key": "group_pm3_general_page",
+    "title": "General Page — Tổng quan",
+    "fields": [
+
+        {
+            "key": "field_pm3_gen_tab_banner",
+            "label": "Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_gen_banner_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "banner_section_id",
+            "type": "text",
+            "instructions": "VD: banner — dùng như id=\"...\" trên thẻ <section>"
+        },
+        {
+            "key": "field_pm3_gen_banner_slides",
+            "label": "Danh sách slide",
+            "name": "banner_slides",
+            "type": "repeater",
+            "min": 1,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm slide",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_gen_banner_title",
+                    "label": "Tiêu đề chính (H1)",
+                    "name": "banner_title",
+                    "type": "text",
+                    "instructions": "Hiển thị as <h1> trên slide"
+                },
+                {
+                    "key": "field_pm3_gen_banner_sub_title",
+                    "label": "Tiêu đề phụ",
+                    "name": "banner_sub_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_gen_banner_description",
+                    "label": "Mô tả ngắn",
+                    "name": "banner_description",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_gen_banner_image",
+                    "label": "Ảnh banner (1920×780)",
+                    "name": "banner_image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_gen_tab_nav",
+            "label": "Điều hướng",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_gen_nav_items",
+            "label": "Danh sách tab điều hướng",
+            "name": "nav_items",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm mục",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_gen_nav_label",
+                    "label": "Nhãn hiển thị",
+                    "name": "nav_label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_gen_nav_href",
+                    "label": "Anchor / Link",
+                    "name": "nav_href",
+                    "type": "text",
+                    "instructions": "VD: #gioi-thieu"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_gen_tab_newsfeed",
+            "label": "Tin tức nhanh",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_gen_newsfeed_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "newsfeed_section_id",
+            "type": "text",
+            "instructions": "VD: tin-tuc-nhanh"
+        },
+        {
+            "key": "field_pm3_gen_news_posts",
+            "label": "Bài viết tin tức hiển thị",
+            "name": "news_posts",
+            "type": "relationship",
+            "post_type": ["post"],
+            "filters": ["search"],
+            "return_format": "object",
+            "min": 0,
+            "max": 0,
+            "instructions": "Chọn các bài viết hiển thị trong ticker marquee"
+        },
+
+        {
+            "key": "field_pm3_gen_tab_intro",
+            "label": "Giới thiệu",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_gen_intro_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "intro_section_id",
+            "type": "text",
+            "instructions": "VD: gioi-thieu"
+        },
+        {
+            "key": "field_pm3_gen_intro_bg_image",
+            "label": "Ảnh nền section Giới thiệu",
+            "name": "intro_bg_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "instructions": "Thay thế ảnh hardcode bg-ss2.png"
+        },
+        {
+            "key": "field_pm3_gen_intro_subtitle",
+            "label": "Tiêu đề nhỏ (sub-title)",
+            "name": "intro_subtitle",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_gen_intro_title",
+            "label": "Tiêu đề chính",
+            "name": "intro_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_gen_intro_desc",
+            "label": "Mô tả",
+            "name": "intro_desc",
+            "type": "wysiwyg",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_pm3_gen_intro_stats",
+            "label": "Thống kê số liệu",
+            "name": "intro_stats",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm thống kê",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_gen_stat_icon",
+                    "label": "Icon",
+                    "name": "stat_icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail"
+                },
+                {
+                    "key": "field_pm3_gen_stat_number",
+                    "label": "Số (CountUp target)",
+                    "name": "stat_number",
+                    "type": "number"
+                },
+                {
+                    "key": "field_pm3_gen_stat_unit",
+                    "label": "Đơn vị",
+                    "name": "stat_unit",
+                    "type": "text",
+                    "instructions": "VD: ha, km, TEU..."
+                },
+                {
+                    "key": "field_pm3_gen_stat_title",
+                    "label": "Chú thích",
+                    "name": "stat_title",
+                    "type": "text"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_gen_tab_infra",
+            "label": "Hạ tầng",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_gen_infra_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "infra_section_id",
+            "type": "text",
+            "instructions": "VD: ha-tang"
+        },
+        {
+            "key": "field_pm3_gen_infra_title",
+            "label": "Tiêu đề section",
+            "name": "infra_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_gen_infra_items",
+            "label": "Danh sách hạ tầng",
+            "name": "infra_items",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm mục hạ tầng",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_gen_infra_item_title",
+                    "label": "Tên hạ tầng",
+                    "name": "infra_item_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_gen_infra_item_image",
+                    "label": "Ảnh nền (1920×780)",
+                    "name": "infra_item_image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_pm3_gen_infra_item_content",
+                    "label": "Nội dung (danh sách <ul>)",
+                    "name": "infra_item_content",
+                    "type": "wysiwyg",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "instructions": "Nhập nội dung dạng danh sách. VD: <ul><li>Diện tích: 46 ha</li></ul>"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_gen_tab_vision",
+            "label": "Tầm nhìn — Sứ mệnh",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_gen_vision_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "vision_section_id",
+            "type": "text",
+            "instructions": "VD: dinh-huong"
+        },
+        {
+            "key": "field_pm3_gen_vision_title",
+            "label": "Tầm nhìn — Tiêu đề",
+            "name": "vision_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_gen_vision_desc",
+            "label": "Tầm nhìn — Nội dung",
+            "name": "vision_desc",
+            "type": "wysiwyg",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_pm3_gen_mission_title",
+            "label": "Sứ mệnh — Tiêu đề",
+            "name": "mission_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_gen_mission_desc",
+            "label": "Sứ mệnh — Nội dung",
+            "name": "mission_desc",
+            "type": "wysiwyg",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_pm3_gen_hex_items",
+            "label": "Honeycomb — Các ô (tối đa 7)",
+            "name": "hex_items",
+            "type": "repeater",
+            "min": 0,
+            "max": 7,
+            "layout": "table",
+            "button_label": "Thêm ô honeycomb",
+            "instructions": "Thứ tự: ô trung tâm (hex-center) → hex-1 → hex-2 → ... → hex-6",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_gen_hex_icon",
+                    "label": "Icon",
+                    "name": "hex_icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_gen_tab_corevalues",
+            "label": "Giá trị cốt lõi",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_gen_cv_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "cv_section_id",
+            "type": "text",
+            "instructions": "VD: gia-tri-cot-loi"
+        },
+		{
+			"key": "field_pm3_gen_cv_bg_image",
+			"label": "Ảnh nền (SVG)",
+			"name": "cv_bg_image",
+			"type": "image",
+			"return_format": "array"
+		},
+        {
+            "key": "field_pm3_gen_cv_title",
+            "label": "Tiêu đề section",
+            "name": "cv_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_gen_core_values",
+            "label": "Danh sách giá trị cốt lõi",
+            "name": "core_values",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm giá trị",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_gen_cv_icon",
+                    "label": "Icon (mobile slider)",
+                    "name": "cv_icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail"
+                },
+                {
+                    "key": "field_pm3_gen_cv_item_title",
+                    "label": "Tiêu đề",
+                    "name": "cv_item_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_gen_cv_item_subtitle",
+                    "label": "Tiêu đề phụ (câu trích dẫn)",
+                    "name": "cv_item_subtitle",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_gen_cv_item_desc",
+                    "label": "Mô tả",
+                    "name": "cv_item_desc",
+                    "type": "wysiwyg",
+                    "toolbar": "basic",
+                    "media_upload": 0
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_gen_tab_location",
+            "label": "Vị trí chiến lược",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_gen_location_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "location_section_id",
+            "type": "text",
+            "instructions": "VD: tiem-nang"
+        },
+        {
+            "key": "field_pm3_gen_location_title",
+            "label": "Tiêu đề section",
+            "name": "location_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_gen_location_desc",
+            "label": "Mô tả",
+            "name": "location_desc",
+            "type": "wysiwyg",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_pm3_gen_location_subtitle",
+            "label": "Tiêu đề phụ (Vận tải đa phương thức)",
+            "name": "location_subtitle",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_gen_location_tabs",
+            "label": "Tab bản đồ",
+            "name": "location_tabs",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm tab bản đồ",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_gen_ltab_label",
+                    "label": "Nhãn tab",
+                    "name": "ltab_label",
+                    "type": "text",
+                    "instructions": "VD: Đường bộ, Đường thuỷ..."
+                },
+                {
+                    "key": "field_pm3_gen_ltab_map",
+                    "label": "Bản đồ (SVG hoặc PNG)",
+                    "name": "ltab_map",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_pm3_gen_ltab_info_title",
+                    "label": "Tiêu đề hộp thông tin",
+                    "name": "ltab_info_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_gen_ltab_info_content",
+                    "label": "Nội dung hộp thông tin",
+                    "name": "ltab_info_content",
+                    "type": "wysiwyg",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "instructions": "Nhập dạng <ul><li><strong>2km</strong> - Cụm cảng Cái Mép</li></ul>"
+                },
+                {
+                    "key": "field_pm3_gen_ltab_legend_title",
+                    "label": "Tiêu đề Chú thích",
+                    "name": "ltab_legend_title",
+                    "type": "text",
+                    "instructions": "VD: Chú thích"
+                },
+				{
+				"key": "field_pm3_gen_ltab_legend_items",
+				"label": "Danh sách chú thích",
+				"name": "ltab_legend_items",
+				"type": "repeater",
+				"button_label": "Thêm chú thích",
+				"sub_fields": [
+					{
+					"key": "field_pm3_gen_ltab_legend_type",
+					"label": "Loại đường",
+					"name": "type",
+					"type": "select",
+					"choices": {
+						"red": "Cao tốc",
+						"dark": "Quốc lộ",
+						"pink": "Vành đai"
+					},
+					"default_value": "red"
+					}
+				]
+				}
+            ]
+        },
+
+        {
+            "key": "field_pm3_gen_tab_services",
+            "label": "Dịch vụ",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_gen_services_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "services_section_id",
+            "type": "text",
+            "instructions": "VD: dich-vu"
+        },
+        {
+            "key": "field_pm3_gen_services_title",
+            "label": "Tiêu đề section",
+            "name": "services_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_gen_service_cards",
+            "label": "Danh sách dịch vụ",
+            "name": "service_cards",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm dịch vụ",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_gen_svc_image",
+                    "label": "Ảnh (800×450)",
+                    "name": "svc_image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_pm3_gen_svc_title",
+                    "label": "Tiêu đề",
+                    "name": "svc_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_gen_svc_desc",
+                    "label": "Mô tả",
+                    "name": "svc_desc",
+                    "type": "wysiwyg",
+                    "toolbar": "basic",
+                    "media_upload": 0
+                },
+                {
+                    "key": "field_pm3_gen_svc_link",
+                    "label": "Đường dẫn (Tìm hiểu thêm)",
+                    "name": "svc_link",
+                    "type": "link",
+                    "return_format": "array"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_gen_tab_certs",
+            "label": "Chứng chỉ",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_gen_certs_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "certs_section_id",
+            "type": "text",
+            "instructions": "VD: chung-chi"
+        },
+        {
+            "key": "field_pm3_gen_certs_title",
+            "label": "Tiêu đề section",
+            "name": "certs_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_gen_certificates",
+            "label": "Danh sách chứng chỉ",
+            "name": "certificates",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm chứng chỉ",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_gen_cert_image",
+                    "label": "Ảnh chứng chỉ (300×400)",
+                    "name": "cert_image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_pm3_gen_cert_title",
+                    "label": "Tên chứng chỉ",
+                    "name": "cert_title",
+                    "type": "text"
+                }
+            ]
+        }
+
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-general.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "ACF fields cho trang General — Tổng quan (page-general.php)",
+    "show_in_rest": 0,
+    "modified": 1775433600
+}

@@ -1,0 +1,39 @@
+.section-khophumy-services
+	@apply full-bleed rem:py-[56px] lg:rem:py-[80px] overflow-hidden
+	background: linear-gradient(180deg, #FFFFFF 0%, #EBF3FB 100%)
+
+	.section-header
+		@apply text-center container
+
+	// ── Full-bleed swiper wrapper ──
+	&__swiper
+		@apply w-full
+
+		.swiper
+			@apply w-full overflow-visible
+
+	// ── Individual card ──
+	.service-card
+		@apply relative w-full overflow-hidden rounded-10 flex flex-col justify-center items-center text-center rem:px-6 rem:py-6
+		@apply aspect-[400/700] lg:aspect-[400/620]
+
+		&__image
+			@apply absolute inset-0 z-0
+			img
+				@apply w-full h-full object-cover transition-transform duration-700 ease-in-out
+
+		&__overlay
+			@apply absolute inset-0 z-1 bg-black/20
+
+		&__body
+			@apply relative z-2
+
+		&__title
+			@apply font-bold text-white leading-[1.3]
+			@apply rem:text-xl md:text-2xl xl:rem:text-[40px]
+			text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4)
+
+		// Subtle hover
+		&:hover
+			.service-card__image img
+				transform: scale(1.2)

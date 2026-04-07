@@ -1,0 +1,28 @@
+section.section-khophumy-services#dich-vu
+	-
+		var section3Data = {
+			title: 'Các dịch vụ của chúng tôi',
+			items: [
+				{ title: 'Quản lý hàng tồn kho', image: './img/about-2-bg.jpg' },
+				{ title: 'Lưu trữ', image: './img/home-about-bg.jpg' },
+				{ title: 'Nâng hạ', image: './img/service-dt-2-bg.jpg' },
+				{ title: 'Xếp dỡ', image: './img/about-4-bg.jpg' },
+				{ title: 'Đóng gói', image: './img/bg_intro_general.png' },
+				{ title: 'Vận chuyển nội bộ', image: './img/about-2-bg.jpg' },
+				{ title: 'Kiểm đếm hàng hoá', image: './img/home-about-bg.jpg' },
+				{ title: 'Xử lý hàng trả', image: './img/service-dt-2-bg.jpg' }
+			]
+		}
+	.section-header
+		h2.section-title(data-aos="fade-up")= section3Data.title
+	.section-khophumy-services__swiper(data-aos="fade-up" data-aos-delay="150")
+		.swiper
+			.swiper-wrapper
+				each item in section3Data.items
+					.swiper-slide
+						article.service-card
+							.service-card__image.img-cover
+								img(src=item.image, alt=item.title, loading='lazy')
+							.service-card__overlay(aria-hidden='true')
+							.service-card__body
+								h3.service-card__title= item.title

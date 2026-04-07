@@ -1,0 +1,505 @@
+{
+    "key": "group_pm3_cangcanphumy_page",
+    "title": "Cảng Cạn Phú Mỹ — Trang",
+    "fields": [
+
+        {
+            "key": "field_pm3_ccp_tab_banner",
+            "label": "Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_ccp_banner_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "banner_section_id",
+            "type": "text",
+            "instructions": "VD: banner — dùng như id=\"...\" trên thẻ <section>"
+        },
+        {
+            "key": "field_pm3_ccp_banner_heading",
+            "label": "Câu trích dẫn chính (H1)",
+            "name": "banner_heading",
+            "type": "text",
+            "instructions": "VD: \"THÀNH CÔNG CỦA BẠN LÀ THÀNH CÔNG CỦA CHÚNG TÔI\""
+        },
+        {
+            "key": "field_pm3_ccp_banner_cards",
+            "label": "Hai thẻ banner (trái / phải)",
+            "name": "banner_cards",
+            "type": "repeater",
+            "min": 0,
+            "max": 2,
+            "layout": "table",
+            "button_label": "Thêm thẻ",
+            "instructions": "Thứ tự: thẻ trái trước, thẻ phải sau",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_ccp_card_type",
+                    "label": "Kiểu thẻ",
+                    "name": "card_type",
+                    "type": "select",
+                    "choices": {
+                        "left": "Trái — clip góc trên phải",
+                        "right": "Phải — clip góc dưới trái"
+                    },
+                    "default_value": "left",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_pm3_ccp_card_image",
+                    "label": "Ảnh thẻ",
+                    "name": "card_image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all"
+                },
+                {
+                    "key": "field_pm3_ccp_card_title",
+                    "label": "Tiêu đề thẻ",
+                    "name": "card_title",
+                    "type": "text",
+                    "instructions": "VD: HỆ SINH THÁI LOGISTICS TOÀN DIỆN"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_ccp_tab_nav",
+            "label": "Điều hướng",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_ccp_nav_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "nav_section_id",
+            "type": "text",
+            "instructions": "VD: dieu-huong"
+        },
+        {
+            "key": "field_pm3_ccp_nav_items",
+            "label": "Danh sách tab điều hướng",
+            "name": "nav_items",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm mục",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_ccp_nav_label",
+                    "label": "Nhãn hiển thị",
+                    "name": "nav_label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_ccp_nav_href",
+                    "label": "Anchor ID",
+                    "name": "nav_href",
+                    "type": "text",
+                    "instructions": "VD: #gioi-thieu"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_ccp_tab_feature",
+            "label": "Feature Grid — Giới thiệu",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_ccp_feature_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "feature_section_id",
+            "type": "text",
+            "instructions": "VD: gioi-thieu"
+        },
+        {
+            "key": "field_pm3_ccp_feature_items",
+            "label": "Danh sách ô lưới (xen kẽ ảnh / nội dung)",
+            "name": "feature_items",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm ô",
+            "instructions": "Xen kẽ: ảnh → nội dung → ảnh → nội dung… Tổng 6 ô (3 ảnh, 3 nội dung)",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_ccp_item_type",
+                    "label": "Loại ô",
+                    "name": "item_type",
+                    "type": "select",
+                    "choices": {
+                        "image": "Ảnh",
+                        "text": "Nội dung văn bản"
+                    },
+                    "default_value": "image",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_pm3_ccp_item_image",
+                    "label": "Ảnh (chỉ dùng khi loại = Ảnh)",
+                    "name": "item_image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all"
+                },
+                {
+                    "key": "field_pm3_ccp_item_title",
+                    "label": "Tiêu đề (chỉ dùng khi loại = Nội dung)",
+                    "name": "item_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_ccp_item_desc",
+                    "label": "Mô tả (chỉ dùng khi loại = Nội dung)",
+                    "name": "item_desc",
+                    "type": "wysiwyg",
+                    "toolbar": "basic",
+                    "media_upload": 0
+                },
+                {
+                    "key": "field_pm3_ccp_has_corner",
+                    "label": "Có trang trí góc?",
+                    "name": "has_corner",
+                    "type": "true_false",
+                    "default_value": 0,
+                    "instructions": "Bật nếu thẻ nội dung cần hình trang trí góc dưới"
+                },
+                {
+                    "key": "field_pm3_ccp_corner_align",
+                    "label": "Vị trí góc trang trí",
+                    "name": "corner_align",
+                    "type": "select",
+                    "choices": {
+                        "": "— Không có —",
+                        "left": "Trái",
+                        "right": "Phải"
+                    },
+                    "default_value": "",
+                    "return_format": "value"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_ccp_tab_docs",
+            "label": "Tài liệu",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_ccp_docs_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "docs_section_id",
+            "type": "text",
+            "instructions": "VD: tai-lieu"
+        },
+        {
+            "key": "field_pm3_ccp_docs_title",
+            "label": "Tiêu đề section",
+            "name": "docs_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_ccp_documents",
+            "label": "Danh sách tài liệu (PDF)",
+            "name": "documents",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm tài liệu",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_ccp_doc_title",
+                    "label": "Tên tài liệu",
+                    "name": "doc_title",
+                    "type": "text",
+                    "instructions": "VD: Profile - VN"
+                },
+                {
+                    "key": "field_pm3_ccp_doc_file",
+                    "label": "File đính kèm (PDF)",
+                    "name": "doc_file",
+                    "type": "file",
+                    "return_format": "array",
+                    "library": "all",
+                    "mime_types": "pdf"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_ccp_tab_infra",
+            "label": "Hạ tầng & Trang thiết bị",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_ccp_infra_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "infra_section_id",
+            "type": "text",
+            "instructions": "VD: ha-tang"
+        },
+        {
+            "key": "field_pm3_ccp_infra_bg_image",
+            "label": "Ảnh nền section Hạ tầng",
+            "name": "infra_bg_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "instructions": "Thay thế ảnh hardcode bg-cosohatang.png"
+        },
+        {
+            "key": "field_pm3_ccp_infra_title",
+            "label": "Tiêu đề section",
+            "name": "infra_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_ccp_infra_items",
+            "label": "Các mục hạ tầng",
+            "name": "infra_items",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm mục",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_ccp_infra_item_icon",
+                    "label": "Icon SVG",
+                    "name": "item_icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all"
+                },
+                {
+                    "key": "field_pm3_ccp_infra_item_title",
+                    "label": "Tiêu đề mục",
+                    "name": "item_title",
+                    "type": "text",
+                    "instructions": "VD: QUY MÔ, PHẦN MỀM, HỆ THỐNG"
+                },
+                {
+                    "key": "field_pm3_ccp_infra_item_desc",
+                    "label": "Mô tả (danh sách nội dung)",
+                    "name": "item_desc",
+                    "type": "wysiwyg",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "instructions": "Nhập dạng <p> hoặc <ul><li>. Mỗi dòng là một mục."
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_ccp_tab_services",
+            "label": "Dịch vụ Cảng",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_ccp_services_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "services_section_id",
+            "type": "text",
+            "instructions": "VD: dich-vu-cang"
+        },
+        {
+            "key": "field_pm3_ccp_services_title",
+            "label": "Tiêu đề section",
+            "name": "services_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_ccp_service_items",
+            "label": "Danh sách dịch vụ cảng",
+            "name": "service_items",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm dịch vụ",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_ccp_svc_title",
+                    "label": "Tên dịch vụ (tab label)",
+                    "name": "svc_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_ccp_svc_card_image",
+                    "label": "Ảnh card dịch vụ",
+                    "name": "svc_card_image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all"
+                },
+                {
+                    "key": "field_pm3_ccp_svc_card_subtitle",
+                    "label": "Slogan ngắn (trên card)",
+                    "name": "svc_card_subtitle",
+                    "type": "text",
+                    "instructions": "VD: Vận hành chuẩn mực - tối ưu hiệu suất từng container"
+                },
+                {
+                    "key": "field_pm3_ccp_svc_popup_title",
+                    "label": "Tiêu đề popup",
+                    "name": "svc_popup_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_ccp_svc_popup_content",
+                    "label": "Nội dung popup",
+                    "name": "svc_popup_content",
+                    "type": "wysiwyg",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "instructions": "Mỗi đoạn văn sẽ được hiển thị như một <p> riêng trong popup"
+                },
+                {
+                    "key": "field_pm3_ccp_svc_gallery",
+                    "label": "Thư viện ảnh popup (slider + thumbs)",
+                    "name": "svc_gallery",
+                    "type": "repeater",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "Thêm ảnh",
+                    "sub_fields": [
+                        {
+                            "key": "field_pm3_ccp_svc_gallery_image",
+                            "label": "Ảnh",
+                            "name": "svc_gallery_image",
+                            "type": "image",
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_ccp_tab_mooring",
+            "label": "Dịch vụ Bến Phao",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_ccp_mooring_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "mooring_section_id",
+            "type": "text",
+            "instructions": "VD: dich-vu-ben-phao"
+        },
+        {
+            "key": "field_pm3_ccp_mooring_title",
+            "label": "Tiêu đề section",
+            "name": "mooring_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_ccp_mooring_image",
+            "label": "Ảnh chính (bên trái)",
+            "name": "mooring_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_pm3_ccp_mooring_stats",
+            "label": "Thống kê (icon + giá trị)",
+            "name": "mooring_stats",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm chỉ số",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_ccp_mooring_stat_icon",
+                    "label": "Icon",
+                    "name": "stat_icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail"
+                },
+                {
+                    "key": "field_pm3_ccp_mooring_stat_value",
+                    "label": "Giá trị hiển thị",
+                    "name": "stat_value",
+                    "type": "text",
+                    "instructions": "VD: -14M, 80.000 DWT, ~20KM"
+                }
+            ]
+        },
+        {
+            "key": "field_pm3_ccp_mooring_content",
+            "label": "Nội dung mô tả (bên phải)",
+            "name": "mooring_content",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm đoạn nội dung",
+            "instructions": "Mỗi hàng tương ứng một khối .copy-desc",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_ccp_mooring_content_desc",
+                    "label": "Nội dung đoạn",
+                    "name": "content_desc",
+                    "type": "wysiwyg",
+                    "toolbar": "basic",
+                    "media_upload": 0
+                }
+            ]
+        }
+
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-cangcanphumy.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "ACF fields cho trang Cảng Cạn Phú Mỹ (page-cangcanphumy.php)",
+    "show_in_rest": 0,
+    "modified": 1775433600
+}

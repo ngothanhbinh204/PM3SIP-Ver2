@@ -1,6 +1,6 @@
 section.general-services.section-large#dich-vu
 	.container
-		h2.site-title Dịch vụ logistics toàn diện, trọn gói, đa phương thức
+		h2.site-title(data-aos="fade-up") Dịch vụ logistics toàn diện, trọn gói, đa phương thức
 		.services-grid
 			-
 				var svcs = [
@@ -21,8 +21,8 @@ section.general-services.section-large#dich-vu
 						desc: "Hệ thống bồn bể chuyên dụng cho hóa chất và khí hóa lỏng được thiết kế theo tiêu chuẩn an toàn nghiêm ngặt quốc tế."
 					}
 				]
-			each svc in svcs
-				.service-card
+			each svc, index in svcs
+				.service-card(data-aos="fade-up" data-aos-delay=100*index)
 					.image
 						+img(800, 450)
 					.overlay

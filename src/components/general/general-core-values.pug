@@ -29,19 +29,19 @@ section.section-core-values
 		];
 	.wrapper-core-values
 		.core-values-header
-			h2 Giá trị cốt lõi
+			h2(data-aos="fade-up") Giá trị cốt lõi
 		.core-values-body 
-			.core-values-image
+			.core-values-image(data-aos="zoom-in" data-aos-duration="1000")
 				include ../../img/core-value.svg
 			.core-values-list
 				each item, index in coreValues
-					.core-values-item(class=`item-${index + 1}`)
+					.core-values-item(class=`item-${index + 1}` data-aos="fade-left" data-aos-delay=`${index * 80}`)
 						h3= item.title
 						p.subtitle= item.subtitle
 						p.desc= item.desc
 
 		.core-values-mobile
-			.one-slider.no-autoplay.core-values-mobile-slider
+			.one-slider.no-autoplay.core-values-mobile-slider(data-aos="fade-up")
 				.swiper
 					.swiper-wrapper
 						each item in coreValues

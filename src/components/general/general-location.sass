@@ -7,11 +7,11 @@
 	.location-header
 		@apply text-center
 		.site-title
-			@apply text-center text-neutral-900 mb-4 relative z-10
+			@apply text-center text-black mb-4 relative z-10
 		.desc
-			@apply text-neutral-600 mt-4 mx-auto md:max-w-4xl text-justify md:text-center text-base leading-relaxed
+			@apply body-base-18 mt-3 mx-auto md:max-w-[1240px] text-justify md:text-center
 		.sub-title
-			@apply text-neutral-900 text-xl font-bold mt-10 mb-6
+			@apply text-black text-2xl lg:rem:text-[32px] font-bold my-10
 	.tabs-container
 		@apply flex items-center justify-center gap-x-4 gap-y-4 flex-wrap pb-10
 		.btn
@@ -21,7 +21,7 @@
 			&:not(.active)
 				@apply bg-neutral-100 text-primary-1 hover:bg-primary-1 hover:text-white
 	.map-wrapper
-		@apply relative w-full bg-neutral-200 overflow-hidden rem:h-[640px]		
+		@apply relative w-full bg-neutral-200 overflow-hidden aspect-[1920/640] lg:rem:h-[640px]		
 	.map-pane
 		@apply absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-500 z-0
 		&.active

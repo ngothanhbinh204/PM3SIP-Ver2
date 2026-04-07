@@ -20,11 +20,11 @@
 
 	.curve-top
 		@apply rem:-top-[430px] lg:rem:-top-[350px]
-		border-radius: 100% 0% 70% 70% / 0% 0% 100% 100% 
+		border-radius: 100% 0% 80% 80% / 0% 0% 100% 100% 
 
 	.curve-bottom
-		@apply rem:-bottom-[460px] lg:rem:-bottom-[380px]
-		border-radius: 70% 70% 100% 0% / 100% 100% 0% 0%
+		@apply rem:-bottom-[460px] lg:rem:-bottom-[410px]
+		border-radius: 80% 80% 100% 0% / 100% 100% 0% 0%
 
 	.container
 		@apply relative z-10
@@ -63,7 +63,7 @@
 				content: ''
 				@apply absolute left-1/2 bottom-0 -translate-x-1/2 w-full h-px bg-primary-1/30
 		
-	@screen lg
+	@screen md
 		.infrastructure-item
 			&:first-child
 				@apply pr-16 pb-0

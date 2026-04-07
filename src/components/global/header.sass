@@ -7,14 +7,14 @@ header
 		img
 			@apply w-full h-full object-contain
 	.header-right
-		@apply flex items-center
+		@apply flex items-center gap-10
 	.navbar-nav
 		@apply hidden xl:block
 	.main-menu
 		@apply flex items-center gap-10
 		> li
 			> a
-				@apply sub-header-20 font-medium text-black py-8 rem:gap-[10px]
+				@apply sub-header-20 font-medium text-neutral-500 py-8 rem:gap-[10px] uppercase
 			&[class*="current-"], &:hover
 				> a
 					@apply text-primary-2
@@ -36,7 +36,7 @@ header
 				a
 					@apply hover-underline-active
 	.button-flex
-		@apply ml-10 flex items-center gap-2
+		@apply flex items-center gap-2
 		> *
 			@apply p-3 rounded-1 bg-neutral-100 text-xl font-medium text-primary-1 flex items-center gap-3 cursor-pointer transition-all duration-200 ease-in-out
 			@apply hover:text-white hover:bg-primary-1
@@ -46,6 +46,8 @@ header
 			@apply p-0
 		.button-email, .button-phone
 			@apply hidden md:flex
+	.button-contact-header
+		@apply sub-header-20 bg-primary-1 text-white font-normal px-6 py-3 hover:bg-primary-2 transition
 	.button-phone
 		@apply py-2 rem:h-[50px]
 	#buttonMenu

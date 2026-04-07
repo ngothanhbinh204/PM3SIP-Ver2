@@ -1,0 +1,332 @@
+{
+    "key": "group_pm3_khophumy_page",
+    "title": "Kho Phú Mỹ — Trang",
+    "fields": [
+
+        {
+            "key": "field_pm3_kho_tab_banner",
+            "label": "Banner",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_kho_banner_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "banner_section_id",
+            "type": "text",
+            "instructions": "VD: banner — dùng như id=\"...\" trên thẻ <section>"
+        },
+        {
+            "key": "field_pm3_kho_banner_heading",
+            "label": "Câu trích dẫn chính (H1)",
+            "name": "banner_heading",
+            "type": "text",
+            "instructions": "VD: \"THÀNH CÔNG CỦA BẠN LÀ THÀNH CÔNG CỦA CHÚNG TÔI\""
+        },
+        {
+            "key": "field_pm3_kho_banner_cards",
+            "label": "Hai thẻ banner (trái / phải)",
+            "name": "banner_cards",
+            "type": "repeater",
+            "min": 0,
+            "max": 2,
+            "layout": "table",
+            "button_label": "Thêm thẻ",
+            "instructions": "Thứ tự: thẻ trái trước, thẻ phải sau",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_kho_card_type",
+                    "label": "Kiểu thẻ",
+                    "name": "card_type",
+                    "type": "select",
+                    "choices": {
+                        "left": "Trái — clip góc trên phải",
+                        "right": "Phải — clip góc dưới trái"
+                    },
+                    "default_value": "left",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_pm3_kho_card_image",
+                    "label": "Ảnh thẻ",
+                    "name": "card_image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all"
+                },
+                {
+                    "key": "field_pm3_kho_card_title",
+                    "label": "Tiêu đề thẻ",
+                    "name": "card_title",
+                    "type": "text",
+                    "instructions": "VD: HỆ SINH THÁI LOGISTICS TOÀN DIỆN"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_kho_tab_nav",
+            "label": "Điều hướng",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_kho_nav_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "nav_section_id",
+            "type": "text",
+            "instructions": "VD: dieu-huong"
+        },
+        {
+            "key": "field_pm3_kho_nav_items",
+            "label": "Danh sách tab điều hướng",
+            "name": "nav_items",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm mục",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_kho_nav_label",
+                    "label": "Nhãn hiển thị",
+                    "name": "nav_label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pm3_kho_nav_href",
+                    "label": "Anchor ID",
+                    "name": "nav_href",
+                    "type": "text",
+                    "instructions": "VD: #gioi-thieu"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_kho_tab_infra",
+            "label": "Hạ tầng & Năng lực vận hành",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_kho_infra_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "infra_section_id",
+            "type": "text",
+            "instructions": "VD: ha-tang"
+        },
+        {
+            "key": "field_pm3_kho_infra_title",
+            "label": "Tiêu đề section",
+            "name": "infra_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_kho_infra_background",
+            "label": "Ảnh nền section (lozad-bg)",
+            "name": "infra_background",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Ảnh nền tải lười cho toàn bộ section"
+        },
+        {
+            "key": "field_pm3_kho_polygon_items",
+            "label": "Danh sách ô polygon (tối đa 3)",
+            "name": "polygon_items",
+            "type": "repeater",
+            "min": 0,
+            "max": 3,
+            "layout": "table",
+            "button_label": "Thêm ô polygon",
+            "instructions": "Thứ tự hiển thị từ trái sang phải",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_kho_polygon_icon",
+                    "label": "Icon SVG",
+                    "name": "polygon_icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all"
+                },
+				{
+					"key": "field_pm3_kho_polygon_bg",
+					"label": "Ảnh nền của hình Polygon",
+					"name": "polygon_bg_icon",
+					"type": "image",
+					"return_format": "array",
+					"preview_size": "medium",
+					"library": "all"
+				},
+                {
+                    "key": "field_pm3_kho_polygon_title",
+                    "label": "Tiêu đề",
+                    "name": "polygon_title",
+                    "type": "text",
+                    "instructions": "VD: Cơ sở vật chất"
+                },
+                {
+                    "key": "field_pm3_kho_polygon_detail",
+                    "label": "Chi tiết nội dung",
+                    "name": "polygon_detail",
+                    "type": "wysiwyg",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "instructions": "Nhập dạng <ul><li>...</li></ul> hoặc các đoạn <p>"
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_kho_tab_warehouse",
+            "label": "Hệ thống Kho",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_kho_warehouse_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "warehouse_section_id",
+            "type": "text",
+            "instructions": "VD: he-thong-kho"
+        },
+        {
+            "key": "field_pm3_kho_warehouse_title",
+            "label": "Tiêu đề section",
+            "name": "warehouse_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_kho_warehouse_items",
+            "label": "Danh sách kho",
+            "name": "warehouse_items",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm kho",
+            "instructions": "Mỗi hàng là một tab kho và bộ gallery tương ứng bên phải",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_kho_wh_title",
+                    "label": "Tên kho (tab label)",
+                    "name": "wh_title",
+                    "type": "text",
+                    "instructions": "VD: Kho CFS, Kho Ngoại quan, Kho Tổng hợp, Kho Hoá chất"
+                },
+                {
+                    "key": "field_pm3_kho_wh_desc",
+                    "label": "Mô tả kho (hiển thị dưới tab)",
+                    "name": "wh_desc",
+                    "type": "wysiwyg",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "instructions": "Đoạn mô tả ngắn hiện ra khi tab được mở rộng"
+                },
+                {
+                    "key": "field_pm3_kho_wh_gallery",
+                    "label": "Thư viện ảnh (slider bên phải)",
+                    "name": "wh_gallery",
+                    "type": "repeater",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "Thêm ảnh",
+                    "sub_fields": [
+                        {
+                            "key": "field_pm3_kho_wh_gallery_image",
+                            "label": "Ảnh slide",
+                            "name": "wh_gallery_image",
+                            "type": "image",
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "key": "field_pm3_kho_tab_services",
+            "label": "Dịch vụ",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pm3_kho_services_section_id",
+            "label": "ID Section (HTML anchor)",
+            "name": "services_section_id",
+            "type": "text",
+            "instructions": "VD: dich-vu"
+        },
+        {
+            "key": "field_pm3_kho_services_title",
+            "label": "Tiêu đề section",
+            "name": "services_title",
+            "type": "text"
+        },
+        {
+            "key": "field_pm3_kho_service_cards",
+            "label": "Danh sách dịch vụ (swiper cards)",
+            "name": "service_cards",
+            "type": "repeater",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Thêm dịch vụ",
+            "sub_fields": [
+                {
+                    "key": "field_pm3_kho_svc_title",
+                    "label": "Tên dịch vụ",
+                    "name": "svc_title",
+                    "type": "text",
+                    "instructions": "VD: Quản lý hàng tồn kho, Lưu trữ, Nâng hạ..."
+                },
+                {
+                    "key": "field_pm3_kho_svc_image",
+                    "label": "Ảnh thẻ dịch vụ",
+                    "name": "svc_image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all"
+                }
+            ]
+        }
+
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-khophumy.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "ACF fields cho trang Kho Phú Mỹ (page-khophumy.php)",
+    "show_in_rest": 0,
+    "modified": 1775433600
+}

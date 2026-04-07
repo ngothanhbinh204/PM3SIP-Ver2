@@ -1,79 +1,90 @@
 footer
-	.footer-top
-		.row(class="-mt-10")
-			.col(class="w-full mt-10 md:w-1/2 col-cus-1")
-				.footer-xl-flex
+	.footer-top(style="background-image: url('./img/bg-footer.jpg')")
+		.footer-brand-title
+			span.footer-brand-title__text(style="background-image: url('./img/text-clip-background-footer.jpg')") TRUNG TÂM CHUỖI CUNG ỨNG TOÀN CẦU PHÚ MỸ
+		.container
+			.footer-grid
+				.footer-grid__item
 					.footer-logo
 						a(href="/")
 							img(src="./img/logo-w.png", alt="")
-					.footer-info
-						h4 CẢNG CẠN PHÚ MỸ
+					.social-list.mt-6
 						ul
 							li
-								i.icon.fa-light.fa-location-dot
-								p Trụ sở: KCN Chuyên Sâu Phú Mỹ 3, Phường Phước Hòa, Tỉnh Bà Rịa Vũng Tàu, Việt Nam
+								a(href="#")
+									i.fa-brands.fa-facebook
 							li
-								i.icon.fa-light.fa-phone
-								p Số điện thoại liên hệ:&nbsp;
-									a(href="tel: 097 716 1417") 097 716 1417
+								a(href="#")
+									i.fa-brands.fa-youtube
 							li
-								i.icon.fa-light.fa-envelope
-								p Email:&nbsp;
-									a(href="mailto: sales-pmdryport@phumy3sip.com") sales-pmdryport@phumy3sip.com
-			.col(class="w-full mt-10 md:w-1/2 col-cus-2")
-				p.footer-title DỊCH VỤ
-				ul.footer-menu
-					li
-						a(href="#") Dịch vụ Hàng rời
-					li
-						a(href="#") Dịch vụ Hàng container
-					li
-						a(href="#") Dịch vụ Vận chuyển
-					li
-						a(href="#") Dịch vụ Kho bãi
-					li
-						a(href="#") Dịch vụ Bến phao
-					li
-						a(href="#") Dịch vụ Thủ tục hải quan
-			.col(class="w-full mt-10 md:w-1/2 col-cus-3")
-				p.footer-title LIÊN KẾT NHANH
-				ul.footer-menu
-					li
-						a(href="#") Giới thiệu
-					li
-						a(href="#") Tin tức
-					li
-						a(href="#") Tuyển dụng
-					li
-						a(href="#") Thư viện
-					li
-						a(href="#") Liên hệ
-			.col(class="w-full mt-10 md:w-1/2 col-cus-4")
-				.footer-news-letter
-					form(action="")
-						h4 ĐĂNG KÝ NHẬN BẢN TIN
-						p Đăng ký ngay để nhận thông tin về hoạt động mới nhất từ công ty.
-						.form-group
-							input(type="text", placeholder="Điạ chỉ email...")
-							button(type="submit")
-								span GỬI
-								span.icon
-									i.fa-solid.fa-arrow-right
-									i.fa-solid.fa-arrow-right
-				.social-list.mt-5
-					ul
+								a(href="#")
+									i.fa-brands.fa-linkedin
+				.footer-grid__item
+					.footer-address-group
+						.footer-address-block
+							h3.footer-address-block__title TRỤ SỞ CHÍNH
+							.footer-address-block__content
+								p KCN Chuyên Sâu Phú Mỹ 3, Phường Tân Phước, TP. Hồ Chí Minh
+								p
+									| Số điện thoại liên hệ:&nbsp;
+									a(href="tel:+84987083030") (+84) 987–083–030
+								p
+									| Email:&nbsp;
+									a(href="mailto:marketing@phumy3sip.com") marketing@phumy3sip.com
+						.footer-address-block
+							h3.footer-address-block__title VĂN PHÒNG ĐẠI DIỆN TẠI TP.HCM
+							.footer-address-block__content
+								p 103–105 Đường S, KDC Lakeview City, Phường Bình Trưng, TP. Hồ Chí Minh
+				.footer-grid__item
+					.footer-address-group
+						.footer-address-block
+							h3.footer-address-block__title CẢNG CẠN PHÚ MỸ
+							.footer-address-block__content
+								p
+									| Số điện thoại liên hệ:&nbsp;
+									a(href="tel:+84977161417") (+84) 97 716 1417
+								p
+									| Email:&nbsp;
+									a(href="mailto:biz@phumy3sip.com") biz@phumy3sip.com
+						.footer-address-block
+							h3.footer-address-block__title KHO PHÚ MỸ 3
+							.footer-address-block__content
+								p
+									| Số điện thoại liên hệ:&nbsp;
+									a(href="tel:+84971052211") (+84) 97 105 2211
+								p
+									| Email:&nbsp;
+									a(href="mailto:sales-warehouse@phumy3sip.com") sales-warehouse@phumy3sip.com
+				.footer-grid__item
+					p.footer-title DỊCH VỤ CẢNG
+					ul.footer-menu
 						li
-							a(href="#")
-								i.icon.fa-brands.fa-facebook-f
+							a(href="#") Dịch vụ Hàng rời
 						li
-							a(href="#")
-								i.icon.fa-brands.fa-youtube
+							a(href="#") Dịch vụ Hàng container
 						li
-							a(href="#")
-								i.icon.fa-brands.fa-linkedin-in
+							a(href="#") Dịch vụ Vận chuyển
 						li
-							a(href="#")
-								i.icon.fa-regular.fa-envelope
+							a(href="#") Dịch vụ Kho bãi
+						li
+							a(href="#") Dịch vụ Bến phao
+						li
+							a(href="#") Dịch vụ Thủ tục hải quan
+				.footer-grid__item
+					p.footer-title DỊCH VỤ KHO
+					ul.footer-menu
+						li
+							a(href="#") Lưu trữ hàng hóa
+						li
+							a(href="#") Quản lý tồn kho
+						li
+							a(href="#") Phân loại, đóng gói
+						li
+							a(href="#") Dịch vụ Kho bãi
+						li
+							a(href="#") Dán nhãn, mã hóa
+						li
+							a(href="#") Vận chuyển tích hợp
 	.footer-bot
 		.footer-copyright
 			p Copyright © 2024 Cảng cạn Phú Mỹ. All Rights Reserved. Thiết kế web bởi Cánh Cam.

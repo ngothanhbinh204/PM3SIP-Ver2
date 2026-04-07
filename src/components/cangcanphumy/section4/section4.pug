@@ -26,10 +26,10 @@ section.section-cangcanphumy-infrastructure
 				]
 			}
 		.section-header
-			h2.section-title= section4Data.title
+			h2.section-title(data-aos="fade-up")= section4Data.title
 		.infrastructure-panel
 			each item, index in section4Data.items
-				.infrastructure-item
+				.infrastructure-item(data-aos="fade-up" data-aos-delay=`${index * 150}`)
 					.item-icon
 						img(src=item.icon, alt=item.title)
 					.item-content
